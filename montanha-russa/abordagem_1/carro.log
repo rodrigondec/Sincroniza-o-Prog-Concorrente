@@ -1,0 +1,27 @@
+Carro: <__main__.Carro object at 0x02B86A70> irá fazer o passeio 1
+Carro: <__main__.Carro object at 0x02B86A70> espera estar vazio para liberar embarque!
+Carro: <__main__.Carro object at 0x02B86A70> embarque do carro está liberado!
+Carro: <__main__.Carro object at 0x02B86A70> espera estar cheio para iniciar passeio!
+Carro: <__main__.Carro object at 0x02B86A70> passeio iniciado!
+Carro: <__main__.Carro object at 0x02B86A70> espera terminar o passaio para liberar desembarque!
+Carro: <__main__.Carro object at 0x02B86A70> vai andar por 4 segundos.
+Carro: <__main__.Carro object at 0x02B86A70> passeio terminado!
+Carro: <__main__.Carro object at 0x02B86A70> desembarque do carro está liberado!
+Carro: <__main__.Carro object at 0x02B86A70> irá fazer o passeio 2
+Carro: <__main__.Carro object at 0x02B86A70> espera estar vazio para liberar embarque!
+Carro: <__main__.Carro object at 0x02B86A70> embarque do carro está liberado!
+Carro: <__main__.Carro object at 0x02B86A70> espera estar cheio para iniciar passeio!
+Carro: <__main__.Carro object at 0x02B86A70> passeio iniciado!
+Carro: <__main__.Carro object at 0x02B86A70> espera terminar o passaio para liberar desembarque!
+Carro: <__main__.Carro object at 0x02B86A70> vai andar por 3 segundos.
+Carro: <__main__.Carro object at 0x02B86A70> passeio terminado!
+Carro: <__main__.Carro object at 0x02B86A70> desembarque do carro está liberado!
+Carro: <__main__.Carro object at 0x02B86A70> irá fazer o passeio 3
+Carro: <__main__.Carro object at 0x02B86A70> espera estar vazio para liberar embarque!
+Carro: <__main__.Carro object at 0x02B86A70> embarque do carro está liberado!
+Carro: <__main__.Carro object at 0x02B86A70> espera estar cheio para iniciar passeio!
+Carro: <__main__.Carro object at 0x02B86A70> passeio iniciado!
+Carro: <__main__.Carro object at 0x02B86A70> espera terminar o passaio para liberar desembarque!
+Carro: <__main__.Carro object at 0x02B86A70> vai andar por 5 segundos.
+Carro: <__main__.Carro object at 0x02B86A70> passeio terminado!
+Carro: <__main__.Carro object at 0x02B86A70> desembarque do carro está liberado!
