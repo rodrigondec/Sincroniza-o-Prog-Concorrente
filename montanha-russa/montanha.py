@@ -16,12 +16,31 @@ def setup_logger(logger_name, log_file, level=logging.INFO):
     # l.addHandler(streamHandler)
 
 
-setup_logger("log", "info.log")
-log = logging.getLogger("log")
+setup_logger("info_log", "info.log")
+info_log = logging.getLogger("info_log")
 
-def print_log(msg):
+setup_logger("carro_log", "carro.log")
+carro_log = logging.getLogger("carro_log")
+
+setup_logger("passageiros_log", "passageiros.log")
+passageiros_log = logging.getLogger("passageiros_log")
+
+
+def print_info_log(msg):
+    info_log.info(msg)
+
+
+def print_carro_log(msg):
     print(msg)
-    log.info(msg)
+    carro_log.info(msg)
+    print_info_log(msg)
+
+
+def print_passageiros_log(msg):
+    print(msg)
+    passageiros_log.info(msg)
+    print_info_log(msg)
+
 
 class Erro(Exception):
     def __init__(self, msg):
