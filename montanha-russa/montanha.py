@@ -168,6 +168,9 @@ class Passageiro(object):
         self.carro = carro
         self.thread = Thread(target=self.run)
 
+        # print_passageiros_log("iniciado thread")
+        self.thread.start()
+
     def run(self):
         while True:
             self.board()
@@ -176,37 +179,40 @@ class Passageiro(object):
 
     def passear(self):
         tempo = randrange(5)+1
-        print_log("Passageiro: "+str(self)+" vai passear no parque por "+str(tempo)+" segundos.")
+        print_passageiros_log("Passageiro: "+str(self)+" vai passear no parque por "+str(tempo)+" segundos.")
         time.sleep(tempo)
 
     def board(self):
-        print_log("Passageiro: " +str(self)+" vai tentar entrar no carro")
+        print_passageiros_log("Passageiro: " + str(self) + " espera poder entrar no carro")
         if not self.carro.boardable.is_set():
             self.carro.boardable.wait()
+        print_passageiros_log("Passageiro: " +str(self)+" vai tentar entrar no carro")
         try:
             self.carro.board(self)
-            print_log("Passageiro: " + str(self) + " entrou no carro!")
-            self.carro.thread_wait_board.join()
-            self.carro.thread_run.join()
+            print_passageiros_log("Passageiro: " + str(self) + " entrou no carro!")
+            # self.carro.thread_wait_board.join()
+            # self.carro.thread_run.join()
         except Erro as e:
-            print_log("Passageiro: "+str(self)+" não entrou no carro! "+e.msg+" Passageiro vai esperar 1 segundo e tentar novamente!")
+            print_passageiros_log("Passageiro: "+str(self)+" não entrou no carro! "+e.msg+" Passageiro vai esperar 1 segundo e tentar novamente!")
             time.sleep(1)
             self.board()
 
     def unboard(self):
-        print_log("Passageiro: "+str(self)+" vai tentar sair do carro")
+        print_passageiros_log("Passageiro: " + str(self) + " espera poder sair do carro")
         if not self.carro.unboardable.is_set():
             self.carro.unboardable.wait()
+        print_passageiros_log("Passageiro: "+str(self)+" vai tentar sair do carro")
         try:
             self.carro.unboard(self)
-            print_log("Passageiro: " + str(self) + " saiu do carro!")
+            print_passageiros_log("Passageiro: " + str(self) + " saiu do carro!")
         except Erro as e:
-            print_log("Passageiro: "+str(self)+" não saiu do carro! "+e.msg+" Passageiro vai esperar 1 segundo e tentar novamente!")
+            print_passageiros_log("Passageiro: "+str(self)+" não saiu do carro! "+e.msg+" Passageiro vai esperar 1 segundo e tentar novamente!")
             time.sleep(1)
             self.unboard()
 
     def __str__(self):
         return str(self.id_passageiro)
+
 
 num_pessoas = 8
 limite_pessoas_por_carro = 6
@@ -219,8 +225,11 @@ passageiros = []
 for x in range(8):
     passageiros.append(Passageiro(carro))
 
-for passageiro in passageiros:
-    passageiro.thread.start()
+
+
+# for passageiro in passageiros:
+    # passageiro.run()
+    # passageiro.thread.start()
 
 
 # handle_carro.join()
