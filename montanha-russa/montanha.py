@@ -157,3 +157,26 @@ class Passageiro(object):
     def __str__(self):
         return str(self.id_passageiro)
 
+num_pessoas = 8
+limite_pessoas_por_carro = 6
+passeios_por_carro = 3
+
+carro = Carro(limite_pessoas_por_carro, passeios_por_carro)
+
+passageiros = []
+
+for x in range(8):
+    passageiros.append(Passageiro(carro))
+
+for passageiro in passageiros:
+    passageiro.thread.start()
+
+
+# handle_carro.join()
+
+# t = Thread(name='car', target=car, args=('test',))
+# threads.append(t)
+# t.start()
+#
+# for thread in threads:
+#     thread.join()
