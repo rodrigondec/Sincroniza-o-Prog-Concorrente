@@ -105,3 +105,55 @@ class Carro(object):
         self.passageiros.remove(passageiro)
 
 
+class Passageiro(object):
+    """Passageiros de uma montanha russa"""
+
+    id_passageiro = 1
+
+    def __init__(self, carro):
+        """Constructor for Passageiro"""
+        self.id_passageiro = Passageiro.id_passageiro
+        Passageiro.id_passageiro += 1
+        self.carro = carro
+        self.thread = Thread(target=self.run)
+
+    def run(self):
+        while True:
+            self.board()
+            self.unboard()
+            self.passear()
+
+    def passear(self):
+        tempo = randrange(5)+1
+        print_log("Passageiro: "+str(self)+" vai passear no parque por "+str(tempo)+" segundos.")
+        time.sleep(tempo)
+
+    def board(self):
+        print_log("Passageiro: " +str(self)+" vai tentar entrar no carro")
+        if not self.carro.boardable.is_set():
+            self.carro.boardable.wait()
+        try:
+            self.carro.board(self)
+            print_log("Passageiro: " + str(self) + " entrou no carro!")
+            self.carro.thread_wait_board.join()
+            self.carro.thread_run.join()
+        except Erro as e:
+            print_log("Passageiro: "+str(self)+" não entrou no carro! "+e.msg+" Passageiro vai esperar 1 segundo e tentar novamente!")
+            time.sleep(1)
+            self.board()
+
+    def unboard(self):
+        print_log("Passageiro: "+str(self)+" vai tentar sair do carro")
+        if not self.carro.unboardable.is_set():
+            self.carro.unboardable.wait()
+        try:
+            self.carro.unboard(self)
+            print_log("Passageiro: " + str(self) + " saiu do carro!")
+        except Erro as e:
+            print_log("Passageiro: "+str(self)+" não saiu do carro! "+e.msg+" Passageiro vai esperar 1 segundo e tentar novamente!")
+            time.sleep(1)
+            self.unboard()
+
+    def __str__(self):
+        return str(self.id_passageiro)
+
