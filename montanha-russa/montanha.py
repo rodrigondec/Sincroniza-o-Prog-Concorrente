@@ -1,4 +1,5 @@
-import threading, logging, time
+import logging
+import time
 from random import randrange
 from threading import Thread, Event
 
@@ -13,7 +14,6 @@ def setup_logger(logger_name, log_file, level=logging.INFO):
 
     l.setLevel(level)
     l.addHandler(fileHandler)
-    # l.addHandler(streamHandler)
 
 
 setup_logger("info_log", "info.log")
@@ -61,34 +61,13 @@ class Carro(object):
         self.unboardable = Event()
         self.cheio = Event()
         self.vazio = Event()
-        # self.
         self.thread_main = Thread(target=self.main)
         self.thread_run = Thread(target=self.run)
-        # self.thread_wait_board = Thread(target=self.wait_board)
-        # self.thread_wait_unboard = Thread(target=self.wait_unboard)
-
-
         self.boardable.clear()
         self.unboardable.clear()
         self.cheio.clear()
         self.vazio.set()
-        # self.unboard = Event()
-
         self.thread_main.start()
-
-    # def controller(self):
-    #     for x in range(self.num_passeios):
-    #         print_log("O carro irá fazer o passeio " + str(x + 1))
-    #         self.thread_main.start()
-
-    # def main(self):
-    #         self.load()
-    #         self.thread_wait_board.start()
-    #         self.thread_wait_board.join()
-    #         self.unload()
-    #         self.thread_wait_unboard.start()
-    #         self.thread_wait_unboard.join()
-    #         # self.wait_unboard()
 
     def main(self):
         for x in range(self.num_passeios):
@@ -108,22 +87,10 @@ class Carro(object):
 
     def run(self):
         print_carro_log("Carro: " + str(self) + " passeio iniciado!")
-        # self.boardable.clear()
-        # self.unboardable.clear()
         tempo = randrange(5) + 1
         print_carro_log("Carro: " + str(self) + " vai andar por " + str(tempo) + " segundos.")
         time.sleep(tempo)
         print_carro_log("Carro: " + str(self) + " passeio terminado!")
-
-    # def wait_board(self):
-    #     while len(self.passageiros) != self.limite_pessoas:
-    #         pass
-    #     self.thread_run.start()
-    #     self.thread_run.join()
-    #
-    # def wait_unboard(self):
-    #     while len(self.passageiros) != 0:
-    #         pass
 
     def load(self):
         print_carro_log("Carro: " + str(self) + " embarque do carro está liberado!")
@@ -137,14 +104,12 @@ class Carro(object):
         if not self.boardable.is_set():
             raise Erro("Carro não liberado para embarque!")
         if len(self.passageiros) >= self.limite_pessoas:
-            # self.boardable.clear()
             raise Erro("Carro cheio!")
         self.passageiros.append(passageiro)
         if len(self.passageiros) == self.limite_pessoas:
             self.boardable.clear()
             self.vazio.clear()
             self.cheio.set()
-        #     self.thread.start()
 
     def unboard(self, passageiro):
         if not self.unboardable:
@@ -167,8 +132,6 @@ class Passageiro(object):
         Passageiro.id_passageiro += 1
         self.carro = carro
         self.thread = Thread(target=self.run)
-
-        # print_passageiros_log("iniciado thread")
         self.thread.start()
 
     def run(self):
@@ -190,8 +153,6 @@ class Passageiro(object):
         try:
             self.carro.board(self)
             print_passageiros_log("Passageiro: " + str(self) + " entrou no carro!")
-            # self.carro.thread_wait_board.join()
-            # self.carro.thread_run.join()
         except Erro as e:
             print_passageiros_log("Passageiro: "+str(self)+" não entrou no carro! "+e.msg+" Passageiro vai esperar 1 segundo e tentar novamente!")
             time.sleep(1)
@@ -224,19 +185,3 @@ passageiros = []
 
 for x in range(8):
     passageiros.append(Passageiro(carro))
-
-
-
-# for passageiro in passageiros:
-    # passageiro.run()
-    # passageiro.thread.start()
-
-
-# handle_carro.join()
-
-# t = Thread(name='car', target=car, args=('test',))
-# threads.append(t)
-# t.start()
-#
-# for thread in threads:
-#     thread.join()
