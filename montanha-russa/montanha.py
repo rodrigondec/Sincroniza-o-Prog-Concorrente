@@ -27,3 +27,81 @@ class Erro(Exception):
     def __init__(self, msg):
         self.msg = msg
 
+
+class Carro(object):
+    """Carro de uma montanha russa"""
+
+    def __init__(self, limite_pessoas, num_passeios, passageiros=None):
+        """Constructor for Car"""
+        self.limite_pessoas = limite_pessoas
+        self.num_passeios = num_passeios
+        if passageiros is None:
+            passageiros = []
+        self.passageiros = passageiros
+        self.boardable = Event()
+        self.unboardable = Event()
+        # self.thread_main = Thread(target=self.main)
+        self.thread_run = Thread(target=self.run)
+        # self.thread_wait_board = Thread(target=self.wait_board)
+        # self.thread_wait_unboard = Thread(target=self.wait_unboard)
+
+        # self.unboard = Event()
+
+        self.controller()
+
+    def controller(self):
+        for x in range(self.num_passeios):
+            print_log("O carro irá fazer o passeio " + str(x + 1))
+            self.thread_main.start()
+
+    def main(self):
+            self.load()
+            self.thread_wait_board.start()
+            self.thread_wait_board.join()
+            self.unload()
+            self.thread_wait_unboard.start()
+            self.thread_wait_unboard.join()
+            # self.wait_unboard()
+
+    def run(self):
+        print_log("Thread do carro iniciada")
+        self.boardable.clear()
+        self.unboardable.clear()
+        tempo = randrange(5) + 1
+        print_log("Carro: " + str(self) + " vai andar por " + str(tempo) + " segundos.")
+        time.sleep(tempo)
+
+    def wait_board(self):
+        while len(self.passageiros) != self.limite_pessoas:
+            pass
+        self.thread_run.start()
+        self.thread_run.join()
+
+    def wait_unboard(self):
+        while len(self.passageiros) != 0:
+            pass
+
+    def load(self):
+        print_log("O embarque do carro está liberado!")
+        self.boardable.set()
+
+    def unload(self):
+        print_log("O desembarque do carro está liberado!")
+        self.unboardable.set()
+
+    def board(self, passageiro):
+        if not self.boardable.is_set():
+            raise Erro("Carro não liberado para embarque!")
+        if len(self.passageiros) >= self.limite_pessoas:
+            # self.boardable.clear()
+            raise Erro("Carro cheio!")
+        self.passageiros.append(passageiro)
+        # if len(self.passageiros) == self.limite_pessoas:
+        #     self.thread.start()
+
+    def unboard(self, passageiro):
+        if not self.unboardable:
+            raise Erro("Carro não liberado para desembarque!")
+        self.passageiros.remove(passageiro)
+
+
