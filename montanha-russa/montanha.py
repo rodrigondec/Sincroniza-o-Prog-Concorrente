@@ -1,4 +1,6 @@
-from threading import Thread
+import threading, logging, time
+from random import randrange
+from threading import Thread, Event
 
 
 def car():
