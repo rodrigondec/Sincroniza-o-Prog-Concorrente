@@ -1,0 +1,6 @@
+# Dificuldades Encontradas
+
+bla
+
+
+
