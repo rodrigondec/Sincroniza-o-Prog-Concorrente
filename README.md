@@ -61,7 +61,7 @@ Temos duas classes para resolver o problema:
 - board: método para adicionar um passageiro no carro
 - unboard: método para remover um passageiro no carro
 
-####### Condições
+###### Condições
 - Para o embarque do carro ser liberado é necessário que o carro esteja vazio
 - Para que o carro esteja na situação `boardable` é necessário que ele não esteja cheio
 - Para que o passeio do carro seja iniciado é necessário que o carro esteja cheio
