@@ -12,14 +12,14 @@ Para mais informações leia [Trabalho-Sincronizacao.pdf](https://github.com/rod
         - [Sincronização](#sincronização)
         - [Classes](#classes)
             - [Carro](#carro)
-                - [Atributos](#atributos)
-                - [Atributos situação](#atributos-situação)
-                - [Métodos](#métodos)
-                - [Condições](#condições)
+                - [Atributos](#atributos-carro)
+                - [Atributos situação](#atributos-situação-carro)
+                - [Métodos](#métodos-carro)
+                - [Condições](#condições-carro)
             - [Passageiro](#passageiro)
-                - [Atributos](#atributos)
-                - [Métodos](#métodos)
-                - [Condições](#condições)
+                - [Atributos](#atributos-passageiro)
+                - [Métodos](#métodos-passageiro)
+                - [Condições](#condições-passageiro)
         
 ## Executando
 Para executar os programas criados, executar o comando `python <problema>/<abordagem>/<nome>.py`. 
@@ -40,20 +40,20 @@ Temos duas classes para resolver o problema:
 - Passageiro
 
 ##### Carro
-###### Atributos
+###### Atributos (carro)
 - limite_pessoas: quantidade de pessoas que cabem no carro
 - num_passeios: número de vezes que o carro irá rodar
 - passageiros: lista de passageiros no carro
 - thread_main: Thread principal do carro com todos os estágios
 - thread_run: Thread representando o passeio do carro nos trilhos
 
-###### Atributos situação
+###### Atributos situação (carro)
 - boardable: Event - representando o estágio de embarque do carro
 - unboardable: Event - representando o estágio de desembarque do carro
 - cheio: Event - representando o status lotado do carro
 - vazio: Event - representando o status vazio do carro
 
-###### Métodos
+###### Métodos (carro)
 - main: método controlador do carro
 - run: método de passeio do carro
 - load: método que libera o embarque no carro
@@ -61,7 +61,7 @@ Temos duas classes para resolver o problema:
 - board: método para adicionar um passageiro no carro
 - unboard: método para remover um passageiro no carro
 
-###### Condições
+###### Condições (carro)
 - Para o embarque do carro ser liberado é necessário que o carro esteja vazio
 - Para que o carro esteja na situação `boardable` é necessário que ele não esteja cheio
 - Para que o passeio do carro seja iniciado é necessário que o carro esteja cheio
@@ -69,16 +69,16 @@ Temos duas classes para resolver o problema:
 - Para que o carro continue na situação `unboardable` é necessário que ele não esteja vazio
 
 ##### Passageiro
-###### Atributos
+###### Atributos (passageiro)
 - id_passageiro: identificador do passageiro
 - thread: thread que representa a vida do passageiro no parque de diversões
 
-###### Métodos
+###### Métodos (passageiro)
 - run: método que representa a vida do passageiro no parque de diversões
 - passear: método para o passageiro passear pelo parque de diversões
 - board: método para o passageiro embarcar no carro da montanha russa
 - unboard: método para o passageiro desembarcar no carro da montanha russa
 
-###### Condições
+###### Condições (passageiro)
 - Para um passageiro embarcar num carro, o carro precisa estar na situação `boardable`
 - Para um passageiro desembarcar de um carro, o caro precisa estar na situação `unboardable`
