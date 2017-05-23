@@ -115,3 +115,56 @@ class Banheiro(object):
             self.feminino.set()
 
 
+class Pessoa(object):
+    """Implementação de um banheiro"""
+    id_pessoa = 1
+    def __init__(self, sexo, banheiro):
+        """Constructor for Pessoa"""
+        self.id_pessoa = Pessoa.id_pessoa
+        Pessoa.id_pessoa += 1
+        self.sexo = sexo
+        self.banheiro = banheiro
+        self.thread = Thread(target=self.run)
+
+        self.thread.start()
+
+    def run(self):
+        while True:
+            self.trabalhar()
+            self.entrar()
+            self.sair()
+
+    def trabalhar(self):
+        tempo = randrange(10) + 10
+        print_pessoas_log("Pessoa: "+str(self)+" vai trabalhar por "+str(tempo)+" segundos.")
+        time.sleep(tempo)
+
+    def entrar(self):
+        print_pessoas_log("Pessoa: "+str(self)+" quer entrar no banheiro")
+        if self.sexo == 'M':
+            if not self.banheiro.masculino.is_set():
+                print_pessoas_log("Pessoa: " + str(self) + " vai esperar banheiro virar masculino")
+                self.banheiro.masculino.wait()
+        elif self.sexo == 'F':
+            if not self.banheiro.feminino.is_set():
+                print_pessoas_log("Pessoa: " + str(self) + " vai esperar banheiro virar feminino")
+                self.banheiro.feminino.wait()
+        if not self.banheiro.disponivel.is_set():
+            self.banheiro.disponivel.wait()
+        try:
+            self.banheiro.entrar(self)
+            tempo = randrange(5) + 1
+            print_pessoas_log("Pessoa: "+str(self)+" vai ficar no banheiro por "+str(tempo)+" segundos.")
+            time.sleep(tempo)
+        except Erro as e:
+            print_pessoas_log("Pessoa: "+str(self)+" não entrou no banheiro! " + e.msg + " Pessoa vai esperar 1 segundo e tentar novamente!")
+            time.sleep(1)
+            self.entrar()
+
+    def sair(self):
+        print_pessoas_log("Pessoa: "+str(self)+" quer sair do banheiro")
+        self.banheiro.sair(self)
+
+    def __str__(self):
+        return str(self.id_pessoa)+" ("+self.sexo+")"
+
