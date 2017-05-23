@@ -1,7 +1,5 @@
 # Projeto 2ª unidade de Programação Concorrente
 
----
-
 Nesse projeto são encontrados dois problemas:
 
 * Uma Montanha-Russa
@@ -11,8 +9,6 @@ Para mais informações leia [Trabalho-Sincronizacao.pdf](https://github.com/rod
 
 ## Índice
 
----
-
 * [Executando](#executando)
 * [Uma Montanha Russa](#uma-montanha-russa)
 * [Banheiro Unissex](#banheiro-unissex)
@@ -21,9 +17,7 @@ Para mais informações leia [Trabalho-Sincronizacao.pdf](https://github.com/rod
 
 ## Executando
 
----
-
-Para executar os programas criados, executar o comando `python <problema>/<abordagem>/<nome>.py`.   
+Para executar os programas criados, executar o comando `python <problema>/<abordagem>/<nome>.py`.  
 Onde `<problema>` é o nome do problema, `<abordagem>` é a abordagem a ser rodada e `<nome>` é o nome do arquivo. Por exemplo: `python montanha-russa/abordagem_1/montanha.py`
 
 ## Uma Montanha-Russa
@@ -34,10 +28,10 @@ Onde `<problema>` é o nome do problema, `<abordagem>` é a abordagem a ser roda
 
 #### Sincronização
 
-A solução desse problema foi baseada em variáveis de condição.   
+A solução desse problema foi baseada em variáveis de condição.  
 Mais especificamente utilizando `Event` objects da biblioteca `threading` do python3.
 
-Esse objeto possiu um status `True` ou `False` e um método `wait()` que bloqueia o processo que chamar esse método caso o status seja `false`.   
+Esse objeto possiu um status `True` ou `False` e um método `wait()` que bloqueia o processo que chamar esse método caso o status seja `false`.  
 Dessa forma podemos verificar se a condição se foi satisfeita ou esperar até que ela seja satisfeita.
 
 #### Classes
@@ -106,10 +100,10 @@ Dessa forma podemos verificar se a condição se foi satisfeita ou esperar até 
 
 #### Sincronização
 
-A solução desse problema foi baseada em variáveis de condição.   
+A solução desse problema foi baseada em variáveis de condição.  
 Mais especificamente utilizando `Event` objects da biblioteca `threading` do python3.
 
-Esse objeto possiu um status `True` ou `False` e um método `wait()` que bloqueia o processo que chamar esse método caso o status seja `false`.   
+Esse objeto possiu um status `True` ou `False` e um método `wait()` que bloqueia o processo que chamar esse método caso o status seja `false`.  
 Dessa forma podemos verificar se a condição se foi satisfeita ou esperar até que ela seja satisfeita.
 
 #### Classes
@@ -161,13 +155,9 @@ Dessa forma podemos verificar se a condição se foi satisfeita ou esperar até 
 
 ## Dificuldades encontradas
 
----
-
 bla
 
 ## Análise
-
----
 
 bla
 
