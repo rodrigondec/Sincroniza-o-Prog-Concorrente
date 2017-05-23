@@ -1,5 +1,6 @@
 import logging
 import time
+import os
 from random import randrange
 from threading import Thread, Event
 
@@ -84,6 +85,7 @@ class Carro(object):
             print_carro_log("Carro: " + str(self) + " espera terminar o passaio para liberar desembarque!")
             self.thread_run.join()
             self.unload()
+        os._exit(1)
 
     def run(self):
         print_carro_log("Carro: " + str(self) + " passeio iniciado!")
