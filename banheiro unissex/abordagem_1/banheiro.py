@@ -1,6 +1,5 @@
 import logging
 import time
-import os
 from random import randrange
 from threading import Thread, Event
 
@@ -62,8 +61,6 @@ class Banheiro(object):
         self.masculino = Event()
         self.feminino = Event()
         self.disponivel = Event()
-        # self.sexo_atual = sexo_atual
-        # self.thread = Thread(target=run)
 
         self.disponivel.set()
         self.masculino.set()
@@ -103,11 +100,9 @@ class Banheiro(object):
 
     def sair(self, pessoa):
         self.disponivel.set()
-        # print_banheiro_log("ERRO: removendo pessoa "+str(pessoa))
         self.pessoas.remove(pessoa)
         print_banheiro_log("Banheiro: pessoa "+str(pessoa)+" saiu do banheiro")
-        # print_banheiro_log(self.pessoas)
-        print_banheiro_log("Banheiro: tem "+str(len(self.pessoas))+" pessoa no banheiro")
+        print_banheiro_log("Banheiro: tem "+str(len(self.pessoas))+" pessoa(s) no banheiro")
         if len(self.pessoas) == 0:
             print_banheiro_log("Banheiro: é unissex agora")
             self.swap_atual = 0
