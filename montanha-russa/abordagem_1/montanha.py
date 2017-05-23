@@ -5,6 +5,12 @@ from random import randrange
 from threading import Thread, Event
 
 
+# VARIÁVEIS DE CONFIGURAÇÃO
+num_pessoas = 8
+limite_pessoas_por_carro = 6
+passeios_por_carro = 3
+
+
 def setup_logger(logger_name, log_file, level=logging.INFO):
     l = logging.getLogger(logger_name)
     formatter = logging.Formatter('%(message)s')
@@ -176,10 +182,6 @@ class Passageiro(object):
     def __str__(self):
         return str(self.id_passageiro)
 
-
-num_pessoas = 8
-limite_pessoas_por_carro = 6
-passeios_por_carro = 3
 
 carro = Carro(limite_pessoas_por_carro, passeios_por_carro)
 

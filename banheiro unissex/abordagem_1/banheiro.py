@@ -4,6 +4,10 @@ from random import randrange
 from threading import Thread, Event
 
 
+# VARIÁVEIS DE CONFIGURAÇÃO
+limite_pessoas = 3
+
+
 def setup_logger(logger_name, log_file, level=logging.INFO):
     l = logging.getLogger(logger_name)
     formatter = logging.Formatter('%(message)s')
@@ -163,14 +167,10 @@ class Pessoa(object):
     def __str__(self):
         return str(self.id_pessoa)+" ("+self.sexo+")"
 
-limite_pessoas = 3
-
 banheiro = Banheiro(limite_pessoas)
 
 pessoas = []
 
 for x in range(5):
     pessoas.append(Pessoa('M', banheiro))
-
-for x in range(5):
     pessoas.append(Pessoa('F', banheiro))
