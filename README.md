@@ -38,7 +38,7 @@ Dessa forma podemos verificar se a condição se foi satisfeita ou esperar até 
 - thread_main: Thread principal do carro com todos os estágios
 - thread_run: Thread representando o passeio do carro nos trilhos
 
-###### Atributos situação
+###### Atributos condicionais
 - boardable: Event - representando o estágio de embarque do carro
 - unboardable: Event - representando o estágio de desembarque do carro
 - cheio: Event - representando o status lotado do carro
@@ -77,30 +77,49 @@ Dessa forma podemos verificar se a condição se foi satisfeita ou esperar até 
 ## Banheiro Unissex
 ### Abordagem 1
 #### Sincronização
-bla
+A solução desse problema foi baseada em variáveis de condição. 
+Mais especificamente utilizando `Event` objects da biblioteca `threading` do python3. 
+
+Esse objeto possiu um status `True` ou `False` e um método `wait()` que bloqueia o processo que chamar esse método caso o status seja `false`. 
+Dessa forma podemos verificar se a condição se foi satisfeita ou esperar até que ela seja satisfeita.
 
 #### Classes
-- X
-- Y
+- Banheiro
+- Pessoa
 
-##### X
+##### Banheiro
 ###### Atributos
-- x: bla
-- y: bla
+- limite_pessoas: quantidade de pessoas que cabem no banheiro
+- limite_swap: quantidade de vezes que pessoas podem entrar do mesmo sexo
+- swap_atual: quantidade de vezes que pessoas do mesmo sexo entraram
+- pessoas: lista de pessoas no banheiro
+
+###### Atributos condicionais
+- masculino: Event - representa que o banheiro é masculino
+- feminino: Event - representa que o banheiro é feminino
+- disponível: Event - representa que o banheiro não está cheio
 
 ###### Métodos
-- x: bla
-- y: bla
+- swap: método para justiça de starvation de sexo
+- entrar: método para adicionar uma pessoa no banheiro
+- sair: método para tirar uma pessoa do banheiro
 
-##### Y
+##### Pessoa
 ###### Atributos
-- x: bla
-- y: bla
+- id_pessoa: identificador da pessoa
+- sexo: sexo da pessoa. Ou `M` ou `F`.
+- thread: thread que representa a vida da pessoa no escritório
 
 ###### Métodos
-- x: bla
-- y: bla
+- run: método que representa a vida da pessoa no escritório
+- trabalhar: método para uma pessoa trabalhar por x segundos
+- entrar: método para a pessoa entrar no banheiro
+- sair: método para a pessoa sair do banheiro
 
+###### Condições
+- para uma pessoa entrar no banheiro, o banheiro precisa estar `disponível`
+- para uma pessoa masculina entrar no banheiro, o banheiro precisa ser masculino
+- para uma pessoa feminina entrar no banheiro, o banheiro precisa ser feminino
 
 ## Dificuldades encontradas
 bla
