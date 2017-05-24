@@ -8,7 +8,7 @@ Nesse projeto são implementadas soluções para dois problemas de concorrência
 As implementações encontram-se no [github](https://github.com/rodrigondec/Sincronizacao-Prog-Concorrente).  
 Para mais informações leia os [requisitos do projeto](https://github.com/rodrigondec/Sincronizacao-Prog-Concorrente/blob/master/Trabalho-Sincronizao.pdf).
 
-A documentação encontra-se no link do [gitbook](https://www.gitbook.com/book/rodrigondec/sincronizacao-programacao-concorrente)
+A documentação encontra-se no [gitbook](https://www.gitbook.com/book/rodrigondec/sincronizacao-programacao-concorrente)
 
 ## Integrantes
 
