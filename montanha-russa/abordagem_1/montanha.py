@@ -2,11 +2,11 @@ import logging
 import time
 import os
 from random import randrange
-from threading import Thread, Event
+from threading import Thread, Event, BoundedSemaphore
 
 
 # VARIÁVEIS DE CONFIGURAÇÃO
-num_pessoas = 8
+num_pessoas = 12
 limite_pessoas_por_carro = 6
 passeios_por_carro = 3
 
@@ -57,13 +57,13 @@ class Erro(Exception):
 class Carro(object):
     """Carro de uma montanha russa"""
 
-    def __init__(self, limite_pessoas, num_passeios, passageiros=None):
+    def __init__(self, limite_passageiros, num_passeios):
         """Constructor for Car"""
-        self.limite_pessoas = limite_pessoas
+
         self.num_passeios = num_passeios
-        if passageiros is None:
-            passageiros = []
-        self.passageiros = passageiros
+        self.limite_passageiros = limite_passageiros
+        self.passageiros = 0
+        self.assentos = BoundedSemaphore(value=self.limite_passageiros)
         self.boardable = Event()
         self.unboardable = Event()
         self.cheio = Event()
@@ -79,9 +79,10 @@ class Carro(object):
     def main(self):
         for x in range(self.num_passeios):
             print_carro_log("Carro: " + str(self) + " irá fazer o passeio " + str(x + 1))
-            print_carro_log("Carro: " + str(self) + " espera estar vazio para liberar embarque!")
+            print_carro_log("Carro: " + str(self) + " espera estar vazio para liberar o embarque!")
             if not self.vazio.is_set():
                 self.vazio.wait()
+            print_carro_log("Carro: " + str(self) + " embarque liberado!")
             self.load()
             print_carro_log("Carro: " + str(self) + " espera estar cheio para iniciar passeio!")
             if not self.cheio.is_set():
@@ -102,30 +103,24 @@ class Carro(object):
 
     def load(self):
         print_carro_log("Carro: " + str(self) + " embarque do carro está liberado!")
+        self.unboardable.clear()
         self.boardable.set()
 
     def unload(self):
         print_carro_log("Carro: " + str(self) + " desembarque do carro está liberado!")
+        self.boardable.clear()
         self.unboardable.set()
 
-    def board(self, passageiro):
-        if not self.boardable.is_set():
-            raise Erro("Carro não liberado para embarque!")
-        if len(self.passageiros) >= self.limite_pessoas:
-            raise Erro("Carro cheio!")
-        self.passageiros.append(passageiro)
-        if len(self.passageiros) == self.limite_pessoas:
-            self.boardable.clear()
-            self.vazio.clear()
+    def board(self):
+        self.vazio.clear()
+        self.passageiros += 1
+        if self.passageiros == self.limite_passageiros:
             self.cheio.set()
 
-    def unboard(self, passageiro):
-        if not self.unboardable:
-            raise Erro("Carro não liberado para desembarque!")
-        self.passageiros.remove(passageiro)
-        if len(self.passageiros) == 0:
-            self.unboardable.clear()
-            self.cheio.clear()
+    def unboard(self):
+        self.cheio.clear()
+        self.passageiros -= 1
+        if self.passageiros == 0:
             self.vazio.set()
 
 
@@ -144,40 +139,31 @@ class Passageiro(object):
 
     def run(self):
         while True:
-            self.board()
-            self.unboard()
+            print_passageiros_log("Passageiro: " + str(self) + " pergunta: é minha vez?")
+            with self.carro.assentos:
+                print_passageiros_log("Passageiro: " + str(self) + " irá poder entrar no carro!")
+                self.board()
+                self.unboard()
             self.passear()
 
     def passear(self):
         tempo = randrange(5)+1
-        print_passageiros_log("Passageiro: "+str(self)+" vai passear no parque por "+str(tempo)+" segundos.")
+        print_passageiros_log("Passageiro: "+str(self)+" vai passear no parque por "+str(tempo)+" segundos!")
         time.sleep(tempo)
 
     def board(self):
-        print_passageiros_log("Passageiro: " + str(self) + " espera poder entrar no carro")
+        print_passageiros_log("Passageiro: " + str(self) + " pergunta: embarque do carro está liberado?")
         if not self.carro.boardable.is_set():
             self.carro.boardable.wait()
-        print_passageiros_log("Passageiro: " +str(self)+" vai tentar entrar no carro")
-        try:
-            self.carro.board(self)
-            print_passageiros_log("Passageiro: " + str(self) + " entrou no carro!")
-        except Erro as e:
-            print_passageiros_log("Passageiro: "+str(self)+" não entrou no carro! "+e.msg+" Passageiro vai esperar 1 segundo e tentar novamente!")
-            time.sleep(1)
-            self.board()
+        print_passageiros_log("Passageiro: " + str(self) + " entrou no carro!")
+        self.carro.board()
 
     def unboard(self):
-        print_passageiros_log("Passageiro: " + str(self) + " espera poder sair do carro")
+        print_passageiros_log("Passageiro: " + str(self) + " pergunta: desembarque do carro está liberado?")
         if not self.carro.unboardable.is_set():
             self.carro.unboardable.wait()
-        print_passageiros_log("Passageiro: "+str(self)+" vai tentar sair do carro")
-        try:
-            self.carro.unboard(self)
-            print_passageiros_log("Passageiro: " + str(self) + " saiu do carro!")
-        except Erro as e:
-            print_passageiros_log("Passageiro: "+str(self)+" não saiu do carro! "+e.msg+" Passageiro vai esperar 1 segundo e tentar novamente!")
-            time.sleep(1)
-            self.unboard()
+        print_passageiros_log("Passageiro: "+str(self)+" saiu do carro!")
+        self.carro.unboard()
 
     def __str__(self):
         return str(self.id_passageiro)
