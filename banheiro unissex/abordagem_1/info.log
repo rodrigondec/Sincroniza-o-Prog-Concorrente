@@ -1,359 +1,320 @@
-Pessoa: 1 (M) vai trabalhar por 15 segundos.
-Pessoa: 2 (M) vai trabalhar por 13 segundos.
-Pessoa: 3 (M) vai trabalhar por 17 segundos.
-Pessoa: 4 (M) vai trabalhar por 11 segundos.
-Pessoa: 5 (M) vai trabalhar por 13 segundos.
-Pessoa: 6 (F) vai trabalhar por 11 segundos.
-Pessoa: 7 (F) vai trabalhar por 18 segundos.
-Pessoa: 8 (F) vai trabalhar por 17 segundos.
-Pessoa: 9 (F) vai trabalhar por 15 segundos.
-Pessoa: 10 (F) vai trabalhar por 11 segundos.
-Pessoa: 4 (M) quer entrar no banheiro
-Banheiro: é masculino agora
-Banheiro: pessoa 4 (M) entrou no banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 4 (M) vai ficar no banheiro por 2 segundos.
-Pessoa: 6 (F) quer entrar no banheiro
-Pessoa: 6 (F) vai esperar banheiro virar feminino
-Pessoa: 10 (F) quer entrar no banheiro
-Pessoa: 10 (F) vai esperar banheiro virar feminino
-Pessoa: 2 (M) quer entrar no banheiro
-Banheiro: pessoa 2 (M) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 2 (M) vai ficar no banheiro por 4 segundos.
-Pessoa: 5 (M) quer entrar no banheiro
-Banheiro: pessoa 5 (M) entrou no banheiro
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 5 (M) vai ficar no banheiro por 1 segundos.
-Pessoa: 4 (M) quer sair do banheiro
-Banheiro: pessoa 4 (M) saiu do banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 4 (M) vai trabalhar por 16 segundos.
-Pessoa: 5 (M) quer sair do banheiro
-Banheiro: pessoa 5 (M) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 5 (M) vai trabalhar por 10 segundos.
-Pessoa: 1 (M) quer entrar no banheiro
-Banheiro: pessoa 1 (M) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 1 (M) vai ficar no banheiro por 4 segundos.
-Pessoa: 9 (F) quer entrar no banheiro
-Pessoa: 9 (F) vai esperar banheiro virar feminino
-Pessoa: 2 (M) quer sair do banheiro
-Banheiro: pessoa 2 (M) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 3 (M) quer entrar no banheiro
-Pessoa: 2 (M) vai trabalhar por 14 segundos.
-Pessoa: 8 (F) quer entrar no banheiro
-Banheiro: pessoa 3 (M) entrou no banheiro
-Pessoa: 8 (F) vai esperar banheiro virar feminino
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 3 (M) vai ficar no banheiro por 2 segundos.
-Pessoa: 7 (F) quer entrar no banheiro
-Pessoa: 7 (F) vai esperar banheiro virar feminino
-Pessoa: 1 (M) quer sair do banheiro
-Banheiro: pessoa 1 (M) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 1 (M) vai trabalhar por 12 segundos.
-Pessoa: 3 (M) quer sair do banheiro
-Banheiro: pessoa 3 (M) saiu do banheiro
-Banheiro: tem 0 pessoa no banheiro
-Banheiro: é unissex agora
+Pessoa: 1 (M) vai trabalhar por 11 segundos.
+Pessoa: 2 (F) vai trabalhar por 18 segundos.
 Pessoa: 3 (M) vai trabalhar por 19 segundos.
-Banheiro: é feminino agora
-Banheiro: pessoa 9 (F) entrou no banheiro
-Pessoa: 7 (F) não entrou no banheiro! Banheiro cheio! Pessoa vai esperar 1 segundo e tentar novamente!
-Banheiro: pessoa 10 (F) entrou no banheiro
-Banheiro: pessoa 6 (F) entrou no banheiro
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 8 (F) não entrou no banheiro! Banheiro cheio! Pessoa vai esperar 1 segundo e tentar novamente!
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 9 (F) vai ficar no banheiro por 1 segundos.
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 10 (F) vai ficar no banheiro por 2 segundos.
-Pessoa: 6 (F) vai ficar no banheiro por 2 segundos.
-Pessoa: 7 (F) quer entrar no banheiro
-Pessoa: 8 (F) quer entrar no banheiro
-Pessoa: 9 (F) quer sair do banheiro
-Banheiro: pessoa 9 (F) saiu do banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 9 (F) vai trabalhar por 15 segundos.
-Banheiro: pessoa 8 (F) entrou no banheiro
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 7 (F) não entrou no banheiro! Banheiro cheio! Pessoa vai esperar 1 segundo e tentar novamente!
-Pessoa: 8 (F) vai ficar no banheiro por 3 segundos.
-Pessoa: 6 (F) quer sair do banheiro
-Pessoa: 10 (F) quer sair do banheiro
-Banheiro: pessoa 6 (F) saiu do banheiro
-Banheiro: pessoa 10 (F) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 6 (F) vai trabalhar por 13 segundos.
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 10 (F) vai trabalhar por 14 segundos.
-Pessoa: 7 (F) quer entrar no banheiro
-Banheiro: pessoa 7 (F) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 7 (F) vai ficar no banheiro por 2 segundos.
-Pessoa: 8 (F) quer sair do banheiro
-Banheiro: pessoa 8 (F) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 8 (F) vai trabalhar por 15 segundos.
-Pessoa: 7 (F) quer sair do banheiro
-Banheiro: pessoa 7 (F) saiu do banheiro
-Banheiro: tem 0 pessoa no banheiro
-Banheiro: é unissex agora
-Pessoa: 7 (F) vai trabalhar por 15 segundos.
-Pessoa: 5 (M) quer entrar no banheiro
-Banheiro: é masculino agora
-Banheiro: pessoa 5 (M) entrou no banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 5 (M) vai ficar no banheiro por 3 segundos.
-Pessoa: 5 (M) quer sair do banheiro
-Banheiro: pessoa 5 (M) saiu do banheiro
-Banheiro: tem 0 pessoa no banheiro
-Banheiro: é unissex agora
-Pessoa: 5 (M) vai trabalhar por 18 segundos.
-Pessoa: 4 (M) quer entrar no banheiro
-Banheiro: é masculino agora
-Banheiro: pessoa 4 (M) entrou no banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 4 (M) vai ficar no banheiro por 3 segundos.
-Pessoa: 1 (M) quer entrar no banheiro
-Banheiro: pessoa 1 (M) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 1 (M) vai ficar no banheiro por 2 segundos.
-Pessoa: 2 (M) quer entrar no banheiro
-Banheiro: pessoa 2 (M) entrou no banheiro
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 2 (M) vai ficar no banheiro por 3 segundos.
-Pessoa: 4 (M) quer sair do banheiro
-Banheiro: pessoa 4 (M) saiu do banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 4 (M) vai trabalhar por 12 segundos.
-Pessoa: 1 (M) quer sair do banheiro
-Banheiro: pessoa 1 (M) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 1 (M) vai trabalhar por 19 segundos.
-Pessoa: 2 (M) quer sair do banheiro
-Banheiro: pessoa 2 (M) saiu do banheiro
-Banheiro: tem 0 pessoa no banheiro
-Banheiro: é unissex agora
-Pessoa: 2 (M) vai trabalhar por 10 segundos.
-Pessoa: 6 (F) quer entrar no banheiro
-Banheiro: é feminino agora
-Banheiro: pessoa 6 (F) entrou no banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 6 (F) vai ficar no banheiro por 2 segundos.
-Pessoa: 10 (F) quer entrar no banheiro
-Pessoa: 9 (F) quer entrar no banheiro
-Banheiro: pessoa 10 (F) entrou no banheiro
-Banheiro: pessoa 9 (F) entrou no banheiro
-Banheiro: tem 3 pessoa no banheiro
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 10 (F) vai ficar no banheiro por 4 segundos.
-Pessoa: 9 (F) vai ficar no banheiro por 2 segundos.
-Pessoa: 6 (F) quer sair do banheiro
-Banheiro: pessoa 6 (F) saiu do banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 6 (F) vai trabalhar por 15 segundos.
-Pessoa: 9 (F) quer sair do banheiro
-Banheiro: pessoa 9 (F) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 9 (F) vai trabalhar por 12 segundos.
-Pessoa: 3 (M) quer entrar no banheiro
-Pessoa: 3 (M) vai esperar banheiro virar masculino
-Pessoa: 8 (F) quer entrar no banheiro
-Banheiro: pessoa 8 (F) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 8 (F) vai ficar no banheiro por 2 segundos.
-Pessoa: 7 (F) quer entrar no banheiro
-Banheiro: pessoa 7 (F) entrou no banheiro
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 7 (F) vai ficar no banheiro por 3 segundos.
-Pessoa: 10 (F) quer sair do banheiro
-Banheiro: pessoa 10 (F) saiu do banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 10 (F) vai trabalhar por 10 segundos.
-Pessoa: 8 (F) quer sair do banheiro
-Banheiro: pessoa 8 (F) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 8 (F) vai trabalhar por 13 segundos.
-Pessoa: 7 (F) quer sair do banheiro
-Banheiro: pessoa 7 (F) saiu do banheiro
-Banheiro: tem 0 pessoa no banheiro
-Banheiro: é unissex agora
-Pessoa: 7 (F) vai trabalhar por 15 segundos.
-Banheiro: é masculino agora
-Banheiro: pessoa 3 (M) entrou no banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 3 (M) vai ficar no banheiro por 2 segundos.
-Pessoa: 3 (M) quer sair do banheiro
-Banheiro: pessoa 3 (M) saiu do banheiro
-Banheiro: tem 0 pessoa no banheiro
-Banheiro: é unissex agora
-Pessoa: 3 (M) vai trabalhar por 18 segundos.
-Pessoa: 2 (M) quer entrar no banheiro
-Pessoa: 4 (M) quer entrar no banheiro
-Banheiro: é masculino agora
-Banheiro: é masculino agora
-Banheiro: pessoa 2 (M) entrou no banheiro
-Banheiro: pessoa 4 (M) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 2 (M) vai ficar no banheiro por 5 segundos.
-Pessoa: 4 (M) vai ficar no banheiro por 1 segundos.
-Pessoa: 5 (M) quer entrar no banheiro
-Banheiro: pessoa 5 (M) entrou no banheiro
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 5 (M) vai ficar no banheiro por 4 segundos.
-Pessoa: 4 (M) quer sair do banheiro
-Banheiro: pessoa 4 (M) saiu do banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 4 (M) vai trabalhar por 19 segundos.
-Pessoa: 5 (M) quer sair do banheiro
-Banheiro: pessoa 5 (M) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 5 (M) vai trabalhar por 12 segundos.
-Pessoa: 2 (M) quer sair do banheiro
-Banheiro: pessoa 2 (M) saiu do banheiro
-Banheiro: tem 0 pessoa no banheiro
-Banheiro: é unissex agora
-Pessoa: 2 (M) vai trabalhar por 13 segundos.
-Pessoa: 10 (F) quer entrar no banheiro
-Banheiro: é feminino agora
-Pessoa: 9 (F) quer entrar no banheiro
-Banheiro: pessoa 10 (F) entrou no banheiro
-Banheiro: pessoa 9 (F) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 9 (F) vai ficar no banheiro por 1 segundos.
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 10 (F) vai ficar no banheiro por 4 segundos.
-Pessoa: 9 (F) quer sair do banheiro
-Banheiro: pessoa 9 (F) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 9 (F) vai trabalhar por 17 segundos.
-Pessoa: 6 (F) quer entrar no banheiro
-Banheiro: pessoa 6 (F) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 6 (F) vai ficar no banheiro por 5 segundos.
-Pessoa: 1 (M) quer entrar no banheiro
-Pessoa: 1 (M) vai esperar banheiro virar masculino
-Pessoa: 8 (F) quer entrar no banheiro
-Banheiro: pessoa 8 (F) entrou no banheiro
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 8 (F) vai ficar no banheiro por 3 segundos.
-Pessoa: 10 (F) quer sair do banheiro
-Banheiro: pessoa 10 (F) saiu do banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 10 (F) vai trabalhar por 19 segundos.
-Pessoa: 8 (F) quer sair do banheiro
-Banheiro: pessoa 8 (F) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 8 (F) vai trabalhar por 12 segundos.
-Pessoa: 7 (F) quer entrar no banheiro
-Banheiro: pessoa 7 (F) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 7 (F) vai ficar no banheiro por 1 segundos.
-Pessoa: 6 (F) quer sair do banheiro
-Banheiro: pessoa 6 (F) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
+Pessoa: 4 (F) vai trabalhar por 14 segundos.
+Pessoa: 5 (M) vai trabalhar por 10 segundos.
 Pessoa: 6 (F) vai trabalhar por 17 segundos.
-Pessoa: 7 (F) quer sair do banheiro
-Banheiro: pessoa 7 (F) saiu do banheiro
-Banheiro: tem 0 pessoa no banheiro
-Banheiro: é unissex agora
-Pessoa: 7 (F) vai trabalhar por 13 segundos.
-Banheiro: é masculino agora
-Banheiro: pessoa 1 (M) entrou no banheiro
-Banheiro: tem 1 pessoa no banheiro
+Pessoa: 7 (M) vai trabalhar por 14 segundos.
+Pessoa: 8 (F) vai trabalhar por 19 segundos.
+Pessoa: 9 (M) vai trabalhar por 10 segundos.
+Pessoa: 10 (F) vai trabalhar por 11 segundos.
+Pessoa: 5 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 5 (M) pergunta: é minha vez?
+Pessoa: 5 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 5 (M) vai ficar no banheiro por 4 segundos.
+Pessoa: 9 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 9 (M) pergunta: é minha vez?
+Pessoa: 9 (M) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 9 (M) vai ficar no banheiro por 3 segundos.
+Pessoa: 1 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 1 (M) pergunta: é minha vez?
+Pessoa: 1 (M) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
 Pessoa: 1 (M) vai ficar no banheiro por 4 segundos.
-Pessoa: 5 (M) quer entrar no banheiro
-Banheiro: pessoa 5 (M) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 5 (M) vai ficar no banheiro por 5 segundos.
-Pessoa: 3 (M) quer entrar no banheiro
-Banheiro: pessoa 3 (M) entrou no banheiro
-Banheiro: tem 3 pessoa no banheiro
+Pessoa: 10 (F) pergunta: o banheiro é feminino?
+Pessoa: 9 (M) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 9 (M) vai trabalhar por 18 segundos.
+Pessoa: 4 (F) pergunta: o banheiro é feminino?
+Pessoa: 7 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 5 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 7 (M) pergunta: é minha vez?
+Pessoa: 5 (M) vai trabalhar por 14 segundos.
+Pessoa: 7 (M) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 7 (M) vai ficar no banheiro por 5 segundos.
+Pessoa: 1 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 1 (M) vai trabalhar por 12 segundos.
+Pessoa: 6 (F) pergunta: o banheiro é feminino?
+Pessoa: 2 (F) pergunta: o banheiro é feminino?
+Pessoa: 3 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 3 (M) pergunta: é minha vez?
+Pessoa: 3 (M) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
 Pessoa: 3 (M) vai ficar no banheiro por 3 segundos.
-Pessoa: 1 (M) quer sair do banheiro
-Banheiro: pessoa 1 (M) saiu do banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 1 (M) vai trabalhar por 14 segundos.
-Pessoa: 2 (M) quer entrar no banheiro
-Banheiro: pessoa 2 (M) entrou no banheiro
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 2 (M) vai ficar no banheiro por 2 segundos.
-Pessoa: 4 (M) quer entrar no banheiro
-Pessoa: 2 (M) quer sair do banheiro
-Banheiro: pessoa 4 (M) entrou no banheiro
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 4 (M) vai ficar no banheiro por 3 segundos.
-Banheiro: pessoa 2 (M) saiu do banheiro
-Banheiro: tem 3 pessoa no banheiro
-Pessoa: 2 (M) vai trabalhar por 12 segundos.
-Pessoa: 3 (M) quer sair do banheiro
-Banheiro: pessoa 3 (M) saiu do banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 3 (M) vai trabalhar por 16 segundos.
-Pessoa: 5 (M) quer sair do banheiro
-Banheiro: pessoa 5 (M) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 5 (M) vai trabalhar por 16 segundos.
-Pessoa: 9 (F) quer entrar no banheiro
-Pessoa: 4 (M) quer sair do banheiro
-Pessoa: 9 (F) vai esperar banheiro virar feminino
-Banheiro: pessoa 4 (M) saiu do banheiro
-Banheiro: tem 0 pessoa no banheiro
-Banheiro: é unissex agora
-Pessoa: 4 (M) vai trabalhar por 19 segundos.
-Banheiro: é feminino agora
-Banheiro: pessoa 9 (F) entrou no banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 9 (F) vai ficar no banheiro por 3 segundos.
-Pessoa: 8 (F) quer entrar no banheiro
-Banheiro: pessoa 8 (F) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 8 (F) vai ficar no banheiro por 1 segundos.
-Pessoa: 8 (F) quer sair do banheiro
-Banheiro: pessoa 8 (F) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 8 (F) vai trabalhar por 17 segundos.
-Pessoa: 7 (F) quer entrar no banheiro
-Banheiro: pessoa 7 (F) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 7 (F) vai ficar no banheiro por 2 segundos.
-Pessoa: 9 (F) quer sair do banheiro
-Banheiro: pessoa 9 (F) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 9 (F) vai trabalhar por 12 segundos.
-Pessoa: 10 (F) quer entrar no banheiro
-Banheiro: pessoa 10 (F) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
+Pessoa: 8 (F) pergunta: o banheiro é feminino?
+Pessoa: 7 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 7 (M) vai trabalhar por 15 segundos.
+Pessoa: 3 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Banheiro: é unissex agora!
+Pessoa: 3 (M) vai trabalhar por 10 segundos.
+Banheiro: é feminino agora!
+Pessoa: 4 (F) pergunta: é minha vez?
+Pessoa: 4 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 4 (F) vai ficar no banheiro por 3 segundos.
+Banheiro: é feminino agora!
+Banheiro: é feminino agora!
+Banheiro: é feminino agora!
+Banheiro: é feminino agora!
+Pessoa: 2 (F) pergunta: é minha vez?
+Pessoa: 10 (F) pergunta: é minha vez?
+Pessoa: 6 (F) pergunta: é minha vez?
+Pessoa: 8 (F) pergunta: é minha vez?
+Pessoa: 2 (F) entrou no banheiro!
+Pessoa: 10 (F) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 2 (F) vai ficar no banheiro por 1 segundos.
 Pessoa: 10 (F) vai ficar no banheiro por 4 segundos.
-Pessoa: 7 (F) quer sair do banheiro
-Banheiro: pessoa 7 (F) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 7 (F) vai trabalhar por 17 segundos.
-Pessoa: 6 (F) quer entrar no banheiro
-Banheiro: pessoa 6 (F) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 6 (F) vai ficar no banheiro por 1 segundos.
-Pessoa: 6 (F) quer sair do banheiro
-Banheiro: pessoa 6 (F) saiu do banheiro
-Banheiro: tem 1 pessoa no banheiro
-Pessoa: 6 (F) vai trabalhar por 19 segundos.
-Pessoa: 1 (M) quer entrar no banheiro
-Pessoa: 1 (M) vai esperar banheiro virar masculino
-Pessoa: 10 (F) quer sair do banheiro
-Banheiro: pessoa 10 (F) saiu do banheiro
-Banheiro: tem 0 pessoa no banheiro
-Banheiro: é unissex agora
-Pessoa: 10 (F) vai trabalhar por 18 segundos.
-Banheiro: é masculino agora
-Banheiro: pessoa 1 (M) entrou no banheiro
-Banheiro: tem 1 pessoa no banheiro
+Pessoa: 2 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 2 (F) vai trabalhar por 11 segundos.
+Pessoa: 6 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 6 (F) vai ficar no banheiro por 3 segundos.
+Pessoa: 4 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 8 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 8 (F) vai ficar no banheiro por 5 segundos.
+Pessoa: 4 (F) vai trabalhar por 16 segundos.
+Pessoa: 10 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 10 (F) vai trabalhar por 16 segundos.
+Pessoa: 6 (F) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 6 (F) vai trabalhar por 14 segundos.
+Pessoa: 1 (M) pergunta: o banheiro é masculino?
+Pessoa: 5 (M) pergunta: o banheiro é masculino?
+Pessoa: 8 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Banheiro: é unissex agora!
+Pessoa: 8 (F) vai trabalhar por 16 segundos.
+Banheiro: é masculino agora!
+Pessoa: 5 (M) pergunta: é minha vez?
+Banheiro: é masculino agora!
+Pessoa: 5 (M) entrou no banheiro!
+Pessoa: 1 (M) pergunta: é minha vez?
+Pessoa: 1 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
 Pessoa: 1 (M) vai ficar no banheiro por 2 segundos.
-Pessoa: 2 (M) quer entrar no banheiro
-Banheiro: pessoa 2 (M) entrou no banheiro
-Banheiro: tem 2 pessoa no banheiro
-Pessoa: 2 (M) vai ficar no banheiro por 2 segundos.
+Pessoa: 5 (M) vai ficar no banheiro por 5 segundos.
+Pessoa: 9 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 9 (M) pergunta: é minha vez?
+Pessoa: 9 (M) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 9 (M) vai ficar no banheiro por 2 segundos.
+Pessoa: 3 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 3 (M) pergunta: é minha vez?
+Pessoa: 1 (M) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 3 (M) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 3 (M) vai ficar no banheiro por 2 segundos.
+Pessoa: 1 (M) vai trabalhar por 13 segundos.
+Pessoa: 9 (M) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 9 (M) vai trabalhar por 11 segundos.
+Pessoa: 7 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 7 (M) pergunta: é minha vez?
+Pessoa: 7 (M) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 7 (M) vai ficar no banheiro por 5 segundos.
+Pessoa: 2 (F) pergunta: o banheiro é feminino?
+Pessoa: 3 (M) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 3 (M) vai trabalhar por 11 segundos.
+Pessoa: 5 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 5 (M) vai trabalhar por 11 segundos.
+Pessoa: 7 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Banheiro: é feminino agora!
+Banheiro: é unissex agora!
+Pessoa: 2 (F) pergunta: é minha vez?
+Pessoa: 7 (M) vai trabalhar por 11 segundos.
+Pessoa: 2 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 2 (F) vai ficar no banheiro por 1 segundos.
+Pessoa: 6 (F) pergunta: o banheiro é feminino?
+Banheiro: é feminino agora!
+Pessoa: 6 (F) pergunta: é minha vez?
+Pessoa: 6 (F) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 6 (F) vai ficar no banheiro por 3 segundos.
+Pessoa: 2 (F) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 2 (F) vai trabalhar por 11 segundos.
+Pessoa: 4 (F) pergunta: o banheiro é feminino?
+Banheiro: é feminino agora!
+Pessoa: 4 (F) pergunta: é minha vez?
+Pessoa: 4 (F) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 4 (F) vai ficar no banheiro por 5 segundos.
+Pessoa: 10 (F) pergunta: o banheiro é feminino?
+Banheiro: é feminino agora!
+Pessoa: 10 (F) pergunta: é minha vez?
+Pessoa: 10 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 10 (F) vai ficar no banheiro por 2 segundos.
+Pessoa: 6 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 6 (F) vai trabalhar por 13 segundos.
+Pessoa: 9 (M) pergunta: o banheiro é masculino?
+Pessoa: 10 (F) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 10 (F) vai trabalhar por 11 segundos.
+Pessoa: 1 (M) pergunta: o banheiro é masculino?
+Pessoa: 3 (M) pergunta: o banheiro é masculino?
+Pessoa: 8 (F) pergunta: o banheiro é feminino?
+Banheiro: é feminino agora!
+Pessoa: 8 (F) pergunta: é minha vez?
+Pessoa: 8 (F) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 8 (F) vai ficar no banheiro por 5 segundos.
+Pessoa: 4 (F) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 4 (F) vai trabalhar por 11 segundos.
+Pessoa: 5 (M) pergunta: o banheiro é masculino?
+Pessoa: 7 (M) pergunta: o banheiro é masculino?
+Pessoa: 8 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Banheiro: é unissex agora!
+Pessoa: 8 (F) vai trabalhar por 16 segundos.
+Banheiro: é masculino agora!
+Pessoa: 3 (M) pergunta: é minha vez?
+Pessoa: 3 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 3 (M) vai ficar no banheiro por 4 segundos.
+Banheiro: é masculino agora!
+Pessoa: 7 (M) pergunta: é minha vez?
+Banheiro: é masculino agora!
+Banheiro: é masculino agora!
+Pessoa: 7 (M) entrou no banheiro!
+Pessoa: 5 (M) pergunta: é minha vez?
+Banheiro: é masculino agora!
+Pessoa: 2 (F) pergunta: o banheiro é feminino?
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 9 (M) pergunta: é minha vez?
+Pessoa: 5 (M) entrou no banheiro!
+Pessoa: 1 (M) pergunta: é minha vez?
+Pessoa: 7 (M) vai ficar no banheiro por 2 segundos.
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 5 (M) vai ficar no banheiro por 3 segundos.
+Pessoa: 7 (M) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 7 (M) vai trabalhar por 13 segundos.
+Pessoa: 9 (M) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 9 (M) vai ficar no banheiro por 1 segundos.
+Pessoa: 5 (M) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 5 (M) vai trabalhar por 15 segundos.
+Pessoa: 1 (M) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 1 (M) vai ficar no banheiro por 5 segundos.
+Pessoa: 9 (M) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 9 (M) vai trabalhar por 11 segundos.
+Pessoa: 10 (F) pergunta: o banheiro é feminino?
+Pessoa: 3 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 3 (M) vai trabalhar por 13 segundos.
+Pessoa: 6 (F) pergunta: o banheiro é feminino?
+Pessoa: 4 (F) pergunta: o banheiro é feminino?
+Pessoa: 1 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Banheiro: é unissex agora!
+Pessoa: 1 (M) vai trabalhar por 10 segundos.
+Banheiro: é feminino agora!
+Pessoa: 4 (F) pergunta: é minha vez?
+Pessoa: 4 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 4 (F) vai ficar no banheiro por 2 segundos.
+Banheiro: é feminino agora!
+Pessoa: 6 (F) pergunta: é minha vez?
+Pessoa: 6 (F) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 6 (F) vai ficar no banheiro por 1 segundos.
+Banheiro: é feminino agora!
+Pessoa: 10 (F) pergunta: é minha vez?
+Pessoa: 10 (F) entrou no banheiro!
+Banheiro: é feminino agora!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 2 (F) pergunta: é minha vez?
+Pessoa: 10 (F) vai ficar no banheiro por 2 segundos.
+Pessoa: 6 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 6 (F) vai trabalhar por 16 segundos.
+Pessoa: 2 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 2 (F) vai ficar no banheiro por 1 segundos.
+Pessoa: 4 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 4 (F) vai trabalhar por 19 segundos.
+Pessoa: 10 (F) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 2 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Banheiro: é unissex agora!
+Pessoa: 10 (F) vai trabalhar por 13 segundos.
+Pessoa: 2 (F) vai trabalhar por 16 segundos.
+Pessoa: 9 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 9 (M) pergunta: é minha vez?
+Pessoa: 9 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 9 (M) vai ficar no banheiro por 5 segundos.
+Pessoa: 7 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 7 (M) pergunta: é minha vez?
+Pessoa: 7 (M) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 7 (M) vai ficar no banheiro por 1 segundos.
+Pessoa: 8 (F) pergunta: o banheiro é feminino?
+Pessoa: 7 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 7 (M) vai trabalhar por 17 segundos.
+Pessoa: 3 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 3 (M) pergunta: é minha vez?
+Pessoa: 3 (M) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 3 (M) vai ficar no banheiro por 4 segundos.
+Pessoa: 5 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 5 (M) pergunta: é minha vez?
+Pessoa: 5 (M) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 5 (M) vai ficar no banheiro por 1 segundos.
+Pessoa: 1 (M) pergunta: o banheiro é masculino?
+Banheiro: é masculino agora!
+Pessoa: 1 (M) pergunta: é minha vez?
+Pessoa: 5 (M) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 5 (M) vai trabalhar por 18 segundos.
+Pessoa: 1 (M) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 1 (M) vai ficar no banheiro por 4 segundos.
+Pessoa: 9 (M) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 9 (M) vai trabalhar por 12 segundos.
+Pessoa: 3 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 3 (M) vai trabalhar por 13 segundos.
