@@ -1,7 +1,7 @@
 import logging
 import time
 from random import randrange
-from threading import Thread, Event
+from threading import Thread, Event, BoundedSemaphore
 
 
 # VARIÁVEIS DE CONFIGURAÇÃO
@@ -54,19 +54,17 @@ class Erro(Exception):
 class Banheiro(object):
     """Implementação de um banheiro"""
 
-    def __init__(self, limite_pessoas, pessoas=None):
+    def __init__(self, limite_pessoas):
         """Constructor for Banheiro"""
-        if pessoas is None:
-            pessoas = []
+
         self.limite_pessoas = limite_pessoas
+        self.pessoas = 0
+        self.vagas = BoundedSemaphore(value=self.limite_pessoas)
         self.limite_swap = 2*limite_pessoas
         self.swap_atual = 0
-        self.pessoas = pessoas
         self.masculino = Event()
         self.feminino = Event()
-        self.disponivel = Event()
 
-        self.disponivel.set()
         self.masculino.set()
         self.feminino.set()
 
@@ -75,43 +73,51 @@ class Banheiro(object):
         if self.swap_atual%self.limite_swap == 0:
             self.swap_atual = 0
             if self.masculino.is_set():
-                self.masculino.clear()
-                self.feminino.set()
-                print_banheiro_log("Banheiro: é feminino agora")
+                print_banheiro_log("Banheiro: foi masulino por muito tempo!!!!")
+                self.tornar_feminino()
             if self.feminino.is_set():
-                self.feminino.clear()
-                self.masculino.set()
-                print_banheiro_log("Banheiro: é masculino agora")
+                print_banheiro_log("Banheiro: foi feminino por muito tempo!!!!")
+                self.tornar_masculino()
 
-    def entrar(self, pessoa):
-        if len(self.pessoas) == 0:
-            if pessoa.sexo == 'F':
-                self.masculino.clear()
-                print_banheiro_log("Banheiro: é feminino agora")
-                self.swap_atual = 0
-            elif pessoa.sexo == 'M':
-                self.feminino.clear()
-                print_banheiro_log("Banheiro: é masculino agora")
-                self.swap_atual = 0
-        if len(self.pessoas) >= self.limite_pessoas:
-            raise Erro("Banheiro cheio!")
-        self.pessoas.append(pessoa)
-        print_banheiro_log("Banheiro: pessoa "+str(pessoa)+" entrou no banheiro")
-        print_banheiro_log("Banheiro: tem "+str(len(self.pessoas))+" pessoa no banheiro")
-        if len(self.pessoas) == self.limite_pessoas:
-            self.disponivel.clear()
+    def tornar_feminino(self):
+        self.feminino.set()
+        self.masculino.clear()
+        print_banheiro_log("Banheiro: é feminino agora!")
+
+    def tornar_masculino(self):
+        self.feminino.clear()
+        self.masculino.set()
+        print_banheiro_log("Banheiro: é masculino agora!")
+
+    def tornar_unissex(self):
+        self.masculino.set()
+        self.feminino.set()
+        print_banheiro_log("Banheiro: é unissex agora!")
+
+    def entrar(self):
+        if self.pessoas == 0:
+            self.swap_atual = 0
+            # if sexo == 'F':
+            #     self.feminino()
+            #     self.swap_atual = 0
+            # elif sexo == 'M':
+            #     self.masculino()
+            #     self.swap_atual = 0
+
+        self.pessoas += 1
+
+        print_banheiro_log("Banheiro: tem "+str(self.pessoas)+" pessoa(s) no banheiro")
+
         self.swap()
 
-    def sair(self, pessoa):
-        self.disponivel.set()
-        self.pessoas.remove(pessoa)
-        print_banheiro_log("Banheiro: pessoa "+str(pessoa)+" saiu do banheiro")
-        print_banheiro_log("Banheiro: tem "+str(len(self.pessoas))+" pessoa(s) no banheiro")
-        if len(self.pessoas) == 0:
-            print_banheiro_log("Banheiro: é unissex agora")
+    def sair(self):
+        self.pessoas -= 1
+
+        print_banheiro_log("Banheiro: tem "+str(self.pessoas)+" pessoa(s) no banheiro")
+
+        if self.pessoas == 0:
             self.swap_atual = 0
-            self.masculino.set()
-            self.feminino.set()
+            self.tornar_unissex()
 
 
 class Pessoa(object):
@@ -130,39 +136,40 @@ class Pessoa(object):
     def run(self):
         while True:
             self.trabalhar()
-            self.entrar()
-            self.sair()
+            self.esperar_genero()
+            print_pessoas_log("Pessoa: " + str(self) + " pergunta: é minha vez?")
+            with banheiro.vagas:
+                self.entrar()
+                self.sair()
 
     def trabalhar(self):
         tempo = randrange(10) + 10
         print_pessoas_log("Pessoa: "+str(self)+" vai trabalhar por "+str(tempo)+" segundos.")
         time.sleep(tempo)
 
-    def entrar(self):
-        print_pessoas_log("Pessoa: "+str(self)+" quer entrar no banheiro")
+    def esperar_genero(self):
         if self.sexo == 'M':
+            print_pessoas_log("Pessoa: " + str(self) + " pergunta: o banheiro é masculino?")
             if not self.banheiro.masculino.is_set():
-                print_pessoas_log("Pessoa: " + str(self) + " vai esperar banheiro virar masculino")
                 self.banheiro.masculino.wait()
+            self.banheiro.tornar_masculino()
         elif self.sexo == 'F':
+            print_pessoas_log("Pessoa: " + str(self) + " pergunta: o banheiro é feminino?")
             if not self.banheiro.feminino.is_set():
-                print_pessoas_log("Pessoa: " + str(self) + " vai esperar banheiro virar feminino")
                 self.banheiro.feminino.wait()
-        if not self.banheiro.disponivel.is_set():
-            self.banheiro.disponivel.wait()
-        try:
-            self.banheiro.entrar(self)
-            tempo = randrange(5) + 1
-            print_pessoas_log("Pessoa: "+str(self)+" vai ficar no banheiro por "+str(tempo)+" segundos.")
-            time.sleep(tempo)
-        except Erro as e:
-            print_pessoas_log("Pessoa: "+str(self)+" não entrou no banheiro! " + e.msg + " Pessoa vai esperar 1 segundo e tentar novamente!")
-            time.sleep(1)
-            self.entrar()
+            self.banheiro.tornar_feminino()
+
+    def entrar(self):
+        print_pessoas_log("Pessoa: " + str(self) + " entrou no banheiro!")
+        self.banheiro.entrar()
+
+        tempo = randrange(5) + 1
+        print_pessoas_log("Pessoa: " + str(self) + " vai ficar no banheiro por " + str(tempo) + " segundos.")
+        time.sleep(tempo)
 
     def sair(self):
-        print_pessoas_log("Pessoa: "+str(self)+" quer sair do banheiro")
-        self.banheiro.sair(self)
+        print_pessoas_log("Pessoa: "+str(self)+" saiu do banheiro")
+        self.banheiro.sair()
 
     def __str__(self):
         return str(self.id_pessoa)+" ("+self.sexo+")"
