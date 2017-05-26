@@ -1,27 +1,30 @@
-Carro: <__main__.Carro object at 0x02AB8410> irá fazer o passeio 1
-Carro: <__main__.Carro object at 0x02AB8410> espera estar vazio para liberar embarque!
-Carro: <__main__.Carro object at 0x02AB8410> embarque do carro está liberado!
-Carro: <__main__.Carro object at 0x02AB8410> espera estar cheio para iniciar passeio!
-Carro: <__main__.Carro object at 0x02AB8410> passeio iniciado!
-Carro: <__main__.Carro object at 0x02AB8410> espera terminar o passaio para liberar desembarque!
-Carro: <__main__.Carro object at 0x02AB8410> vai andar por 3 segundos.
-Carro: <__main__.Carro object at 0x02AB8410> passeio terminado!
-Carro: <__main__.Carro object at 0x02AB8410> desembarque do carro está liberado!
-Carro: <__main__.Carro object at 0x02AB8410> irá fazer o passeio 2
-Carro: <__main__.Carro object at 0x02AB8410> espera estar vazio para liberar embarque!
-Carro: <__main__.Carro object at 0x02AB8410> embarque do carro está liberado!
-Carro: <__main__.Carro object at 0x02AB8410> espera estar cheio para iniciar passeio!
-Carro: <__main__.Carro object at 0x02AB8410> passeio iniciado!
-Carro: <__main__.Carro object at 0x02AB8410> espera terminar o passaio para liberar desembarque!
-Carro: <__main__.Carro object at 0x02AB8410> vai andar por 2 segundos.
-Carro: <__main__.Carro object at 0x02AB8410> passeio terminado!
-Carro: <__main__.Carro object at 0x02AB8410> desembarque do carro está liberado!
-Carro: <__main__.Carro object at 0x02AB8410> irá fazer o passeio 3
-Carro: <__main__.Carro object at 0x02AB8410> espera estar vazio para liberar embarque!
-Carro: <__main__.Carro object at 0x02AB8410> embarque do carro está liberado!
-Carro: <__main__.Carro object at 0x02AB8410> espera estar cheio para iniciar passeio!
-Carro: <__main__.Carro object at 0x02AB8410> espera terminar o passaio para liberar desembarque!
-Carro: <__main__.Carro object at 0x02AB8410> passeio iniciado!
-Carro: <__main__.Carro object at 0x02AB8410> vai andar por 2 segundos.
-Carro: <__main__.Carro object at 0x02AB8410> passeio terminado!
-Carro: <__main__.Carro object at 0x02AB8410> desembarque do carro está liberado!
+Carro: <__main__.Carro object at 0x036B4550> irá fazer o passeio 1
+Carro: <__main__.Carro object at 0x036B4550> espera estar vazio para liberar o embarque!
+Carro: <__main__.Carro object at 0x036B4550> embarque liberado!
+Carro: <__main__.Carro object at 0x036B4550> embarque do carro está liberado!
+Carro: <__main__.Carro object at 0x036B4550> espera estar cheio para iniciar passeio!
+Carro: <__main__.Carro object at 0x036B4550> espera terminar o passaio para liberar desembarque!
+Carro: <__main__.Carro object at 0x036B4550> passeio iniciado!
+Carro: <__main__.Carro object at 0x036B4550> vai andar por 4 segundos.
+Carro: <__main__.Carro object at 0x036B4550> passeio terminado!
+Carro: <__main__.Carro object at 0x036B4550> desembarque do carro está liberado!
+Carro: <__main__.Carro object at 0x036B4550> irá fazer o passeio 2
+Carro: <__main__.Carro object at 0x036B4550> espera estar vazio para liberar o embarque!
+Carro: <__main__.Carro object at 0x036B4550> embarque liberado!
+Carro: <__main__.Carro object at 0x036B4550> embarque do carro está liberado!
+Carro: <__main__.Carro object at 0x036B4550> espera estar cheio para iniciar passeio!
+Carro: <__main__.Carro object at 0x036B4550> passeio iniciado!
+Carro: <__main__.Carro object at 0x036B4550> espera terminar o passaio para liberar desembarque!
+Carro: <__main__.Carro object at 0x036B4550> vai andar por 1 segundos.
+Carro: <__main__.Carro object at 0x036B4550> passeio terminado!
+Carro: <__main__.Carro object at 0x036B4550> desembarque do carro está liberado!
+Carro: <__main__.Carro object at 0x036B4550> irá fazer o passeio 3
+Carro: <__main__.Carro object at 0x036B4550> espera estar vazio para liberar o embarque!
+Carro: <__main__.Carro object at 0x036B4550> embarque liberado!
+Carro: <__main__.Carro object at 0x036B4550> embarque do carro está liberado!
+Carro: <__main__.Carro object at 0x036B4550> espera estar cheio para iniciar passeio!
+Carro: <__main__.Carro object at 0x036B4550> espera terminar o passaio para liberar desembarque!
+Carro: <__main__.Carro object at 0x036B4550> passeio iniciado!
+Carro: <__main__.Carro object at 0x036B4550> vai andar por 3 segundos.
+Carro: <__main__.Carro object at 0x036B4550> passeio terminado!
+Carro: <__main__.Carro object at 0x036B4550> desembarque do carro está liberado!
