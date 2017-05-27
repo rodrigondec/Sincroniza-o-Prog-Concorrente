@@ -2,12 +2,14 @@
 
 ## Sincronização
 
-A sincronização desse problema foi baseada em variáveis de condição.  
-Mais especificamente utilizando [Event](https://docs.python.org/3/library/threading.html#event-objects) objects da biblioteca [threading](https://docs.python.org/3/library/threading.html) do python3.
+A sincronização desse problema foi baseada em variáveis de condição e semáforo.  
+Mais especificamente utilizando [Event](https://docs.python.org/3/library/threading.html#event-objects) e [BoundedSemaphore](https://docs.python.org/3/library/threading.html#semaphore-objects) objects da biblioteca [threading](https://docs.python.org/3/library/threading.html) do python3.
 
-Esse objeto possiu uma flag `True` ou `False` e um método `wait()` que bloqueia o processo que chamar esse método caso a flag seja `false`.
+O Event possiu uma flag `True` ou `False` e um método `wait()` que bloqueia o processo que chamar esse método caso a flag seja `false`.
 
-Dessa forma podemos sincronizar as threads, verificando se a condição foi satisfeita ou esperar até que ela seja satisfeita.
+Enquanto o BondedSemaphore é um Lock com um contador interno com um valor máximo. 
+
+Com esses mecanismos podemos sincronizar as threads, verificando condições e bloqueando as threads até que elas sejam satisfeitas.
 
 ## Classes
 
@@ -20,18 +22,19 @@ Dessa forma podemos sincronizar as threads, verificando se a condição foi sati
 
 | Nome do atributo | Descrição | Tipo |
 | :--- | :--- | :--- |
-| limite\_pessoas | quantidade de pessoas que cabem no carro | inteiro |
 | num\_passeios | número de vezes que o carro irá rodar | inteiro |
-| passageiros | passageiros no carro | list \[\] |
+| limite\_passageiros | quantidade de pessoas que cabem no carro | inteiro |
+| passageiros | quantidade atual de pessoas no ca | inteiro |
 | thread\_main | representa o controlador do carro | Thread |
 | thread\_run | representa o passeio do carro nos trilhos | Thread |
 
-#### Atributos condicionais
+#### Atributos sincronização
 
 | Nome do atributo condicional | Descrição | Tipo |
 | :--- | :--- | :--- |
 | boardable | representa o estágio de embarque do carro | Event |
 | unboardable | representa o estágio de desembarque do carro | Event |
+| assentos | representa os assentos disponíveis no carro | BoundedSemaphore |
 | cheio | representa o status lotado do carro | Event |
 | vazio | representa o status vazio do carro | Event |
 
@@ -74,7 +77,7 @@ Dessa forma podemos sincronizar as threads, verificando se a condição foi sati
 
 #### Condições
 
-* Para um passageiro embarcar num carro, o carro precisa estar na situação `boardable`
+* Para um passageiro embarcar num carro, o carro precisa estar na situação `boardable` e alocar o recurso assento do carro
 * Para um passageiro desembarcar de um carro, o caro precisa estar na situação `unboardable`
 
 
