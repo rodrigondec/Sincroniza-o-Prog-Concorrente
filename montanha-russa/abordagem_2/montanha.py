@@ -7,12 +7,6 @@ import threading
 import sys
 
 
-# VARIÁVEIS DE CONFIGURAÇÃO
-#num_pessoas = 8
-#limite_pessoas_por_carro = 6
-#passeios_por_carro = 3
-
-
 def setup_logger(logger_name, log_file, level=logging.INFO):
     l = logging.getLogger(logger_name)
     formatter = logging.Formatter('%(message)s')
@@ -71,7 +65,6 @@ class Carro(object):
     def __init__(self, limite_pessoas, num_passeios, passageiros=None): #,
         #barreira, lock, condition_variable): #barreira, lock e condition_variables necessitam ser os mesmos enviados
         #aos passageiros
-
         """Constructor for Car"""
         self.limite_pessoas = limite_pessoas
         self.num_passeios = num_passeios
@@ -124,7 +117,7 @@ class Carro(object):
 
     def board(self, passageiro):
         self.lk.acquire()
-        if not self.boardable:
+        while not self.boardable:
             self.cv_list.wait() #this releases lock
             #lock is automatically reacquired
         self.passageiros.append(passageiro)
@@ -132,7 +125,7 @@ class Carro(object):
             self.cv_car.notify() #Car is full and will start running
             self.boardable = False #Done here to ensure corretude.
         #mensagem impressa dentro de lock para facilitar compreensao. Idealmente estaria fora
-        print_passageiros_log("Passageiro: " + str(passageiro.id_passageiro) + " entrou no carro!")
+        print_passageiros_log("Passageiro: " + str(passageiro.id_passageiro) + " entrou no carro!" + str(len(self.passageiros)))
         self.lk.release()
         self.barr.wait()
 
@@ -177,31 +170,11 @@ class Passageiro(object):
         print_passageiros_log("Passageiro: " + str(self) + " espera poder entrar no carro")
         print_passageiros_log("Passageiro: " +str(self)+" vai tentar entrar no carro")
         self.carro.board(self)
-        '''
-        try:
-            self.carro.board(self)
-            print_passageiros_log("Passageiro: " + str(self) + " entrou no carro!")
-        except Erro as e:
-            print_passageiros_log("Passageiro: "+str(self)+" não entrou no carro! "+e.msg+" Passageiro vai esperar 1 segundo e tentar novamente!")
-            time.sleep(1)
-            self.board()'''
 
     def unboard(self):
         print_passageiros_log("Passageiro: " + str(self) + " espera poder sair do carro")
         print_passageiros_log("Passageiro: "+str(self)+" vai tentar sair do carro")
         self.carro.unboard(self)
-        '''
-        print_passageiros_log("Passageiro: " + str(self) + " espera poder sair do carro")
-        if not self.carro.unboardable.is_set():
-            self.carro.unboardable.wait()
-        print_passageiros_log("Passageiro: "+str(self)+" vai tentar sair do carro")
-        try:
-            self.carro.unboard(self)
-            print_passageiros_log("Passageiro: " + str(self) + " saiu do carro!")
-        except Erro as e:
-            print_passageiros_log("Passageiro: "+str(self)+" não saiu do carro! "+e.msg+" Passageiro vai esperar 1 segundo e tentar novamente!")
-            time.sleep(1)
-            self.unboard()'''
 
     def __str__(self):
         return str(self.id_passageiro)
