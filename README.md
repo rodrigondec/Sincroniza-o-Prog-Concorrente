@@ -13,7 +13,7 @@ A documentação encontra-se no [gitbook](https://www.gitbook.com/book/rodrigond
 ## Integrantes
 
 * [Rodrigo Castro](https://github.com/rodrigondec)
-* Gustavo Alves
+* [Gustavo Alves](https://github.com/gustavowl)
 
 
 
