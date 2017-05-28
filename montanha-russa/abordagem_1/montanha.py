@@ -69,28 +69,28 @@ class Carro(object):
         self.cheio = Event()
         self.vazio = Event()
         self.thread_main = Thread(target=self.main)
-        self.thread_run = Thread(target=self.run)
         self.boardable.clear()
         self.unboardable.clear()
         self.cheio.clear()
         self.vazio.set()
+
         self.thread_main.start()
 
     def main(self):
         for x in range(self.num_passeios):
-            print_carro_log("Carro: " + str(self) + " irá fazer o passeio " + str(x + 1))
+            print_carro_log("Carro: " + str(self) + " passeio nº " + str(x + 1))
+
             print_carro_log("Carro: " + str(self) + " espera estar vazio para liberar o embarque!")
             if not self.vazio.is_set():
                 self.vazio.wait()
-            print_carro_log("Carro: " + str(self) + " embarque liberado!")
+
             self.load()
             print_carro_log("Carro: " + str(self) + " espera estar cheio para iniciar passeio!")
             if not self.cheio.is_set():
                 self.cheio.wait()
-            self.thread_run = Thread(target=self.run)
-            self.thread_run.start()
-            print_carro_log("Carro: " + str(self) + " espera terminar o passaio para liberar desembarque!")
-            self.thread_run.join()
+
+            self.run()
+
             self.unload()
         os._exit(1)
 
