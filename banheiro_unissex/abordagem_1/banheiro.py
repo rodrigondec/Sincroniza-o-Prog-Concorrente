@@ -53,6 +53,7 @@ class Erro(Exception):
 
 class Banheiro(object):
     """Implementação de um banheiro"""
+# TODO documentar variáveis
 
     def __init__(self, limite_pessoas):
         """Constructor for Banheiro"""
