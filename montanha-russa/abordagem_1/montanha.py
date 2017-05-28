@@ -49,26 +49,45 @@ class Erro(Exception):
         self.msg = msg
 
 
+"""Essa abordagem irá fazer o uso de eventos e semáforos. Os eventos são utilizados para controlar as fases de
+embarque e desembarque do veículo e as situações cheio e vazio. O controle do acesso aos assentos do carro é 
+feito por um semáforo. 
+
+Considere o caso em que o caro possui 6 vagas mas há 12 pessoas no parque. 
+O carro espera o evento vazio para liberar o embarque. 
+O carro espera o evento cheio para terminar o embarque e iniciar o passeio. 
+Depois do passeio, é iniciado o desembarque.
+
+Os passageiros tentam alocar um assento do semáforo, com isso fazendo o controle de limite de pessoas no carro. 
+Depois de alocar o assento, eles esperam o embarque ser liberado para entrar de fato no carro. 
+Após embarcarem, eles esperam o desembarque do carro. Ao desembarcarem, liberam o assento adquirido e vão passear."""
+
+
 class Carro(object):
     """Carro de uma montanha russa"""
 
     def __init__(self, limite_passageiros, num_passeios):
         """Constructor for Car"""
-
+        # variáveis para controle de passageiros/assentos
         self.num_passeios = num_passeios
         self.limite_passageiros = limite_passageiros
         self.passageiros = 0
         self.assentos = BoundedSemaphore(value=self.limite_passageiros)
+
+        # variáveis para controle de eventos/situações
         self.boardable = Event()
         self.unboardable = Event()
         self.cheio = Event()
         self.vazio = Event()
-        self.thread_main = Thread(target=self.main)
+        # carro começa com embarque e desembarque bloqueados
         self.boardable.clear()
         self.unboardable.clear()
+        # carro começa vazio
         self.cheio.clear()
         self.vazio.set()
 
+        # thread de controle do carro
+        self.thread_main = Thread(target=self.main)
         self.thread_main.start()
 
     def main(self):
@@ -111,14 +130,15 @@ class Carro(object):
         self.vazio.clear()
         self.passageiros += 1
         if self.passageiros == self.limite_passageiros:
+            self.boardable.clear()
             self.cheio.set()
 
     def unboard(self):
         self.cheio.clear()
         self.passageiros -= 1
         if self.passageiros == 0:
+            self.unboardable.clear()
             self.vazio.set()
-
 
 class Passageiro(object):
     """Passageiros de uma montanha russa"""
@@ -129,7 +149,9 @@ class Passageiro(object):
         """Constructor for Passageiro"""
         self.id_passageiro = Passageiro.id_passageiro
         Passageiro.id_passageiro += 1
+
         self.carro = carro
+
         self.thread = Thread(target=self.run)
         self.thread.start()
 
@@ -171,6 +193,10 @@ if len(sys.argv) != 4:
           "\n1 - Número total de passageiros\n2 - Capacidade do carro\n3 - Número máximo de passeios")
     os._exit(1)
 
+num_pessoas = None
+limite_pessoas_por_carro = None
+passeios_por_carro = None
+
 try:
     num_pessoas = int(sys.argv[1])
     limite_pessoas_por_carro = int(sys.argv[2])
@@ -179,7 +205,7 @@ except ValueError:
     print("Argumento(s) inválido(s)! Os 3 argumentos enviados necessitam ser do tipo inteiro")
     os._exit(1)
 
-if (num_pessoas < limite_pessoas_por_carro):
+if num_pessoas < limite_pessoas_por_carro:
     print("Erro! Número total de pessoas/passageiros é menor que a capacidade do carro")
     os._exit(1)
 
