@@ -65,12 +65,12 @@ class Carro(object):
     """Carro de uma montanha russa"""
     id = 1
 
-    def __init__(self, limite_pessoas, num_passeios, is_sleeping): #,
+    def __init__(self, limite_pessoas, num_passeios): #,
         #barreira, lock, condition_variable): #barreira, lock e condition_variables necessitam ser os mesmos enviados
         #aos passageiros
         """Constructor for Car"""
-        self.id = id
-        id += 1
+        self.id = Carro.id
+        Carro.id += 1
 
         self.limite_pessoas = limite_pessoas
         self.num_passeios = num_passeios
@@ -87,17 +87,18 @@ class Carro(object):
 
         self.prv_car = None #usado para acordar carro anterior, permitindo que novos passageros embarquem nele
 
-        self.thread_main = Thread(target=self.main, args=(is_sleeping))
-        #self.thread_main.start()
+        self.thread_main = None
 
-    def set_prv_car(prv_car):
+    def set_prv_car(self, prv_car):
     	self.prv_car = prv_car
 
+    def set_thread_main_args(self, is_car_sleeping):
+    	self.thread_main = Thread(target=self.main, args=(is_car_sleeping,))
+
+    #def main(self, is_sleeping):
     def main(self, is_sleeping):
         if (is_sleeping): #waits for next car to get full and free this
-        		self.lk.acquire()
-        		self.cv_wait()
-        		self.lk.release()
+        		self.sem.acquire()
 
         for x in range(self.num_passeios):
             print_carro_log("Carro: " + str(self) + " passeio nº " + str(x + 1))
@@ -109,15 +110,18 @@ class Carro(object):
             self.run()
 
             print_carro_log("Carro: " + str(self) + " espera estar vazio para liberar embarque!")
-            self.unload()
-        os._exit(1)
+            if x != self.num_passeios - 1:
+            	self.unload(False)
+            else:
+            	self.unload(True)
+
+        print("\t\nACABEI\n")
 
     def run(self):
         print_carro_log("Carro: " + str(self) + " passeio iniciado!")
-        tempo = randrange(5) + 1
+        tempo = 5 #passeia por 5 segundos. Tempo constatne para simular questao de seguranca na montanha
         print_carro_log("Carro: " + str(self) + " vai andar por " + str(tempo) + " segundos.")
         time.sleep(tempo)
-        print_carro_log("Carro: " + str(self) + " passeio terminado!")
 
     def load(self):
         print_carro_log("Carro: " + str(self) + " embarque do carro está liberado!")
@@ -126,22 +130,28 @@ class Carro(object):
         #it has become available to boarding
         self.boardable = True #this will allow the passengers to board
         self.cv_car.wait() #espera carro ficar cheio
-        #self.boardable = False #This is done at unboard to avoid adding more passengers than the max
+        global curr_car
+        curr_car = self.prv_car #this is done to avoid passengers trying to enter curr_car (self) twice
         self.cv_list.notify_all() #wakes up all sleeping passengers threads (passengers that tried to enter
         #after car getting full. This is necessary so they can attempt to enter the next car)
-        self.prv_car.lk.acquire() #no deadlock will happen since no one (passenger) will try to access this car
-        #before the "curr_car = self.prv_car" instruction
-        curr_car = self.prv_car #this is done to avoid passengers trying to enter curr_car (self) twice
-        self.prv_car.lk.release()
+        self.prv_car.sem.release() #wakes up previous car
         self.lk.release() #usado para corretude        
 
-    def unload(self):
-        self.lk.acquire() #lock needs to be acquired before cv_wait to assure corretude
+    def unload(self, last_trip):
+        self.lk.acquire() #lock needs to be acquired before cv_wait to assure corretude. Used for passengers
+        self.sem.acquire() #use for cars' arrival order
+        print_carro_log("Carro: " + str(self) + " passeio terminado!")
         #it is done before barr.wait so the car thread can sleep before any passenger leaves
         self.barr.wait() #releases passengers
         print_carro_log("Carro: " + str(self) + " desembarque do carro está liberado!")
         self.cv_car.wait() #wait until it is empty
+        print_carro_log("Carro: " + str(self) + " desembarque do carro está vazio!")
+
+        self.prv_car.sem.release() #permite o carro anterior liberar passageiros
+
         self.lk.release() #(once it is notified, it will "reacquire" lock)
+        if not last_trip:
+        	self.sem.acquire() #waits next car to get full
 
     def __str__(self):
         return str(self.id)
@@ -173,9 +183,10 @@ class Passageiro(object):
         time.sleep(tempo)
 
     def board(self):
-        print_passageiros_log("Passageiro: " +str(self)+" vai tentar entrar no carro")
+        global curr_car
         while (True):
         	self.carro_atual = curr_car #curr_car is a global variable
+        	print_passageiros_log("Passageiro: " +str(self)+" vai tentar entrar no carro " + str(self.carro_atual))
 	        self.carro_atual.lk.acquire()
 	        if not self.carro_atual.boardable:
 	        	self.carro_atual.cv_list.wait()
@@ -184,7 +195,8 @@ class Passageiro(object):
 
 	        self.carro_atual.passageiros.append(self)
 	        #mensagem impressa dentro de lock para facilitar compreensao. Idealmente estaria fora
-	        print_passageiros_log("Passageiro: " + str(passageiro.id_passageiro) + " entrou no carro!" + str(len(self.passageiros)))
+	        print_passageiros_log("Passageiro: " + str(self.id_passageiro) + " entrou no carro " + str(self.carro_atual) + "! " +
+	        	str(len(self.carro_atual.passageiros)))
 	        if len(self.carro_atual.passageiros) == self.carro_atual.limite_pessoas:
 	        	self.carro_atual.cv_car.notify() #Car is full and will start running
 	        	self.carro_atual.boardable = False #Done here to ensure corretude.
@@ -194,13 +206,13 @@ class Passageiro(object):
 	        break
 
     def unboard(self):
-        print_passageiros_log("Passageiro: "+str(self)+" vai tentar sair do carro")
+        print_passageiros_log("Passageiro: "+str(self)+" vai tentar sair do carro " + str(self.carro_atual))
         self.carro_atual.lk.acquire()
         self.carro_atual.passageiros.remove(self)
         if len(self.carro_atual.passageiros) == 0:
         	self.carro_atual.cv_car.notify()
         #mensagem impressa dentro de lock para facilitar compreensao. Idealmente estaria fora
-        print_passageiros_log("Passageiro: " + str(passageiro.id_passageiro) + " saiu do carro!")
+        print_passageiros_log("Passageiro: " + str(self.id_passageiro) + " saiu do carro!")
         self.carro_atual.lk.release()
         self.carro_atual = None
 
@@ -208,23 +220,25 @@ class Passageiro(object):
         return str(self.id_passageiro)
 
 # VARIÁVEIS DE CONFIGURAÇÃO
-qtd_carros = 2
 
-if len(sys.argv) != 4:
+if len(sys.argv) != 5:
     print("Número inválido de argumentos. Exatamente 3 argumentos requeridos, na seguinte ordem:" +
-        "\n1 - Número total de passageiros\n2 - Capacidade do carro\n3 - Número máximo de passeios")
+        "\n1 - Número total de passageiros\n2 - Capacidade do carro\n3 - Número máximo de passeios" +
+        "\n4 - Quantidade de carros")
     os._exit(1)
 
 num_pessoas = None
 limite_pessoas_por_carro = None
 passeios_por_carro = None
+qtd_carros = None
 
 try:
     num_pessoas = int(sys.argv[1])
     limite_pessoas_por_carro = int(sys.argv[2])
     passeios_por_carro = int(sys.argv[3])
+    qtd_carros = int(sys.argv[4])
 except ValueError:
-    print("Argumento(s) inválido(s)! Os 3 argumentos enviados necessitam ser do tipo inteiro")
+    print("Argumento(s) inválido(s)! Os 4 argumentos enviados necessitam ser do tipo inteiro")
     os._exit(1)    
 
 if (num_pessoas < limite_pessoas_por_carro):
@@ -232,24 +246,28 @@ if (num_pessoas < limite_pessoas_por_carro):
     os._exit(1)
 
 #inicializa carros
-first_car_lk = Lock()
-first_car_cv = Condition(first_car_lk)
 carros = []
-carros.append(Carro(limite_pessoas_por_carro, passeios_por_carro, False)) #sets first car
+carros.append(Carro(limite_pessoas_por_carro, passeios_por_carro)) #sets first car
+carros[0].set_thread_main_args(False)
 for i in range(qtd_carros - 1):
-	carros.append(Carro(limite_pessoas_por_carro, passeios_por_carro, True))
-	carros[i].set_prv_car = carros[i + 1]
+	carros.append(Carro(limite_pessoas_por_carro, passeios_por_carro))
+	carros[i+1].set_thread_main_args(True)
+	carros[i].set_prv_car(carros[i + 1])
+	carros[i + 1].sem.acquire() #bloqueia carro na chegada, garantindo ordem
 #finishes setting first car
-carros[0].set_prv_car = carros[qtd_carros - 1]
+carros[qtd_carros - 1].set_prv_car(carros[0])
 
 #defines first current car (car to be boarded)
 curr_car = carros[0] #global
+
 
 #Starts all threads
 for i in range(qtd_carros):
 	carros[i].thread_main.start()
 
-
 passageiros = []
 for x in range(num_pessoas):
     passageiros.append(Passageiro())
+
+carros[qtd_carros - 1].thread_main.join()
+os._exit(1)
