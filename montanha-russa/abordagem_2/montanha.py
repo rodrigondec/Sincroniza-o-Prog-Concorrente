@@ -2,8 +2,7 @@ import logging
 import time
 import os
 from random import randrange
-from threading import Thread, Event
-import threading
+from threading import Thread, Condition, Barrier, Lock
 import sys
 
 
@@ -71,13 +70,16 @@ class Carro(object):
         if passageiros is None:
             passageiros = []
         self.passageiros = passageiros
-        self.thread_main = Thread(target=self.main)
-        self.barr = threading.Barrier(limite_pessoas + 1) #usado para esperar por saida (passageiros + carro)
-        self.lk = threading.Lock() #usado para garantir corretude (travar a lista de passageiros) 
+
+        self.barr = Barrier(limite_pessoas + 1) #usado para esperar por saida (passageiros + carro)
+        self.lk = Lock() #usado para garantir corretude (travar a lista de passageiros)
+
         #e para cvs (controlar board e unboard)
         self.boardable = False
-        self.cv_list = threading.Condition(lock=self.lk) #usado para esperar carro ficar vazio
-        self.cv_car = threading.Condition(lock=self.lk) #usado para controle do algoritmo main do carro
+        self.cv_list = Condition(lock=self.lk) #usado para esperar carro ficar vazio
+        self.cv_car = Condition(lock=self.lk) #usado para controle do algoritmo main do carro
+
+        self.thread_main = Thread(target=self.main)
         self.thread_main.start()
 
     def main(self):
@@ -151,11 +153,10 @@ class Passageiro(object):
         """Constructor for Passageiro"""
         self.id_passageiro = Passageiro.id_passageiro
         Passageiro.id_passageiro += 1
+
         self.carro = carro
+
         self.thread = Thread(target=self.run)
-        #self.barr = barreira
-        #self.lk = lock
-        #self.cv = condition_variable
         self.thread.start()
 
     def run(self):
@@ -170,12 +171,10 @@ class Passageiro(object):
         time.sleep(tempo)
 
     def board(self):
-        # print_passageiros_log("Passageiro: " + str(self) + " espera poder entrar no carro")
         print_passageiros_log("Passageiro: " +str(self)+" vai tentar entrar no carro")
         self.carro.board(self)
 
     def unboard(self):
-        # print_passageiros_log("Passageiro: " + str(self) + " espera poder sair do carro")
         print_passageiros_log("Passageiro: "+str(self)+" vai tentar sair do carro")
         self.carro.unboard(self)
 
@@ -187,6 +186,10 @@ if len(sys.argv) != 4:
     print("Número inválido de argumentos. Exatamente 3 argumentos requeridos, na seguinte ordem:" +
         "\n1 - Número total de passageiros\n2 - Capacidade do carro\n3 - Número máximo de passeios")
     os._exit(1)
+
+num_pessoas = None
+limite_pessoas_por_carro = None
+passeios_por_carro = None
 
 try:
     num_pessoas = int(sys.argv[1])
@@ -206,4 +209,3 @@ carro = Carro(limite_pessoas_por_carro, passeios_por_carro)
 passageiros = []
 for x in range(num_pessoas):
     passageiros.append(Passageiro(carro))
-    
