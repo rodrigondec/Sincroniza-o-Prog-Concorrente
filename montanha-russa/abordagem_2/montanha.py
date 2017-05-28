@@ -49,7 +49,8 @@ class Erro(Exception):
         self.msg = msg
 
 
-"""Essa abordagem irá fazer o uso de barreiras. É impossível o uso de barreiras para controlar a entrada e saída.
+"""
+Essa abordagem irá fazer o uso de barreiras. É impossível o uso de barreiras para controlar a entrada e saída.
 As barreiras são utilizadas para controlar apensas a saída dos passageiros dos veículos, pois um número fixo de
 threads é necessário para reativar a barreira. Isso não pode ser feito para a entrada no carro. Considere o caso
 em que o caro possui 5 vagas mas há 11 pessoas no parque, das quais 5 estão no veículo, 4 na fila e 2 passeando.

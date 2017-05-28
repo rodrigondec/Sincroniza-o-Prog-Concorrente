@@ -56,17 +56,18 @@ class Banheiro(object):
 
     def __init__(self, limite_pessoas):
         """Constructor for Banheiro"""
-
+        # variaaves
         self.limite_pessoas = limite_pessoas
         self.pessoas = 0
         self.vagas = BoundedSemaphore(value=self.limite_pessoas)
         self.limite_swap = 2*limite_pessoas
         self.swap_atual = 0
+
+        # variaaves
         self.masculino = Event()
         self.feminino = Event()
-
-        self.masculino.set()
-        self.feminino.set()
+        # variaaves
+        self.tornar_unissex()
 
     def swap(self):
         self.swap_atual += 1

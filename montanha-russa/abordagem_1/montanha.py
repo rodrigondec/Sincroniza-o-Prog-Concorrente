@@ -49,7 +49,8 @@ class Erro(Exception):
         self.msg = msg
 
 
-"""Essa abordagem irá fazer o uso de eventos e semáforos. Os eventos são utilizados para controlar as fases de
+"""
+Essa abordagem irá fazer o uso de eventos e semáforos. Os eventos são utilizados para controlar as fases de
 embarque e desembarque do veículo e as situações cheio e vazio. O controle do acesso aos assentos do carro é 
 feito por um semáforo. 
 
@@ -60,7 +61,8 @@ Depois do passeio, é iniciado o desembarque.
 
 Os passageiros tentam alocar um assento do semáforo, com isso fazendo o controle de limite de pessoas no carro. 
 Depois de alocar o assento, eles esperam o embarque ser liberado para entrar de fato no carro. 
-Após embarcarem, eles esperam o desembarque do carro. Ao desembarcarem, liberam o assento adquirido e vão passear."""
+Após embarcarem, eles esperam o desembarque do carro. Ao desembarcarem, liberam o assento adquirido e vão passear.
+"""
 
 
 class Carro(object):
