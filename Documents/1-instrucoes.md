@@ -23,7 +23,7 @@ Após a execução dos programas, são salvos arquivos `<nome>.log` na pasta do 
 
 ### Banheiro Unissex
 
-Para executar as abordagens do problema Banheiro Unissex, o usuário deverá executar o comando:
+Para executar as abordagens do problema Banheiro Unissex, o usuário deverá executar o seguinte comando dentro da pasta root do projeto:
 
 ```
 python banheiro_unissex/<abordagem>/banheiro.py
