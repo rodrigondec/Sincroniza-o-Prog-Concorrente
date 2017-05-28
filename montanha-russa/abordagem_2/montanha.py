@@ -82,7 +82,7 @@ class Carro(object):
 
     def main(self):
         for x in range(self.num_passeios):
-            print_carro_log("Carro: " + str(self) + " irá fazer o passeio " + str(x + 1))
+            print_carro_log("Carro: " + str(self) + " passeio nº " + str(x + 1))
             print_carro_log("Carro: " + str(self) + " espera estar cheio para iniciar passeio!")
             self.load()
             print_carro_log("Carro: " + str(self) + " espera terminar o passaio para liberar desembarque!")
