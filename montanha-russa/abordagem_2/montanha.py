@@ -83,10 +83,13 @@ class Carro(object):
     def main(self):
         for x in range(self.num_passeios):
             print_carro_log("Carro: " + str(self) + " passeio nº " + str(x + 1))
+
             print_carro_log("Carro: " + str(self) + " espera estar cheio para iniciar passeio!")
             self.load()
+
             print_carro_log("Carro: " + str(self) + " espera terminar o passaio para liberar desembarque!")
             self.run()
+
             print_carro_log("Carro: " + str(self) + " espera estar vazio para liberar embarque!")
             self.unload()
         os._exit(1)
@@ -167,12 +170,12 @@ class Passageiro(object):
         time.sleep(tempo)
 
     def board(self):
-        print_passageiros_log("Passageiro: " + str(self) + " espera poder entrar no carro")
+        # print_passageiros_log("Passageiro: " + str(self) + " espera poder entrar no carro")
         print_passageiros_log("Passageiro: " +str(self)+" vai tentar entrar no carro")
         self.carro.board(self)
 
     def unboard(self):
-        print_passageiros_log("Passageiro: " + str(self) + " espera poder sair do carro")
+        # print_passageiros_log("Passageiro: " + str(self) + " espera poder sair do carro")
         print_passageiros_log("Passageiro: "+str(self)+" vai tentar sair do carro")
         self.carro.unboard(self)
 
@@ -199,6 +202,7 @@ if (num_pessoas < limite_pessoas_por_carro):
 
 
 carro = Carro(limite_pessoas_por_carro, passeios_por_carro)
+
 passageiros = []
 for x in range(num_pessoas):
     passageiros.append(Passageiro(carro))
