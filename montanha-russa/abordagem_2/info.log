@@ -1,0 +1,116 @@
+Carro: <__main__.Carro object at 0x03725550> passeio nº 1
+Passageiro: 1 vai tentar entrar no carro
+Passageiro: 2 vai tentar entrar no carro
+Carro: <__main__.Carro object at 0x03725550> espera estar cheio para iniciar passeio!
+Passageiro: 3 vai tentar entrar no carro
+Passageiro: 4 vai tentar entrar no carro
+Carro: <__main__.Carro object at 0x03725550> embarque do carro está liberado!
+Passageiro: 5 vai tentar entrar no carro
+Passageiro: 6 vai tentar entrar no carro
+Passageiro: 7 vai tentar entrar no carro
+Passageiro: 8 vai tentar entrar no carro
+Passageiro: 9 vai tentar entrar no carro
+Passageiro: 3 entrou no carro!1
+Passageiro: 10 vai tentar entrar no carro
+Passageiro: 11 vai tentar entrar no carro
+Passageiro: 12 vai tentar entrar no carro
+Passageiro: 4 entrou no carro!2
+Passageiro: 2 entrou no carro!3
+Passageiro: 1 entrou no carro!4
+Passageiro: 5 entrou no carro!5
+Passageiro: 6 entrou no carro!6
+Carro: <__main__.Carro object at 0x03725550> espera terminar o passaio para liberar desembarque!
+Carro: <__main__.Carro object at 0x03725550> passeio iniciado!
+Carro: <__main__.Carro object at 0x03725550> vai andar por 4 segundos.
+Carro: <__main__.Carro object at 0x03725550> passeio terminado!
+Carro: <__main__.Carro object at 0x03725550> espera estar vazio para liberar embarque!
+Carro: <__main__.Carro object at 0x03725550> desembarque do carro está liberado!
+Passageiro: 2 vai tentar sair do carro
+Passageiro: 2 saiu do carro!
+Passageiro: 2 vai passear no parque por 3 segundos enquanto Seu Lobo não vem.
+Passageiro: 1 vai tentar sair do carro
+Passageiro: 1 saiu do carro!
+Passageiro: 1 vai passear no parque por 3 segundos enquanto Seu Lobo não vem.
+Passageiro: 6 vai tentar sair do carro
+Passageiro: 6 saiu do carro!
+Passageiro: 6 vai passear no parque por 4 segundos enquanto Seu Lobo não vem.
+Passageiro: 5 vai tentar sair do carro
+Passageiro: 4 vai tentar sair do carro
+Passageiro: 5 saiu do carro!
+Passageiro: 3 vai tentar sair do carro
+Passageiro: 4 saiu do carro!
+Passageiro: 5 vai passear no parque por 3 segundos enquanto Seu Lobo não vem.
+Passageiro: 4 vai passear no parque por 2 segundos enquanto Seu Lobo não vem.
+Passageiro: 3 saiu do carro!
+Passageiro: 3 vai passear no parque por 2 segundos enquanto Seu Lobo não vem.
+Carro: <__main__.Carro object at 0x03725550> passeio nº 2
+Carro: <__main__.Carro object at 0x03725550> espera estar cheio para iniciar passeio!
+Carro: <__main__.Carro object at 0x03725550> embarque do carro está liberado!
+Passageiro: 7 entrou no carro!1
+Passageiro: 8 entrou no carro!2
+Passageiro: 11 entrou no carro!3
+Passageiro: 10 entrou no carro!4
+Passageiro: 9 entrou no carro!5
+Passageiro: 12 entrou no carro!6
+Carro: <__main__.Carro object at 0x03725550> espera terminar o passaio para liberar desembarque!
+Carro: <__main__.Carro object at 0x03725550> passeio iniciado!
+Carro: <__main__.Carro object at 0x03725550> vai andar por 3 segundos.
+Passageiro: 3 vai tentar entrar no carro
+Passageiro: 4 vai tentar entrar no carro
+Carro: <__main__.Carro object at 0x03725550> passeio terminado!
+Carro: <__main__.Carro object at 0x03725550> espera estar vazio para liberar embarque!
+Carro: <__main__.Carro object at 0x03725550> desembarque do carro está liberado!
+Passageiro: 1 vai tentar entrar no carro
+Passageiro: 5 vai tentar entrar no carro
+Passageiro: 10 vai tentar sair do carro
+Passageiro: 12 vai tentar sair do carro
+Passageiro: 7 vai tentar sair do carro
+Passageiro: 2 vai tentar entrar no carro
+Passageiro: 9 vai tentar sair do carro
+Passageiro: 8 vai tentar sair do carro
+Passageiro: 11 vai tentar sair do carro
+Passageiro: 10 saiu do carro!
+Passageiro: 10 vai passear no parque por 4 segundos enquanto Seu Lobo não vem.
+Passageiro: 12 saiu do carro!
+Passageiro: 12 vai passear no parque por 5 segundos enquanto Seu Lobo não vem.
+Passageiro: 7 saiu do carro!
+Passageiro: 7 vai passear no parque por 2 segundos enquanto Seu Lobo não vem.
+Passageiro: 9 saiu do carro!
+Passageiro: 9 vai passear no parque por 3 segundos enquanto Seu Lobo não vem.
+Passageiro: 8 saiu do carro!
+Passageiro: 8 vai passear no parque por 2 segundos enquanto Seu Lobo não vem.
+Passageiro: 11 saiu do carro!
+Passageiro: 11 vai passear no parque por 5 segundos enquanto Seu Lobo não vem.
+Carro: <__main__.Carro object at 0x03725550> passeio nº 3
+Carro: <__main__.Carro object at 0x03725550> espera estar cheio para iniciar passeio!
+Carro: <__main__.Carro object at 0x03725550> embarque do carro está liberado!
+Passageiro: 3 entrou no carro!1
+Passageiro: 1 entrou no carro!2
+Passageiro: 4 entrou no carro!3
+Passageiro: 5 entrou no carro!4
+Passageiro: 2 entrou no carro!5
+Passageiro: 6 vai tentar entrar no carro
+Passageiro: 6 entrou no carro!6
+Carro: <__main__.Carro object at 0x03725550> espera terminar o passaio para liberar desembarque!
+Carro: <__main__.Carro object at 0x03725550> passeio iniciado!
+Carro: <__main__.Carro object at 0x03725550> vai andar por 1 segundos.
+Carro: <__main__.Carro object at 0x03725550> passeio terminado!
+Carro: <__main__.Carro object at 0x03725550> espera estar vazio para liberar embarque!
+Carro: <__main__.Carro object at 0x03725550> desembarque do carro está liberado!
+Passageiro: 3 vai tentar sair do carro
+Passageiro: 3 saiu do carro!
+Passageiro: 3 vai passear no parque por 5 segundos enquanto Seu Lobo não vem.
+Passageiro: 5 vai tentar sair do carro
+Passageiro: 5 saiu do carro!
+Passageiro: 5 vai passear no parque por 4 segundos enquanto Seu Lobo não vem.
+Passageiro: 6 vai tentar sair do carro
+Passageiro: 6 saiu do carro!
+Passageiro: 6 vai passear no parque por 3 segundos enquanto Seu Lobo não vem.
+Passageiro: 2 vai tentar sair do carro
+Passageiro: 1 vai tentar sair do carro
+Passageiro: 2 saiu do carro!
+Passageiro: 4 vai tentar sair do carro
+Passageiro: 1 saiu do carro!
+Passageiro: 2 vai passear no parque por 2 segundos enquanto Seu Lobo não vem.
+Passageiro: 4 saiu do carro!
+Passageiro: 1 vai passear no parque por 1 segundos enquanto Seu Lobo não vem.
