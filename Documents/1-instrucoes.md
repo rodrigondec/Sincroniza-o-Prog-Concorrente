@@ -19,7 +19,7 @@ python montanha-russa/<abordagem>/montanha.py <c> <n> <p>
 <p> = Número máximo de passeios
 ```
 
-Após a execução dos programas, são salvos arquivos `x.log` na pasta do programa contendo as informações fornecidas durante a execução.
+Após a execução dos programas, são salvos arquivos `<nome>.log` na pasta do programa contendo as informações fornecidas durante a execução.
 
 ### Banheiro Unissex
 
@@ -31,9 +31,7 @@ python banheiro_unissex/<abordagem>/banheiro.py
 <abordagem> = 'abordagem_1' ou 'abordagem_2'
 ```
 
-  dentro da pasta root do projeto.
+dentro da pasta root do projeto.
 
-Após a execução dos programas, são salvos arquivos `x.log` na pasta do programa contendo as informações fornecidas durante a execução.
-
-
+Após a execução dos programas, são salvos arquivos `<nome>.log` na pasta do programa contendo as informações fornecidas durante a execução.
 
