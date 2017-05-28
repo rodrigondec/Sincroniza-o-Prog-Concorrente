@@ -7,7 +7,7 @@ Mais especificamente utilizando [Event](https://docs.python.org/3/library/thread
 
 O Event possiu uma flag `True` ou `False` e um método `wait()` que bloqueia o processo que chamar esse método caso a flag seja `false`.
 
-Enquanto o BondedSemaphore é um Lock com um contador interno com um valor máximo. 
+Enquanto o BondedSemaphore é um Lock com um contador interno com um valor máximo.
 
 Com esses mecanismos podemos sincronizar as threads, verificando condições e bloqueando as threads até que elas sejam satisfeitas.
 
@@ -20,13 +20,14 @@ Com esses mecanismos podemos sincronizar as threads, verificando condições e b
 
 #### Atributos
 
+
+
 | Nome do atributo | Descrição | Tipo |
 | :--- | :--- | :--- |
 | num\_passeios | número de vezes que o carro irá rodar | inteiro |
 | limite\_passageiros | quantidade de pessoas que cabem no carro | inteiro |
 | passageiros | quantidade atual de pessoas no ca | inteiro |
 | thread\_main | representa o controlador do carro | Thread |
-| thread\_run | representa o passeio do carro nos trilhos | Thread |
 
 #### Atributos sincronização
 
