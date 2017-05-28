@@ -1,14 +1,9 @@
 import logging
 import time
+import sys
 import os
 from random import randrange
 from threading import Thread, Event, BoundedSemaphore
-
-
-# VARIÁVEIS DE CONFIGURAÇÃO
-num_pessoas = 12
-limite_pessoas_por_carro = 6
-passeios_por_carro = 3
 
 
 def setup_logger(logger_name, log_file, level=logging.INFO):
@@ -89,6 +84,7 @@ class Carro(object):
             if not self.cheio.is_set():
                 self.cheio.wait()
 
+            print_carro_log("Carro: " + str(self) + " espera terminar o passaio para liberar desembarque!")
             self.run()
 
             self.unload()
@@ -169,9 +165,26 @@ class Passageiro(object):
         return str(self.id_passageiro)
 
 
+# VARIÁVEIS DE CONFIGURAÇÃO
+if len(sys.argv) != 4:
+    print("Número inválido de argumentos. Exatamente 3 argumentos requeridos, na seguinte ordem:" +
+          "\n1 - Número total de passageiros\n2 - Capacidade do carro\n3 - Número máximo de passeios")
+    os._exit(1)
+
+try:
+    num_pessoas = int(sys.argv[1])
+    limite_pessoas_por_carro = int(sys.argv[2])
+    passeios_por_carro = int(sys.argv[3])
+except ValueError:
+    print("Argumento(s) inválido(s)! Os 3 argumentos enviados necessitam ser do tipo inteiro")
+    os._exit(1)
+
+if (num_pessoas < limite_pessoas_por_carro):
+    print("Erro! Número total de pessoas/passageiros é menor que a capacidade do carro")
+    os._exit(1)
+
 carro = Carro(limite_pessoas_por_carro, passeios_por_carro)
 
 passageiros = []
-
-for x in range(8):
+for x in range(num_pessoas):
     passageiros.append(Passageiro(carro))
