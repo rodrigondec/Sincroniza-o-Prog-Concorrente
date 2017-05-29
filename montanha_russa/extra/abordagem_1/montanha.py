@@ -82,15 +82,20 @@ class Plataforma(object):
 
         self.fila = Queue()
         self.carro_atual = None
+        self.tem_carro = Event()
         self.acesso = BoundedSemaphore()
-        self.thread_main = Thread(target=self.main())
 
+        self.tem_carro.clear()
+
+        self.thread_main = Thread(target=self.main)
         self.thread_main.start()
 
     def main(self):
         try:
             while True:
-                self.carro_atual = self.fila.get(timeout=55)
+                self.tem_carro.clear()
+                self.carro_atual = self.fila.get(timeout=5)
+                self.tem_carro.set()
 
                 print_plataforma_log("Plataforma: liberado acesso à plataforma do carro "+str(self.carro_atual))
                 self.carro_atual.vez.set()
@@ -233,10 +238,14 @@ class Passageiro(object):
 
     def run(self):
         while True:
-            print_passageiros_log("Passageiro: " + str(self) + " pergunta: é minha vez?")
+            print_passageiros_log("Passageiro: " + str(self) + " pergunta: tem carro na plataforma?")
+            if not self.plataforma.tem_carro.is_set():
+                self.plataforma.tem_carro.wait()
+
+            print_passageiros_log("Passageiro: " + str(self) + " pergunta: é minha vez para o carro "+str(self.plataforma.carro_atual)+"?")
             assert isinstance(self.plataforma.carro_atual, Carro)
             with self.plataforma.carro_atual.assentos:
-                print_passageiros_log("Passageiro: " + str(self) + " irá poder entrar no carro!")
+                print_passageiros_log("Passageiro: " + str(self) + " irá poder entrar no carro "+str(self.plataforma.carro_atual)+"!")
                 self.board()
                 self.unboard()
             self.passear()
@@ -247,19 +256,19 @@ class Passageiro(object):
         time.sleep(tempo)
 
     def board(self):
-        print_passageiros_log("Passageiro: " + str(self) + " pergunta: embarque do carro está liberado?")
+        print_passageiros_log("Passageiro: " + str(self) + " pergunta: embarque do carro "+str(self.plataforma.carro_atual)+" está liberado?")
         assert isinstance(self.plataforma.carro_atual, Carro)
         if not self.plataforma.carro_atual.boardable.is_set():
             self.plataforma.carro_atual.boardable.wait()
-        print_passageiros_log("Passageiro: " + str(self) + " entrou no carro!")
+        print_passageiros_log("Passageiro: " + str(self) + " entrou no carro "+str(self.plataforma.carro_atual)+"!")
         self.plataforma.carro_atual.board()
 
     def unboard(self):
-        print_passageiros_log("Passageiro: " + str(self) + " pergunta: desembarque do carro está liberado?")
-        assert isinstance(self.plataforma.carro_atual, Carro)
+        print_passageiros_log("Passageiro: " + str(self) + " pergunta: desembarque do carro "+str(self.plataforma.carro_atual)+" está liberado?")
+        # assert isinstance(self.plataforma.carro_atual, Carro)
         if not self.plataforma.carro_atual.unboardable.is_set():
             self.plataforma.carro_atual.unboardable.wait()
-        print_passageiros_log("Passageiro: "+str(self)+" saiu do carro!")
+        print_passageiros_log("Passageiro: "+str(self)+" saiu do carro "+str(self.plataforma.carro_atual)+"!")
         self.plataforma.carro_atual.unboard()
 
     def __str__(self):
@@ -290,8 +299,13 @@ if num_pessoas < limite_pessoas_por_carro:
     print("Erro! Número total de pessoas/passageiros é menor que a capacidade do carro")
     os._exit(1)
 
-carro = Carro(limite_pessoas_por_carro, passeios_por_carro)
+plataforma = Plataforma()
+
+carros = []
+for x in range(num_carros):
+    carros.append(Carro(limite_pessoas_por_carro, passeios_por_carro, plataforma))
+    # plataforma.entrar(carros[x])
 
 passageiros = []
 for x in range(num_pessoas):
-    passageiros.append(Passageiro(carro))
+    passageiros.append(Passageiro(plataforma))
