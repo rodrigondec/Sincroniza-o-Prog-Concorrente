@@ -3,6 +3,7 @@ import sys
 import time
 from random import randrange
 from threading import Thread, Event, BoundedSemaphore
+from queue import Queue
 from logging import getLogger, Formatter, FileHandler, StreamHandler, INFO
 
 
@@ -62,13 +63,21 @@ Após embarcarem, eles esperam o desembarque do carro. Ao desembarcarem, liberam
 class Carro(object):
     """Carro de uma montanha russa"""
 
+    id_carro = 1
+
     def __init__(self, limite_passageiros, num_passeios):
         """Constructor for Car"""
+        self.id_carro = Carro.id_carro
+        Carro.id_carro += 1
+
         # variáveis para controle de passageiros/assentos
         self.num_passeios = num_passeios
         self.limite_passageiros = limite_passageiros
         self.passageiros = 0
         self.assentos = BoundedSemaphore(value=self.limite_passageiros)
+
+        self.passageiro_atual = None
+        self.fila = Queue()
 
         # variáveis para controle de eventos/situações
         self.boardable = Event()
@@ -86,6 +95,9 @@ class Carro(object):
         self.thread_main = Thread(target=self.main)
         self.thread_main.start()
 
+        self.thread_fila = Thread(target=self.controlar_fila)
+        self.thread_fila.start()
+
     def main(self):
         for x in range(self.num_passeios):
             print_carro_log("Carro: " + str(self) + " passeio nº " + str(x + 1))
@@ -95,6 +107,7 @@ class Carro(object):
                 self.vazio.wait()
 
             self.load()
+
             print_carro_log("Carro: " + str(self) + " espera estar cheio para iniciar passeio!")
             if not self.cheio.is_set():
                 self.cheio.wait()
@@ -104,6 +117,19 @@ class Carro(object):
 
             self.unload()
         os._exit(1)
+
+    def controlar_fila(self):
+        while True:
+            print_carro_log("Carro/fila: " + str(self) + " espera estar em embarque para liberar a fila!")
+            if not self.boardable.is_set():
+                self.boardable.wait()
+            self.passageiro_atual = self.fila.get()
+            print_carro_log("Carro/fila: " + str(self) + " é a vez do passageiro "+str(self.passageiro_atual))
+            self.passageiro_atual.vez.set()
+            print_carro_log("Carro/fila: " + str(self) + " espera o passageiro "+str(self.passageiro_atual)+" entrar no carro")
+            if not self.passageiro_atual.boarded.is_set():
+                self.passageiro_atual.boarded.wait()
+            self.passageiro_atual.vez.clear()
 
     def run(self):
         print_carro_log("Carro: " + str(self) + " passeio iniciado!")
@@ -122,6 +148,9 @@ class Carro(object):
         self.boardable.clear()
         self.unboardable.set()
 
+    def entrar_fila(self, passageiro):
+        self.fila.put(passageiro)
+
     def board(self):
         self.vazio.clear()
         self.passageiros += 1
@@ -136,6 +165,9 @@ class Carro(object):
             self.unboardable.clear()
             self.vazio.set()
 
+    def __str__(self):
+        return str(self.id_carro)
+
 class Passageiro(object):
     """Passageiros de uma montanha russa"""
 
@@ -148,12 +180,23 @@ class Passageiro(object):
 
         self.carro = carro
 
+        self.vez = Event()
+        self.boarded = Event()
+
+        self.vez.clear()
+        self.boarded.clear()
+
         self.thread = Thread(target=self.run)
         self.thread.start()
 
     def run(self):
         while True:
+            print_passageiros_log("Passageiro: " + str(self) + " entra na fila!")
+            self.carro.entrar_fila(self)
             print_passageiros_log("Passageiro: " + str(self) + " pergunta: é minha vez?")
+            if not self.vez.is_set():
+                self.vez.wait()
+            print_passageiros_log("Passageiro: " + str(self) + " pergunta: poderei entrar no carro?")
             with self.carro.assentos:
                 print_passageiros_log("Passageiro: " + str(self) + " irá poder entrar no carro!")
                 self.board()
@@ -171,6 +214,7 @@ class Passageiro(object):
             self.carro.boardable.wait()
         print_passageiros_log("Passageiro: " + str(self) + " entrou no carro!")
         self.carro.board()
+        self.boarded.set()
 
     def unboard(self):
         print_passageiros_log("Passageiro: " + str(self) + " pergunta: desembarque do carro está liberado?")
@@ -178,6 +222,7 @@ class Passageiro(object):
             self.carro.unboardable.wait()
         print_passageiros_log("Passageiro: "+str(self)+" saiu do carro!")
         self.carro.unboard()
+        self.boarded.clear()
 
     def __str__(self):
         return str(self.id_passageiro)
