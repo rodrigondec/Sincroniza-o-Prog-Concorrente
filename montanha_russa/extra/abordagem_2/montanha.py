@@ -1,55 +1,13 @@
-import logging
-import time
 import os
+import sys
+import time
 from random import randrange
 from threading import Thread, Condition, Barrier, Lock, Semaphore
-import sys
+
+from montanha_russa.logger import print_carro_log, print_passageiros_log
 
 # global variables
 curr_car = None
-
-
-def setup_logger(logger_name, log_file, level=logging.INFO):
-    l = logging.getLogger(logger_name)
-    formatter = logging.Formatter('%(message)s')
-    fileHandler = logging.FileHandler(log_file, mode='w')
-    fileHandler.setFormatter(formatter)
-    streamHandler = logging.StreamHandler()
-    streamHandler.setFormatter(formatter)
-
-    l.setLevel(level)
-    l.addHandler(fileHandler)
-
-
-setup_logger("info_log", "info.log")
-info_log = logging.getLogger("info_log")
-
-setup_logger("carro_log", "carro.log")
-carro_log = logging.getLogger("carro_log")
-
-setup_logger("passageiros_log", "passageiros.log")
-passageiros_log = logging.getLogger("passageiros_log")
-
-
-def print_info_log(msg):
-    info_log.info(msg)
-
-
-def print_carro_log(msg):
-    print(msg)
-    carro_log.info(msg)
-    print_info_log(msg)
-
-
-def print_passageiros_log(msg):
-    print(msg)
-    passageiros_log.info(msg)
-    print_info_log(msg)
-
-
-class Erro(Exception):
-    def __init__(self, msg):
-        self.msg = msg
 
 
 """
