@@ -79,6 +79,7 @@ class Plataforma(object):
 
     def __init__(self):
         """Constructor for Plataforma"""
+
         self.fila = Queue()
         self.carro_atual = None
         self.acesso = BoundedSemaphore()
@@ -90,9 +91,10 @@ class Plataforma(object):
         try:
             while True:
                 self.carro_atual = self.fila.get(timeout=55)
-                assert isinstance(self.carro_atual, Carro)
+
                 print_plataforma_log("Plataforma: liberado acesso à plataforma do carro "+str(self.carro_atual))
                 self.carro_atual.vez.set()
+
                 print_plataforma_log("Plataforma: espera o carro " + str(self.carro_atual)+" iniciar seu passeio para liberar o prox")
                 if not self.carro_atual.passeio_iniciado.is_set():
                     self.carro_atual.passeio_iniciado.wait()
@@ -100,8 +102,7 @@ class Plataforma(object):
         except Empty:
             print_plataforma_log("Plataforma: terminou todos os passeios!")
 
-
-    def entrar(self, carro: Carro):
+    def entrar(self, carro):
         self.fila.put(carro)
 
 class Carro(object):
