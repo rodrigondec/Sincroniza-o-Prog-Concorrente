@@ -96,7 +96,7 @@ class Plataforma(object):
                 print_plataforma_log("Plataforma: espera o carro " + str(self.carro_atual)+" iniciar seu passeio para liberar o prox")
                 if not self.carro_atual.passeio_iniciado.is_set():
                     self.carro_atual.passeio_iniciado.wait()
-                    self.carro_atual.vez.clear()
+                self.carro_atual.vez.clear()
         except Empty:
             print_plataforma_log("Plataforma: terminou todos os passeios!")
 

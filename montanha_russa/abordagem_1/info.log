@@ -1,195 +1,325 @@
-Carro: <__main__.Carro object at 0x035AA430> passeio nº 1
+Carro: 1 passeio nº 1
+Carro: 1 espera estar vazio para liberar o embarque!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Passageiro: 1 entra na fila!
+Carro: 1 embarque do carro está liberado!
+Passageiro: 2 entra na fila!
 Passageiro: 1 pergunta: é minha vez?
-Carro: <__main__.Carro object at 0x035AA430> espera estar vazio para liberar o embarque!
+Carro: 1 espera estar cheio para iniciar passeio!
+Carro/fila: 1 é a vez do passageiro 1
+Passageiro: 3 entra na fila!
 Passageiro: 2 pergunta: é minha vez?
-Passageiro: 1 irá poder entrar no carro!
-Carro: <__main__.Carro object at 0x035AA430> embarque do carro está liberado!
+Passageiro: 4 entra na fila!
+Passageiro: 5 entra na fila!
+Carro/fila: 1 espera o passageiro 1 entrar no carro
+Passageiro: 6 entra na fila!
+Passageiro: 1 pergunta: poderei entrar no carro?
+Passageiro: 7 entra na fila!
 Passageiro: 3 pergunta: é minha vez?
+Passageiro: 8 entra na fila!
+Passageiro: 9 entra na fila!
 Passageiro: 4 pergunta: é minha vez?
-Carro: <__main__.Carro object at 0x035AA430> espera estar cheio para iniciar passeio!
-Passageiro: 2 irá poder entrar no carro!
-Passageiro: 5 pergunta: é minha vez?
-Passageiro: 1 pergunta: embarque do carro está liberado?
 Passageiro: 6 pergunta: é minha vez?
-Passageiro: 7 pergunta: é minha vez?
-Passageiro: 3 irá poder entrar no carro!
-Passageiro: 8 pergunta: é minha vez?
-Passageiro: 4 irá poder entrar no carro!
-Passageiro: 9 pergunta: é minha vez?
+Passageiro: 10 entra na fila!
 Passageiro: 10 pergunta: é minha vez?
-Passageiro: 2 pergunta: embarque do carro está liberado?
-Passageiro: 11 pergunta: é minha vez?
-Passageiro: 5 irá poder entrar no carro!
+Passageiro: 12 entra na fila!
 Passageiro: 12 pergunta: é minha vez?
+Passageiro: 5 pergunta: é minha vez?
+Passageiro: 11 entra na fila!
+Passageiro: 11 pergunta: é minha vez?
+Passageiro: 1 irá poder entrar no carro!
+Passageiro: 7 pergunta: é minha vez?
+Passageiro: 9 pergunta: é minha vez?
+Passageiro: 8 pergunta: é minha vez?
+Passageiro: 1 pergunta: embarque do carro está liberado?
 Passageiro: 1 entrou no carro!
-Passageiro: 6 irá poder entrar no carro!
-Passageiro: 3 pergunta: embarque do carro está liberado?
-Passageiro: 4 pergunta: embarque do carro está liberado?
-Passageiro: 2 entrou no carro!
-Passageiro: 5 pergunta: embarque do carro está liberado?
 Passageiro: 1 pergunta: desembarque do carro está liberado?
-Passageiro: 6 pergunta: embarque do carro está liberado?
-Passageiro: 3 entrou no carro!
-Passageiro: 4 entrou no carro!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 2
+Carro/fila: 1 espera o passageiro 2 entrar no carro
+Passageiro: 2 pergunta: poderei entrar no carro?
+Passageiro: 2 irá poder entrar no carro!
+Passageiro: 2 pergunta: embarque do carro está liberado?
+Passageiro: 2 entrou no carro!
 Passageiro: 2 pergunta: desembarque do carro está liberado?
-Passageiro: 5 entrou no carro!
-Passageiro: 6 entrou no carro!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 3
+Passageiro: 3 pergunta: poderei entrar no carro?
+Carro/fila: 1 espera o passageiro 3 entrar no carro
+Passageiro: 3 irá poder entrar no carro!
+Passageiro: 3 pergunta: embarque do carro está liberado?
+Passageiro: 3 entrou no carro!
 Passageiro: 3 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 4
+Passageiro: 4 pergunta: poderei entrar no carro?
+Carro/fila: 1 espera o passageiro 4 entrar no carro
+Passageiro: 4 irá poder entrar no carro!
+Passageiro: 4 pergunta: embarque do carro está liberado?
+Passageiro: 4 entrou no carro!
 Passageiro: 4 pergunta: desembarque do carro está liberado?
-Carro: <__main__.Carro object at 0x035AA430> espera terminar o passaio para liberar desembarque!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 5
+Carro/fila: 1 espera o passageiro 5 entrar no carro
+Passageiro: 5 pergunta: poderei entrar no carro?
+Passageiro: 5 irá poder entrar no carro!
+Passageiro: 5 pergunta: embarque do carro está liberado?
+Passageiro: 5 entrou no carro!
 Passageiro: 5 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 6
+Carro/fila: 1 espera o passageiro 6 entrar no carro
+Passageiro: 6 pergunta: poderei entrar no carro?
+Passageiro: 6 irá poder entrar no carro!
+Passageiro: 6 pergunta: embarque do carro está liberado?
+Passageiro: 6 entrou no carro!
 Passageiro: 6 pergunta: desembarque do carro está liberado?
-Carro: <__main__.Carro object at 0x035AA430> passeio iniciado!
-Carro: <__main__.Carro object at 0x035AA430> vai andar por 4 segundos.
-Carro: <__main__.Carro object at 0x035AA430> passeio terminado!
-Carro: <__main__.Carro object at 0x035AA430> desembarque do carro está liberado!
-Carro: <__main__.Carro object at 0x035AA430> passeio nº 2
-Carro: <__main__.Carro object at 0x035AA430> espera estar vazio para liberar o embarque!
+Carro: 1 espera terminar o passaio para liberar desembarque!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro: 1 passeio iniciado!
+Carro: 1 vai andar por 4 segundos.
+Carro: 1 passeio terminado!
+Carro: 1 desembarque do carro está liberado!
+Carro: 1 passeio nº 2
+Carro: 1 espera estar vazio para liberar o embarque!
 Passageiro: 2 saiu do carro!
-Passageiro: 4 saiu do carro!
-Passageiro: 3 saiu do carro!
+Passageiro: 1 saiu do carro!
 Passageiro: 5 saiu do carro!
+Passageiro: 4 saiu do carro!
+Passageiro: 3 saiu do carro!
+Passageiro: 2 vai passear no parque por 4 segundos!
 Passageiro: 6 saiu do carro!
-Passageiro: 1 saiu do carro!
-Passageiro: 2 vai passear no parque por 3 segundos!
-Carro: <__main__.Carro object at 0x035AA430> embarque do carro está liberado!
-Passageiro: 7 irá poder entrar no carro!
-Passageiro: 4 vai passear no parque por 3 segundos!
-Carro: <__main__.Carro object at 0x035AA430> espera estar cheio para iniciar passeio!
-Passageiro: 8 irá poder entrar no carro!
-Passageiro: 3 vai passear no parque por 5 segundos!
-Passageiro: 9 irá poder entrar no carro!
-Passageiro: 6 vai passear no parque por 5 segundos!
-Passageiro: 1 vai passear no parque por 1 segundos!
+Passageiro: 1 vai passear no parque por 4 segundos!
+Carro: 1 embarque do carro está liberado!
 Passageiro: 5 vai passear no parque por 5 segundos!
-Passageiro: 12 irá poder entrar no carro!
-Passageiro: 11 irá poder entrar no carro!
-Passageiro: 10 irá poder entrar no carro!
-Passageiro: 7 pergunta: embarque do carro está liberado?
-Passageiro: 8 pergunta: embarque do carro está liberado?
-Passageiro: 9 pergunta: embarque do carro está liberado?
-Passageiro: 12 pergunta: embarque do carro está liberado?
-Passageiro: 11 pergunta: embarque do carro está liberado?
-Passageiro: 10 pergunta: embarque do carro está liberado?
-Passageiro: 7 entrou no carro!
-Passageiro: 8 entrou no carro!
-Passageiro: 9 entrou no carro!
-Passageiro: 12 entrou no carro!
-Passageiro: 11 entrou no carro!
-Passageiro: 10 entrou no carro!
-Passageiro: 7 pergunta: desembarque do carro está liberado?
-Passageiro: 8 pergunta: desembarque do carro está liberado?
-Passageiro: 9 pergunta: desembarque do carro está liberado?
-Carro: <__main__.Carro object at 0x035AA430> espera terminar o passaio para liberar desembarque!
-Passageiro: 12 pergunta: desembarque do carro está liberado?
-Passageiro: 11 pergunta: desembarque do carro está liberado?
-Passageiro: 10 pergunta: desembarque do carro está liberado?
-Carro: <__main__.Carro object at 0x035AA430> passeio iniciado!
-Carro: <__main__.Carro object at 0x035AA430> vai andar por 3 segundos.
-Passageiro: 1 pergunta: é minha vez?
-Passageiro: 2 pergunta: é minha vez?
-Passageiro: 4 pergunta: é minha vez?
-Carro: <__main__.Carro object at 0x035AA430> passeio terminado!
-Carro: <__main__.Carro object at 0x035AA430> desembarque do carro está liberado!
-Carro: <__main__.Carro object at 0x035AA430> passeio nº 3
-Carro: <__main__.Carro object at 0x035AA430> espera estar vazio para liberar o embarque!
-Passageiro: 8 saiu do carro!
-Passageiro: 8 vai passear no parque por 5 segundos!
-Passageiro: 12 saiu do carro!
-Passageiro: 7 saiu do carro!
-Passageiro: 12 vai passear no parque por 2 segundos!
-Passageiro: 9 saiu do carro!
-Passageiro: 10 saiu do carro!
-Passageiro: 1 irá poder entrar no carro!
-Passageiro: 11 saiu do carro!
-Passageiro: 2 irá poder entrar no carro!
-Passageiro: 7 vai passear no parque por 1 segundos!
-Passageiro: 4 irá poder entrar no carro!
-Passageiro: 9 vai passear no parque por 2 segundos!
-Passageiro: 10 vai passear no parque por 4 segundos!
-Carro: <__main__.Carro object at 0x035AA430> embarque do carro está liberado!
-Passageiro: 1 pergunta: embarque do carro está liberado?
-Passageiro: 11 vai passear no parque por 5 segundos!
-Passageiro: 2 pergunta: embarque do carro está liberado?
-Carro: <__main__.Carro object at 0x035AA430> espera estar cheio para iniciar passeio!
-Passageiro: 4 pergunta: embarque do carro está liberado?
-Passageiro: 1 entrou no carro!
-Passageiro: 2 entrou no carro!
-Passageiro: 4 entrou no carro!
-Passageiro: 1 pergunta: desembarque do carro está liberado?
-Passageiro: 2 pergunta: desembarque do carro está liberado?
-Passageiro: 4 pergunta: desembarque do carro está liberado?
-Passageiro: 7 pergunta: é minha vez?
+Passageiro: 4 vai passear no parque por 2 segundos!
+Passageiro: 3 vai passear no parque por 5 segundos!
+Carro: 1 espera estar cheio para iniciar passeio!
+Carro/fila: 1 é a vez do passageiro 7
+Passageiro: 6 vai passear no parque por 4 segundos!
+Passageiro: 7 pergunta: poderei entrar no carro?
+Carro/fila: 1 espera o passageiro 7 entrar no carro
 Passageiro: 7 irá poder entrar no carro!
 Passageiro: 7 pergunta: embarque do carro está liberado?
 Passageiro: 7 entrou no carro!
 Passageiro: 7 pergunta: desembarque do carro está liberado?
-Passageiro: 3 pergunta: é minha vez?
-Passageiro: 3 irá poder entrar no carro!
-Passageiro: 3 pergunta: embarque do carro está liberado?
-Passageiro: 3 entrou no carro!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 8
+Carro/fila: 1 espera o passageiro 8 entrar no carro
+Passageiro: 8 pergunta: poderei entrar no carro?
+Passageiro: 8 irá poder entrar no carro!
+Passageiro: 8 pergunta: embarque do carro está liberado?
+Passageiro: 8 entrou no carro!
+Passageiro: 8 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 9
+Passageiro: 9 pergunta: poderei entrar no carro?
+Carro/fila: 1 espera o passageiro 9 entrar no carro
+Passageiro: 9 irá poder entrar no carro!
+Passageiro: 9 pergunta: embarque do carro está liberado?
+Passageiro: 9 entrou no carro!
+Passageiro: 9 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 10
+Carro/fila: 1 espera o passageiro 10 entrar no carro
+Passageiro: 10 pergunta: poderei entrar no carro?
+Passageiro: 10 irá poder entrar no carro!
+Passageiro: 10 pergunta: embarque do carro está liberado?
+Passageiro: 10 entrou no carro!
+Passageiro: 10 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 12
+Passageiro: 12 pergunta: poderei entrar no carro?
+Carro/fila: 1 espera o passageiro 12 entrar no carro
+Passageiro: 12 irá poder entrar no carro!
+Passageiro: 12 pergunta: embarque do carro está liberado?
+Passageiro: 12 entrou no carro!
+Passageiro: 12 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 11
+Carro/fila: 1 espera o passageiro 11 entrar no carro
+Passageiro: 11 pergunta: poderei entrar no carro?
+Passageiro: 11 irá poder entrar no carro!
+Passageiro: 11 pergunta: embarque do carro está liberado?
+Passageiro: 11 entrou no carro!
+Passageiro: 11 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro: 1 espera terminar o passaio para liberar desembarque!
+Carro: 1 passeio iniciado!
+Carro: 1 vai andar por 3 segundos.
+Passageiro: 4 entra na fila!
+Passageiro: 4 pergunta: é minha vez?
+Carro: 1 passeio terminado!
+Carro: 1 desembarque do carro está liberado!
+Carro: 1 passeio nº 3
+Carro: 1 espera estar vazio para liberar o embarque!
+Passageiro: 8 saiu do carro!
+Passageiro: 8 vai passear no parque por 4 segundos!
+Passageiro: 10 saiu do carro!
+Passageiro: 10 vai passear no parque por 1 segundos!
+Passageiro: 12 saiu do carro!
+Passageiro: 12 vai passear no parque por 3 segundos!
+Passageiro: 11 saiu do carro!
+Passageiro: 9 saiu do carro!
+Passageiro: 11 vai passear no parque por 1 segundos!
+Passageiro: 7 saiu do carro!
+Passageiro: 9 vai passear no parque por 4 segundos!
+Carro: 1 embarque do carro está liberado!
+Passageiro: 7 vai passear no parque por 4 segundos!
+Carro/fila: 1 é a vez do passageiro 4
+Carro: 1 espera estar cheio para iniciar passeio!
+Carro/fila: 1 espera o passageiro 4 entrar no carro
+Passageiro: 4 pergunta: poderei entrar no carro?
+Passageiro: 4 irá poder entrar no carro!
+Passageiro: 4 pergunta: embarque do carro está liberado?
+Passageiro: 4 entrou no carro!
+Passageiro: 4 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Passageiro: 2 entra na fila!
+Passageiro: 1 entra na fila!
+Passageiro: 2 pergunta: é minha vez?
+Carro/fila: 1 é a vez do passageiro 2
+Passageiro: 1 pergunta: é minha vez?
+Carro/fila: 1 espera o passageiro 2 entrar no carro
+Passageiro: 2 pergunta: poderei entrar no carro?
+Passageiro: 6 entra na fila!
+Passageiro: 2 irá poder entrar no carro!
 Passageiro: 6 pergunta: é minha vez?
-Passageiro: 5 pergunta: é minha vez?
-Passageiro: 3 pergunta: desembarque do carro está liberado?
+Passageiro: 2 pergunta: embarque do carro está liberado?
+Passageiro: 2 entrou no carro!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Passageiro: 2 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 é a vez do passageiro 1
+Carro/fila: 1 espera o passageiro 1 entrar no carro
+Passageiro: 1 pergunta: poderei entrar no carro?
+Passageiro: 1 irá poder entrar no carro!
+Passageiro: 1 pergunta: embarque do carro está liberado?
+Passageiro: 1 entrou no carro!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 6
+Carro/fila: 1 espera o passageiro 6 entrar no carro
+Passageiro: 1 pergunta: desembarque do carro está liberado?
+Passageiro: 6 pergunta: poderei entrar no carro?
 Passageiro: 6 irá poder entrar no carro!
 Passageiro: 6 pergunta: embarque do carro está liberado?
 Passageiro: 6 entrou no carro!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
 Passageiro: 6 pergunta: desembarque do carro está liberado?
-Carro: <__main__.Carro object at 0x035AA430> espera terminar o passaio para liberar desembarque!
-Carro: <__main__.Carro object at 0x035AA430> passeio iniciado!
-Carro: <__main__.Carro object at 0x035AA430> vai andar por 4 segundos.
-Passageiro: 12 pergunta: é minha vez?
-Passageiro: 9 pergunta: é minha vez?
+Passageiro: 10 entra na fila!
 Passageiro: 10 pergunta: é minha vez?
-Passageiro: 8 pergunta: é minha vez?
+Carro/fila: 1 é a vez do passageiro 10
+Passageiro: 10 pergunta: poderei entrar no carro?
+Passageiro: 10 irá poder entrar no carro!
+Carro/fila: 1 espera o passageiro 10 entrar no carro
+Passageiro: 11 entra na fila!
 Passageiro: 11 pergunta: é minha vez?
-Carro: <__main__.Carro object at 0x035AA430> passeio terminado!
-Carro: <__main__.Carro object at 0x035AA430> desembarque do carro está liberado!
-Carro: <__main__.Carro object at 0x035AA430> passeio nº 4
-Passageiro: 1 saiu do carro!
+Passageiro: 10 pergunta: embarque do carro está liberado?
+Passageiro: 10 entrou no carro!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 11
+Passageiro: 10 pergunta: desembarque do carro está liberado?
+Passageiro: 11 pergunta: poderei entrar no carro?
+Passageiro: 11 irá poder entrar no carro!
+Passageiro: 11 pergunta: embarque do carro está liberado?
+Passageiro: 11 entrou no carro!
+Passageiro: 11 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 espera o passageiro 11 entrar no carro
+Carro: 1 espera terminar o passaio para liberar desembarque!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro: 1 passeio iniciado!
+Carro: 1 vai andar por 2 segundos.
+Passageiro: 5 entra na fila!
+Passageiro: 5 pergunta: é minha vez?
+Passageiro: 3 entra na fila!
+Passageiro: 3 pergunta: é minha vez?
+Passageiro: 12 entra na fila!
+Passageiro: 12 pergunta: é minha vez?
+Carro: 1 passeio terminado!
+Carro: 1 desembarque do carro está liberado!
+Carro: 1 passeio nº 4
+Carro: 1 espera estar vazio para liberar o embarque!
 Passageiro: 2 saiu do carro!
-Carro: <__main__.Carro object at 0x035AA430> espera estar vazio para liberar o embarque!
+Passageiro: 1 saiu do carro!
+Passageiro: 10 saiu do carro!
+Passageiro: 2 vai passear no parque por 5 segundos!
 Passageiro: 6 saiu do carro!
 Passageiro: 4 saiu do carro!
-Passageiro: 3 saiu do carro!
-Passageiro: 7 saiu do carro!
-Passageiro: 1 vai passear no parque por 2 segundos!
-Passageiro: 5 irá poder entrar no carro!
-Carro: <__main__.Carro object at 0x035AA430> embarque do carro está liberado!
-Carro: <__main__.Carro object at 0x035AA430> espera estar cheio para iniciar passeio!
-Passageiro: 12 irá poder entrar no carro!
-Passageiro: 2 vai passear no parque por 5 segundos!
+Passageiro: 11 saiu do carro!
+Passageiro: 1 vai passear no parque por 4 segundos!
+Passageiro: 10 vai passear no parque por 2 segundos!
+Carro: 1 embarque do carro está liberado!
 Passageiro: 6 vai passear no parque por 2 segundos!
-Passageiro: 3 vai passear no parque por 4 segundos!
-Passageiro: 9 irá poder entrar no carro!
-Passageiro: 8 irá poder entrar no carro!
-Passageiro: 10 irá poder entrar no carro!
-Passageiro: 7 vai passear no parque por 3 segundos!
-Passageiro: 11 irá poder entrar no carro!
+Passageiro: 4 vai passear no parque por 1 segundos!
+Passageiro: 11 vai passear no parque por 1 segundos!
+Carro: 1 espera estar cheio para iniciar passeio!
+Carro/fila: 1 é a vez do passageiro 5
+Carro/fila: 1 espera o passageiro 5 entrar no carro
+Passageiro: 5 pergunta: poderei entrar no carro?
+Passageiro: 5 irá poder entrar no carro!
 Passageiro: 5 pergunta: embarque do carro está liberado?
-Passageiro: 4 vai passear no parque por 4 segundos!
-Passageiro: 12 pergunta: embarque do carro está liberado?
-Passageiro: 9 pergunta: embarque do carro está liberado?
-Passageiro: 8 pergunta: embarque do carro está liberado?
-Passageiro: 10 pergunta: embarque do carro está liberado?
-Passageiro: 11 pergunta: embarque do carro está liberado?
 Passageiro: 5 entrou no carro!
-Passageiro: 12 entrou no carro!
-Passageiro: 9 entrou no carro!
-Passageiro: 8 entrou no carro!
-Passageiro: 10 entrou no carro!
-Passageiro: 11 entrou no carro!
 Passageiro: 5 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 3
+Carro/fila: 1 espera o passageiro 3 entrar no carro
+Passageiro: 3 pergunta: poderei entrar no carro?
+Passageiro: 3 irá poder entrar no carro!
+Passageiro: 3 pergunta: embarque do carro está liberado?
+Passageiro: 3 entrou no carro!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Passageiro: 3 pergunta: desembarque do carro está liberado?
+Carro/fila: 1 é a vez do passageiro 12
+Carro/fila: 1 espera o passageiro 12 entrar no carro
+Passageiro: 12 pergunta: poderei entrar no carro?
+Passageiro: 12 irá poder entrar no carro!
+Passageiro: 12 pergunta: embarque do carro está liberado?
+Passageiro: 12 entrou no carro!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
 Passageiro: 12 pergunta: desembarque do carro está liberado?
-Carro: <__main__.Carro object at 0x035AA430> espera terminar o passaio para liberar desembarque!
-Passageiro: 9 pergunta: desembarque do carro está liberado?
+Passageiro: 8 entra na fila!
+Passageiro: 8 pergunta: é minha vez?
+Carro/fila: 1 é a vez do passageiro 8
+Passageiro: 8 pergunta: poderei entrar no carro?
+Carro/fila: 1 espera o passageiro 8 entrar no carro
+Passageiro: 8 irá poder entrar no carro!
+Passageiro: 8 pergunta: embarque do carro está liberado?
+Passageiro: 8 entrou no carro!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
 Passageiro: 8 pergunta: desembarque do carro está liberado?
-Carro: <__main__.Carro object at 0x035AA430> passeio iniciado!
-Passageiro: 10 pergunta: desembarque do carro está liberado?
-Passageiro: 11 pergunta: desembarque do carro está liberado?
-Carro: <__main__.Carro object at 0x035AA430> vai andar por 3 segundos.
-Passageiro: 1 pergunta: é minha vez?
-Passageiro: 6 pergunta: é minha vez?
+Passageiro: 9 entra na fila!
+Carro/fila: 1 é a vez do passageiro 9
+Passageiro: 9 pergunta: é minha vez?
+Passageiro: 9 pergunta: poderei entrar no carro?
+Passageiro: 9 irá poder entrar no carro!
+Passageiro: 9 pergunta: embarque do carro está liberado?
+Passageiro: 9 entrou no carro!
+Passageiro: 9 pergunta: desembarque do carro está liberado?
+Passageiro: 7 entra na fila!
 Passageiro: 7 pergunta: é minha vez?
-Carro: <__main__.Carro object at 0x035AA430> passeio terminado!
-Carro: <__main__.Carro object at 0x035AA430> desembarque do carro está liberado!
+Carro/fila: 1 espera o passageiro 9 entrar no carro
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro/fila: 1 é a vez do passageiro 7
+Passageiro: 7 pergunta: poderei entrar no carro?
+Passageiro: 7 irá poder entrar no carro!
+Passageiro: 7 pergunta: embarque do carro está liberado?
+Passageiro: 7 entrou no carro!
+Carro/fila: 1 espera o passageiro 7 entrar no carro
+Passageiro: 7 pergunta: desembarque do carro está liberado?
+Carro: 1 espera terminar o passaio para liberar desembarque!
+Carro/fila: 1 espera estar em embarque para liberar a fila!
+Carro: 1 passeio iniciado!
+Carro: 1 vai andar por 5 segundos.
+Passageiro: 4 entra na fila!
+Passageiro: 4 pergunta: é minha vez?
+Passageiro: 11 entra na fila!
+Passageiro: 11 pergunta: é minha vez?
+Passageiro: 10 entra na fila!
+Passageiro: 10 pergunta: é minha vez?
+Passageiro: 6 entra na fila!
+Passageiro: 6 pergunta: é minha vez?
+Passageiro: 1 entra na fila!
+Passageiro: 1 pergunta: é minha vez?
+Passageiro: 2 entra na fila!
+Passageiro: 2 pergunta: é minha vez?
+Carro: 1 passeio terminado!
+Carro: 1 desembarque do carro está liberado!
