@@ -62,7 +62,8 @@ class Banheiro(object):
 
             if len(self.fila) != 0:
                 #alguém na fila pode entrar no banheiro.
-                self.fila[0].cv.notify()
+                self.notificar_proximo()
+                #self.fila[0].cv.notify()
                 #esperar ação de dentro do banheiro (ou entrada ou saída)
             
             #else: fila está vazia. Não se sabe se chegarão mais funcionários.
@@ -76,6 +77,51 @@ class Banheiro(object):
         self.fila_lk.acquire()
         self.fila_cv.notify()
         self.fila_lk.release()
+
+    def notificar_proximo(self):
+        if self.genero_atual == "":
+            self.genero_atual = self.fila[0].sexo
+
+        if self.fila[0].sexo == self.genero_atual:
+            #notifica a cabeça
+            self.fila[0].cv.notify()
+            #incrementa o contador
+            self.pessoas = min(self.pessoas + 1, self.limite_pessoas_por_genero)
+
+        elif self.fila[0].sexo != self.genero_atual:
+            #notificar o máximo possível de pessoas do genero oposto para
+            #entrar no banheiro
+            next_index = 0
+            for i in range(self.pessoas, self.limite_pessoas_por_genero):
+                next_index += 1
+                next_index = self.find_next(self.genero_atual, next_index)
+                if next_index == -1:
+                    break
+                self.fila[next_index].cv.notify()
+                self.fila_lk.release()
+                self.banheiro_cv.wait()
+                self.banheiro_lk.release()
+
+                self.fila_lk.acquire()
+                self.banheiro_lk.acquire()
+
+            #esperar o banheiro esvaziar
+            self.fila_lk.release()
+            while len(self.pessoas_usando) > 0:
+                self.banheiro_cv.wait()
+            self.banheiro_lk.release()
+
+            #mudar o gênero e notificar o primeiro da fila
+            self.genero = self.fila[0].sexo
+            self.fila_lk.acquire()
+            self.banheiro_lk.acquire()
+            self.fila[0].cv.notify()
+
+    def find_next(self, genero, start_index):
+        for i in range(start_index, len(self.fila)):
+            if self.fila[i].sexo == genero:
+                return i
+        return -1
 
 
 class Pessoa(object):
@@ -126,6 +172,7 @@ class Pessoa(object):
         self.banheiro.pessoas_usando.append(self)
         print("ENTRA BANHEIRO " + str(self) + "\tqtd_pessoas_no_banheiro: " +
             str(len(self.banheiro.pessoas_usando)))
+        print("\tENTRA:" + " ".join(str(x) for x in self.banheiro.pessoas_usando))
         self.banheiro.banheiro_cv.notify() #acorda banheiro
         self.banheiro.banheiro_lk.release()
 
@@ -140,6 +187,7 @@ class Pessoa(object):
         self.banheiro.pessoas_usando.remove(self)
         print("SAIR " + str(self) + "\t\tqtd_pessoas_no_banheiro: " + 
             str(len(self.banheiro.pessoas_usando)))
+        print("\tSAIR:" + " ".join(str(x) for x in self.banheiro.pessoas_usando))
         self.banheiro.banheiro_cv.notify() #acorda banheiro para que ele possa colocar
         #mais gente pra dentro
         self.banheiro.banheiro_lk.release()
