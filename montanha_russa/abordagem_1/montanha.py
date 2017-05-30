@@ -215,9 +215,6 @@ class Passageiro(object):
         time.sleep(tempo)
 
     def board(self):
-        # print_passageiros_log("Passageiro: " + str(self) + " pergunta: embarque do carro está liberado?")
-        # if not self.carro.boardable.is_set():
-        #     self.carro.boardable.wait()
         print_passageiros_log("Passageiro: " + str(self) + " entrou no carro!")
         self.carro.board()
         self.boarded.set()
