@@ -1,15 +1,37 @@
 # Abordagem 1
 
-## Sincronização
+## Descrição
 
-A sincronização desse problema foi baseada em variáveis de condição e semáforo.  
-Mais especificamente utilizando [Event](https://docs.python.org/3/library/threading.html#event-objects) e [BoundedSemaphore](https://docs.python.org/3/library/threading.html#semaphore-objects) objects da biblioteca [threading](https://docs.python.org/3/library/threading.html) do python3.
+Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utilizando [Event](https://docs.python.org/3/library/threading.html#event-objects), [BoundedSemaphore](https://docs.python.org/3/library/threading.html#semaphore-objects) e [Queue](https://docs.python.org/3/library/queue.html#queue-objects) objects das bibliotecas [threading](https://docs.python.org/3/library/threading.html) e  [queue](https://docs.python.org/3/library/queue.html) do python3.   
+  
+Os eventos são utilizados para controlar as fases de embarque e desembarque do veículo e as situações cheio e vazio. O controle do acesso aos assentos do carro é feito por um semáforo e pela fila.   
 
-O Event possiu uma flag `True` ou `False` e um método `wait()` que bloqueia o processo que chamar esse método caso a flag seja `false`.
+ 
 
-Enquanto o BondedSemaphore é um Lock com um contador interno com um valor máximo.
+Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque. 
 
-Com esses mecanismos podemos sincronizar as threads, verificando condições e bloqueando as threads até que elas sejam satisfeitas.
+
+
+O carro espera o evento vazio para liberar o embarque.  
+
+O carro espera o evento cheio para terminar o embarque e iniciar o passeio.
+
+Depois do passeio, é iniciado o desembarque.
+
+
+
+A fila do carro espera o embarque ser liberado para liberar o passagei o atual. 
+
+A fila espera o passageiro atual embarcar no carro para chamar o próximo.  
+
+
+Os passageiros entram na fila e esperam a sua vez. 
+
+Na sua vez, tentam  alocar um assento do semáforo. Com isso fazendo o controle de limite de pessoas no carro.
+
+Depois de alocar o assento eles entram de fato carro.
+
+Após embarcarem, eles esperam o desembarque do carro. Ao desembarcarem, liberam o assento adquirido e vão passear.
 
 ## Classes
 
@@ -20,14 +42,16 @@ Com esses mecanismos podemos sincronizar as threads, verificando condições e b
 
 #### Atributos
 
-
-
 | Nome do atributo | Descrição | Tipo |
 | :--- | :--- | :--- |
+| id\_carro | identificador do carro | inteiro |
 | num\_passeios | número de vezes que o carro irá rodar | inteiro |
 | limite\_passageiros | quantidade de pessoas que cabem no carro | inteiro |
 | passageiros | quantidade atual de pessoas no ca | inteiro |
+| passageiro\_atual | passageiro atual da fila | Passageiro |
+| fila | fila de passageiros do carro | Queue |
 | thread\_main | representa o controlador do carro | Thread |
+| thread\_fila | representa o controlador da fila do carro | Thread |
 
 #### Atributos sincronização
 
