@@ -88,40 +88,26 @@ class Banheiro(object):
             #incrementa o contador
             self.pessoas = min(self.pessoas + 1, self.limite_pessoas_por_genero)
 
-        elif self.fila[0].sexo != self.genero_atual:
-            #notificar o máximo possível de pessoas do genero oposto para
-            #entrar no banheiro
-            next_index = 0
-            for i in range(self.pessoas, self.limite_pessoas_por_genero):
-                next_index += 1
-                next_index = self.find_next(self.genero_atual, next_index)
-                if next_index == -1:
-                    break
+        elif (self.fila[0].sexo != self.genero_atual and 
+            self.pessoas < self.limite_pessoas_por_genero):
+            #notificar a próxima pessoa do sexo oposto na fila, se existir.
+            #só notifica se limite_pessoas_por_genero não foi atingido
+            next_index = self.find_next(self.genero_atual, 1)
+            if next_index > 0:
                 self.fila[next_index].cv.notify()
-                self.fila_lk.release()
-                self.banheiro_cv.wait()
-                self.banheiro_lk.release()
-
-                self.fila_lk.acquire()
-                self.banheiro_lk.acquire()
-
-            #esperar o banheiro esvaziar
-            self.fila_lk.release()
-            while len(self.pessoas_usando) > 0:
-                self.banheiro_cv.wait()
-            self.banheiro_lk.release()
-
-            #mudar o gênero e notificar o primeiro da fila
-            self.genero = self.fila[0].sexo
-            self.fila_lk.acquire()
-            self.banheiro_lk.acquire()
-            self.fila[0].cv.notify()
+                self.pessoas += 1
 
     def find_next(self, genero, start_index):
         for i in range(start_index, len(self.fila)):
             if self.fila[i].sexo == genero:
                 return i
         return -1
+
+    def trocar_genero(self):
+        if len(self.pessoas_usando) == 0:
+            self.genero_atual = ""
+            self.pessoas = 0
+        #print("\tGENERO: " + self.genero_atual)
 
 
 class Pessoa(object):
@@ -152,9 +138,10 @@ class Pessoa(object):
 
     def entrar_fila(self):
         self.banheiro.fila_lk.acquire()
-        print("ENTRA FILA " + str(self))
+        #print("ENTRA FILA " + str(self))
         #se adiciona na fila
         self.banheiro.fila.append(self)
+        print("ENTRA FILA: " + " ".join(str(s) for s in self.banheiro.fila))
         #notifica à fila que uma nova pessoa entrou nela
         self.banheiro.fila_cv.notify()
         self.banheiro.banheiro_lk.acquire() #evita idle management quando,
@@ -170,32 +157,33 @@ class Pessoa(object):
         self.banheiro.fila.remove(self)
         self.banheiro.fila_lk.release()
         self.banheiro.pessoas_usando.append(self)
-        print("ENTRA BANHEIRO " + str(self) + "\tqtd_pessoas_no_banheiro: " +
-            str(len(self.banheiro.pessoas_usando)))
-        print("\tENTRA:" + " ".join(str(x) for x in self.banheiro.pessoas_usando))
+        #print("ENTRA BANHEIRO " + str(self) + "\tqtd_pessoas_no_banheiro: " +
+        #    str(len(self.banheiro.pessoas_usando)))
+        print("ENTRA BANHEIRO: " + " ".join(str(x) for x in self.banheiro.pessoas_usando))
         self.banheiro.banheiro_cv.notify() #acorda banheiro
         self.banheiro.banheiro_lk.release()
 
     def usar_banheiro(self):
         tempo = randrange(4) + 1 #cada segundo simula 1 minuto de uma hora
-        print("USA BANHEIRO POR " + str(tempo) + " SEGUNDOS " + str(self))
+        #print("USA BANHEIRO POR " + str(tempo) + " SEGUNDOS " + str(self))
         time.sleep(tempo)
         
 
     def sair(self):
         self.banheiro.banheiro_lk.acquire()
         self.banheiro.pessoas_usando.remove(self)
-        print("SAIR " + str(self) + "\t\tqtd_pessoas_no_banheiro: " + 
-            str(len(self.banheiro.pessoas_usando)))
-        print("\tSAIR:" + " ".join(str(x) for x in self.banheiro.pessoas_usando))
+        #print("SAIR " + str(self) + "\t\tqtd_pessoas_no_banheiro: " + 
+        #    str(len(self.banheiro.pessoas_usando)))
+        print("SAIR BANHEIRO: " + " ".join(str(x) for x in self.banheiro.pessoas_usando))
+        self.banheiro.trocar_genero() #troca de genero quando necessario
         self.banheiro.banheiro_cv.notify() #acorda banheiro para que ele possa colocar
         #mais gente pra dentro
         self.banheiro.banheiro_lk.release()
 
     def __str__(self):
-        return str(self.id_pessoa) + " " + self.sexo
+        return str(self.id_pessoa) + "-" + self.sexo
 
-banheiro = Banheiro(limite_pessoas, 0)
+banheiro = Banheiro(limite_pessoas, 15)
 
 pessoas = []
 
