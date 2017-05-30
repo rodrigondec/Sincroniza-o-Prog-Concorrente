@@ -1,6 +1,9 @@
 import time
+import os
+import sys
 from random import randrange
 from threading import Thread, Event, BoundedSemaphore
+from queue import Queue
 from logging import getLogger, Formatter, FileHandler, StreamHandler, INFO
 
 
@@ -170,10 +173,37 @@ class Pessoa(object):
     def __str__(self):
         return str(self.id_pessoa)+" ("+self.sexo+")"
 
-banheiro = Banheiro(limite_pessoas)
+
+# VARIÁVEIS DE CONFIGURAÇÃO
+if len(sys.argv) != 4:
+    print("Número inválido de argumentos. Exatamente 4 argumentos requeridos, na seguinte ordem:" +
+          "\n1 - Número total de homens\n2 - Número total de mulheres\n3 - Número de vagas no banheiro")
+    os._exit(1)
+
+qt_homens = None
+qt_mulheres = None
+qt_vagas_banheiro = None
+
+try:
+    qt_homens = int(sys.argv[1])
+    qt_mulheres = int(sys.argv[2])
+    qt_vagas_banheiro = int(sys.argv[3])
+except ValueError:
+    print("Argumento(s) inválido(s)! Os 3 argumentos enviados necessitam ser do tipo inteiro")
+    os._exit(1)
+
+if qt_homens < qt_vagas_banheiro or qt_mulheres < qt_vagas_banheiro:
+    print("Erro! Número total de homens ou mulheres é menor que a capacidade do banheiro")
+    os._exit(1)
+
+banheiro = Banheiro(qt_vagas_banheiro)
 
 pessoas = []
-
-for x in range(5):
+for x in range(qt_homens):
     pessoas.append(Pessoa('M', banheiro))
+
+for x in range(qt_mulheres):
     pessoas.append(Pessoa('F', banheiro))
+
+time.sleep(100)
+os._exit(1)
