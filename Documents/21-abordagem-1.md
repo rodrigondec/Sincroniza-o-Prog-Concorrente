@@ -6,19 +6,28 @@ Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utiliza
 
 Os eventos são utilizados para controlar as fases de embarque e desembarque do veículo e as situações cheio e vazio. O controle do acesso aos assentos do carro é feito por um semáforo e pela fila.
 
+### Condições e fluxo
+
 Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
 
-* O carro espera o evento vazio para liberar o embarque.
-* O carro espera o evento cheio para terminar o embarque e iniciar o passeio.
-* Depois do passeio, é iniciado o desembarque.
+#### Carro
 
-* A fila do carro espera o embarque ser liberado para liberar o passagei o atual.
-* A fila espera o passageiro atual embarcar no carro para chamar o próximo.
+1. O carro espera o evento vazio para liberar o embarque
+2. O carro espera o evento cheio para terminar o embarque e iniciar o passeio
+3. Depois do passeio, é iniciado o desembarque
 
-* Os passageiros entram na fila e esperam a sua vez.
-* Na sua vez, tentam  alocar um assento do semáforo. Com isso fazendo o controle de limite de pessoas no carro.
-* Depois de alocar o assento eles entram de fato carro.
-* Após embarcarem, eles esperam o desembarque do carro. Ao desembarcarem, liberam o assento adquirido e vão passear.
+#### Fila do carro
+
+1. A fila do carro espera o embarque ser liberado para liberar o passagei o atual
+2. A fila espera o passageiro atual embarcar no carro para chamar o próximo
+
+#### Passageiros
+
+1. Os passageiros entram na fila e esperam a sua vez
+2. Na sua vez, tentam  alocar um assento do semáforo. Com isso fazendo o controle de limite de pessoas no carro
+3. Depois de alocar o assento eles entram de fato carro
+4. Após embarcarem, eles esperam o desembarque do carro
+5. Ao desembarcarem, liberam o assento adquirido e vão passear
 
 ## Classes
 
