@@ -15,5 +15,5 @@ Os pontos a serem abordados nesse problema são:
 3. Caso o banheiro seja de um gênero X, pessoas do gênero X que cheguem depois dele entram; enquanto pessoas do gênero Y esperam
    1. Caso o banheiro seja masculino, quantos outros homens podem entrar deixando que as mulherem fiquem esperando? \(starvation\)
 
-
+As sincronizações necessárias entre as partes do programa, são entre os gêneros. sequeência de chegada na fila e quantidade de vagas do banheiro. Tendo em mente isso implementaremos soluções utilizando metodologias/tecnologias com o intuito de garantir a corretude entre esses quesitos.
 
