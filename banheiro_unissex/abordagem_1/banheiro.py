@@ -27,6 +27,9 @@ banheiro_log = getLogger("banheiro_log")
 setup_logger("pessoas_log", "pessoas.log")
 pessoas_log = getLogger("pessoas_log")
 
+setup_logger("fila_log", "fila.log")
+fila_log = getLogger("fila_log")
+
 
 def print_info_log(msg):
     info_log.info(msg)
@@ -38,14 +41,16 @@ def print_banheiro_log(msg):
     print_info_log(msg)
 
 
+def print_fila_log(msg):
+    print(msg)
+    fila_log.info(msg)
+    print_info_log(msg)
+
+
 def print_pessoas_log(msg):
     print(msg)
     pessoas_log.info(msg)
     print_info_log(msg)
-
-
-# VARIÁVEIS DE CONFIGURAÇÃO
-limite_pessoas = 3
 
 
 class Banheiro(object):
