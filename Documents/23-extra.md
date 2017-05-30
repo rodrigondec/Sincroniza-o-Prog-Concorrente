@@ -2,10 +2,7 @@
 
 ## Descrição do problema
 
-Desenvolva uma segunda versão do programa para fazer com que a montanha-russa comporte  
- múltiplos carros. Essa segunda versão não é uma simples generalização da anterior em que tem-se agora  
- m carros de igual capacidade C \(ao invés de apenas um\), mas também satisfaz o seguinte conjunto de  
- restrições adicionais:
+Desenvolva uma segunda versão do programa para fazer com que a montanha-russa comporte múltiplos carros. Essa segunda versão não é uma simples generalização da anterior em que tem-se agora  m carros de igual capacidade C \(ao invés de apenas um\), mas também satisfaz o seguinte conjunto de restrições adicionais:
 
 * o embarque de passageiros só pode ser feito em um carro por vez;
 * os múltiplos carros podem estar simultaneamente na trilha;
