@@ -11,12 +11,12 @@
 Para executar as abordagens do problema Uma Montanha-Russa, o usuário deverá executar o seguinte comando dentro da pasta root do projeto:
 
 ```
-python montanha_russa/<abordagem>/montanha.py <c> <n> <p>
+python montanha_russa/<abordagem>/montanha.py <qt_passag> <qt_ass> <qt_passei>
 
 <abordagem> = 'abordagem_1' ou 'abordagem_2'
-<c> = Número total de passageiros
-<n> = Capacidade do carro
-<p> = Número máximo de passeios
+<qt_passag> = Número total de passageiros
+<qt_ass> = Capacidade do carro
+<qt_passei> = Número de passeios que o carro fará
 ```
 
 Após a execução dos programas, são salvos arquivos `<nome>.log` na pasta do programa contendo as informações fornecidas durante a execução.
@@ -26,13 +26,13 @@ Após a execução dos programas, são salvos arquivos `<nome>.log` na pasta do 
 Para executar as abordagens do problema extra do Uma Montanha-Russa, o usuário deverá executar o seguinte comando dentro da pasta root do projeto:
 
 ```
-python montanha_russa/extra/<abordagem>/montanha.py <c> <n> <p> <t>
+python montanha_russa/extra/<abordagem>/montanha.py <qt_passag> <qt_ass> <qt_passei> <qt_car>
 
 <abordagem> = 'abordagem_1' ou 'abordagem_2'
-<c> = Número total de passageiros
-<n> = Capacidade do carro
-<p> = Número máximo de passeios
-<t> = Número de carros
+<qt_passag> = Número total de passageiros
+<qt_ass> = Capacidade do carro
+<qt_passei> = Número de passeios que o carro fará
+<qt_car> = Número de carros
 ```
 
 Após a execução dos programas, são salvos arquivos `<nome>.log` na pasta do programa contendo as informações fornecidas durante a execução.

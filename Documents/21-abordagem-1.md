@@ -4,11 +4,7 @@
 
 Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utilizando [Event](https://docs.python.org/3/library/threading.html#event-objects), [BoundedSemaphore](https://docs.python.org/3/library/threading.html#semaphore-objects) e [Queue](https://docs.python.org/3/library/queue.html#queue-objects) objects das bibliotecas [threading](https://docs.python.org/3/library/threading.html) e  [queue](https://docs.python.org/3/library/queue.html) do python3.
 
-
-
 Os eventos são utilizados para controlar as fases de embarque e desembarque do veículo e as situações cheio e vazio. O controle do acesso aos assentos do carro é feito por um semáforo e pela fila.
-
-
 
 Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
 
@@ -16,12 +12,8 @@ Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
 * O carro espera o evento cheio para terminar o embarque e iniciar o passeio.
 * Depois do passeio, é iniciado o desembarque.
 
-
-
 * A fila do carro espera o embarque ser liberado para liberar o passagei o atual.
 * A fila espera o passageiro atual embarcar no carro para chamar o próximo.
-
-
 
 * Os passageiros entram na fila e esperam a sua vez.
 * Na sua vez, tentam  alocar um assento do semáforo. Com isso fazendo o controle de limite de pessoas no carro.
@@ -52,11 +44,11 @@ Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
 
 | Nome do atributo condicional | Descrição | Tipo |
 | :--- | :--- | :--- |
-| boardable | representa o estágio de embarque do carro | Event |
-| unboardable | representa o estágio de desembarque do carro | Event |
+| boardable | representa se o embarque do carro está liberado | Event |
+| unboardable | representa se o desembarque do carro está liberado | Event |
 | assentos | representa os assentos disponíveis no carro | BoundedSemaphore |
-| cheio | representa o status lotado do carro | Event |
-| vazio | representa o status vazio do carro | Event |
+| cheio | representa se o carro está cheio | Event |
+| vazio | representa se o carro está vazio | Event |
 
 #### Métodos
 
@@ -71,14 +63,6 @@ Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
 | board | adiciona um passageiro no carro |
 | unboard | remove um passageiro do carro |
 
-#### Condições
-
-* Para o embarque do carro ser liberado é necessário que o carro esteja vazio
-* Para que o carro esteja na situação `boardable` é necessário que ele não esteja cheio
-* Para que o passeio do carro seja iniciado é necessário que o carro esteja cheio
-* Para que o desembarque do carro seja liberado é necessário que o passeio tenha terminado
-* Para que o carro continue na situação `unboardable` é necessário que ele não esteja vazio
-
 ### Passageiro
 
 #### Atributos
@@ -88,6 +72,13 @@ Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
 | id\_passageiro | identificador do passageiro | inteiro |
 | thread | thread que representa a vida do passageiro no parque de diversões | Thread |
 
+#### Atributos sincronização
+
+| Nome do atributo condicional | Descrição | Tipo |
+| :--- | :--- | :--- |
+| vez | representa se é a vez do passageiro na fila | Event |
+| boarded | representa se o passageiro está dentro do carro | Event |
+
 #### Métodos
 
 | Nome do método | Descrição |
@@ -96,11 +87,6 @@ Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
 | passear | passageiro passeia pelo parque de diversões por um tempo |
 | board | passageiro entra no carro da montanha-russa |
 | unboard | passageiro sai do carro da montanha-russa |
-
-#### Condições
-
-* Para um passageiro embarcar num carro, o carro precisa estar na situação `boardable` e alocar o recurso assento do carro
-* Para um passageiro desembarcar de um carro, o caro precisa estar na situação `unboardable`
 
 
 
