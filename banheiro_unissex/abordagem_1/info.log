@@ -1,11 +1,624 @@
-Banheiro: é unissex agora!
-Pessoa: 1 (M) vai trabalhar por 18 segundos.
-Pessoa: 2 (F) vai trabalhar por 14 segundos.
+Banheiro: se tornou masculino agora!
+fila: 1 banheiro é masculino!
+Pessoa: 1 (M) vai trabalhar por 10 segundos.
+Pessoa: 2 (M) vai trabalhar por 14 segundos.
+fila: 1 tem 0 homens na fila masculina!
 Pessoa: 3 (M) vai trabalhar por 15 segundos.
-Pessoa: 4 (F) vai trabalhar por 17 segundos.
-Pessoa: 5 (M) vai trabalhar por 10 segundos.
-Pessoa: 6 (F) vai trabalhar por 15 segundos.
-Pessoa: 7 (M) vai trabalhar por 15 segundos.
+Pessoa: 4 (M) vai trabalhar por 14 segundos.
+fila: 1 tem 0 mulheres na fila feminina!
+Pessoa: 5 (M) vai trabalhar por 16 segundos.
+Pessoa: 6 (F) vai trabalhar por 10 segundos.
+Pessoa: 7 (F) vai trabalhar por 15 segundos.
+Pessoa: 8 (F) vai trabalhar por 15 segundos.
+Pessoa: 9 (F) vai trabalhar por 18 segundos.
+Pessoa: 10 (F) vai trabalhar por 17 segundos.
+Pessoa: 1 (M) entra na fila!
+Pessoa: 1 (M) pergunta: é minha vez?
+fila: 1 é a vez da pessoa 1 (M)
+fila: 1 espera a pessoa 1 (M) entrar no banheiro!
+Pessoa: 1 (M) vai tentrar entrar no banheiro
+Pessoa: 1 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+fila: 1 banheiro é masculino!
+Pessoa: 1 (M) vai ficar no banheiro por 4 segundos.
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Pessoa: 6 (F) entra na fila!
+Pessoa: 6 (F) pergunta: é minha vez?
+Pessoa: 2 (M) entra na fila!
+fila: 1 é a vez da pessoa 2 (M)
+Pessoa: 2 (M) pergunta: é minha vez?
+fila: 1 espera a pessoa 2 (M) entrar no banheiro!
+Pessoa: 2 (M) vai tentrar entrar no banheiro
+Pessoa: 4 (M) entra na fila!
+Pessoa: 2 (M) entrou no banheiro!
+Pessoa: 4 (M) pergunta: é minha vez?
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 1 (M) saiu do banheiro
+fila: 1 banheiro é masculino!
+Pessoa: 2 (M) vai ficar no banheiro por 3 segundos.
+Banheiro: tem 1 pessoa(s) no banheiro
+fila: 1 tem 1 homens na fila masculina!
+Pessoa: 1 (M) vai trabalhar por 11 segundos.
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 4 (M)
+fila: 1 espera a pessoa 4 (M) entrar no banheiro!
+Pessoa: 4 (M) vai tentrar entrar no banheiro
+Pessoa: 4 (M) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+fila: 1 banheiro é masculino!
+Pessoa: 4 (M) vai ficar no banheiro por 2 segundos.
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 3 (M) entra na fila!
+Pessoa: 3 (M) pergunta: é minha vez?
+Pessoa: 8 (F) entra na fila!
+Pessoa: 7 (F) entra na fila!
+Pessoa: 8 (F) pergunta: é minha vez?
+Pessoa: 7 (F) pergunta: é minha vez?
+Pessoa: 5 (M) entra na fila!
+Pessoa: 5 (M) pergunta: é minha vez?
+Pessoa: 4 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 4 (M) vai trabalhar por 12 segundos.
+Pessoa: 2 (M) saiu do banheiro
+Pessoa: 10 (F) entra na fila!
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 10 (F) pergunta: é minha vez?
+Banheiro: se tornou feminino agora!
+Pessoa: 2 (M) vai trabalhar por 17 segundos.
+fila: 1 é a vez da pessoa 6 (F)
+fila: 1 espera a pessoa 6 (F) entrar no banheiro!
+Pessoa: 6 (F) vai tentrar entrar no banheiro
+Pessoa: 6 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+fila: 1 o banheiro é feminino!
+Pessoa: 6 (F) vai ficar no banheiro por 2 segundos.
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 8 (F)
+fila: 1 espera a pessoa 8 (F) entrar no banheiro!
+Pessoa: 8 (F) vai tentrar entrar no banheiro
+Pessoa: 8 (F) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+fila: 1 o banheiro é feminino!
+Pessoa: 8 (F) vai ficar no banheiro por 1 segundos.
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 2 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 7 (F)
+fila: 1 espera a pessoa 7 (F) entrar no banheiro!
+Pessoa: 7 (F) vai tentrar entrar no banheiro
+Pessoa: 7 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 7 (F) vai ficar no banheiro por 4 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 espera estar disponível para liberar a fila!
+Pessoa: 9 (F) entra na fila!
+Pessoa: 9 (F) pergunta: é minha vez?
+Pessoa: 8 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 8 (F) vai trabalhar por 12 segundos.
+fila: 1 é a vez da pessoa 10 (F)
+fila: 1 espera a pessoa 10 (F) entrar no banheiro!
+Pessoa: 10 (F) vai tentrar entrar no banheiro
+Pessoa: 10 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 10 (F) vai ficar no banheiro por 3 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 espera estar disponível para liberar a fila!
+Pessoa: 6 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+fila: 1 é a vez da pessoa 9 (F)
+Pessoa: 6 (F) vai trabalhar por 12 segundos.
+Pessoa: 9 (F) vai tentrar entrar no banheiro
+fila: 1 espera a pessoa 9 (F) entrar no banheiro!
+Pessoa: 9 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 9 (F) vai ficar no banheiro por 5 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 7 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 7 (F) vai trabalhar por 15 segundos.
+Pessoa: 10 (F) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 10 (F) vai trabalhar por 14 segundos.
+Pessoa: 9 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 9 (F) vai trabalhar por 11 segundos.
+Banheiro: se tornou masculino agora!
+fila: 1 é a vez da pessoa 3 (M)
+fila: 1 espera a pessoa 3 (M) entrar no banheiro!
+Pessoa: 3 (M) vai tentrar entrar no banheiro
+Pessoa: 3 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+fila: 1 banheiro é masculino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 3 (M) vai ficar no banheiro por 3 segundos.
+Pessoa: 1 (M) entra na fila!
+Pessoa: 1 (M) pergunta: é minha vez?
+Pessoa: 3 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 3 (M) vai trabalhar por 15 segundos.
+Banheiro: se tornou feminino agora!
+Pessoa: 4 (M) entra na fila!
+Pessoa: 4 (M) pergunta: é minha vez?
+Pessoa: 8 (F) entra na fila!
+Pessoa: 8 (F) pergunta: é minha vez?
+fila: 1 é a vez da pessoa 8 (F)
+fila: 1 espera a pessoa 8 (F) entrar no banheiro!
+Pessoa: 8 (F) vai tentrar entrar no banheiro
+Pessoa: 8 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 8 (F) vai ficar no banheiro por 3 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 3 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 6 (F) entra na fila!
+Pessoa: 6 (F) pergunta: é minha vez?
+Pessoa: 8 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
 Pessoa: 8 (F) vai trabalhar por 14 segundos.
-Pessoa: 9 (M) vai trabalhar por 19 segundos.
-Pessoa: 10 (F) vai trabalhar por 13 segundos.
+Banheiro: se tornou masculino agora!
+fila: 1 é a vez da pessoa 5 (M)
+Pessoa: 5 (M) vai tentrar entrar no banheiro
+fila: 1 espera a pessoa 5 (M) entrar no banheiro!
+Pessoa: 5 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 5 (M) vai ficar no banheiro por 5 segundos.
+fila: 1 banheiro é masculino!
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 1 (M)
+fila: 1 espera a pessoa 1 (M) entrar no banheiro!
+Pessoa: 1 (M) vai tentrar entrar no banheiro
+Pessoa: 1 (M) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 1 (M) vai ficar no banheiro por 4 segundos.
+fila: 1 banheiro é masculino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 4 (M)
+fila: 1 espera a pessoa 4 (M) entrar no banheiro!
+Pessoa: 4 (M) vai tentrar entrar no banheiro
+Pessoa: 4 (M) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 4 (M) vai ficar no banheiro por 4 segundos.
+fila: 1 banheiro é masculino!
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 2 (M) entra na fila!
+Pessoa: 2 (M) pergunta: é minha vez?
+Pessoa: 9 (F) entra na fila!
+Pessoa: 9 (F) pergunta: é minha vez?
+Pessoa: 10 (F) entra na fila!
+Pessoa: 10 (F) pergunta: é minha vez?
+Pessoa: 7 (F) entra na fila!
+Pessoa: 7 (F) pergunta: é minha vez?
+Pessoa: 1 (M) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 1 (M) vai trabalhar por 17 segundos.
+Pessoa: 4 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 4 (M) vai trabalhar por 11 segundos.
+Pessoa: 5 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 5 (M) vai trabalhar por 13 segundos.
+Banheiro: se tornou feminino agora!
+fila: 1 é a vez da pessoa 6 (F)
+fila: 1 espera a pessoa 6 (F) entrar no banheiro!
+Pessoa: 6 (F) vai tentrar entrar no banheiro
+Pessoa: 6 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 6 (F) vai ficar no banheiro por 5 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 9 (F)
+fila: 1 espera a pessoa 9 (F) entrar no banheiro!
+Pessoa: 9 (F) vai tentrar entrar no banheiro
+Pessoa: 9 (F) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 9 (F) vai ficar no banheiro por 5 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 2 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 10 (F)
+fila: 1 espera a pessoa 10 (F) entrar no banheiro!
+Pessoa: 10 (F) vai tentrar entrar no banheiro
+Pessoa: 10 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 10 (F) vai ficar no banheiro por 2 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 espera estar disponível para liberar a fila!
+Pessoa: 10 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+fila: 1 é a vez da pessoa 7 (F)
+fila: 1 espera a pessoa 7 (F) entrar no banheiro!
+Pessoa: 7 (F) vai tentrar entrar no banheiro
+Pessoa: 10 (F) vai trabalhar por 10 segundos.
+Pessoa: 7 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+fila: 1 o banheiro é feminino!
+Pessoa: 7 (F) vai ficar no banheiro por 3 segundos.
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 3 (M) entra na fila!
+Pessoa: 3 (M) pergunta: é minha vez?
+Pessoa: 6 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 6 (F) vai trabalhar por 11 segundos.
+Pessoa: 9 (F) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 9 (F) vai trabalhar por 13 segundos.
+Pessoa: 7 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 7 (F) vai trabalhar por 11 segundos.
+Banheiro: se tornou masculino agora!
+fila: 1 é a vez da pessoa 2 (M)
+fila: 1 espera a pessoa 2 (M) entrar no banheiro!
+Pessoa: 2 (M) vai tentrar entrar no banheiro
+Pessoa: 2 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 2 (M) vai ficar no banheiro por 4 segundos.
+fila: 1 banheiro é masculino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 8 (F) entra na fila!
+Pessoa: 8 (F) pergunta: é minha vez?
+Pessoa: 2 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 2 (M) vai trabalhar por 19 segundos.
+Banheiro: se tornou feminino agora!
+fila: 1 é a vez da pessoa 8 (F)
+fila: 1 espera a pessoa 8 (F) entrar no banheiro!
+Pessoa: 8 (F) vai tentrar entrar no banheiro
+Pessoa: 8 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 8 (F) vai ficar no banheiro por 3 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 4 (M) entra na fila!
+Pessoa: 4 (M) pergunta: é minha vez?
+Pessoa: 10 (F) entra na fila!
+Pessoa: 10 (F) pergunta: é minha vez?
+Pessoa: 8 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Banheiro: se tornou masculino agora!
+Pessoa: 8 (F) vai trabalhar por 14 segundos.
+fila: 1 é a vez da pessoa 3 (M)
+fila: 1 espera a pessoa 3 (M) entrar no banheiro!
+Pessoa: 3 (M) vai tentrar entrar no banheiro
+Pessoa: 3 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+fila: 1 banheiro é masculino!
+Pessoa: 3 (M) vai ficar no banheiro por 3 segundos.
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 4 (M)
+fila: 1 espera a pessoa 4 (M) entrar no banheiro!
+Pessoa: 4 (M) vai tentrar entrar no banheiro
+Pessoa: 4 (M) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 4 (M) vai ficar no banheiro por 1 segundos.
+fila: 1 banheiro é masculino!
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 5 (M) entra na fila!
+Pessoa: 5 (M) pergunta: é minha vez?
+Pessoa: 4 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 4 (M) vai trabalhar por 18 segundos.
+Pessoa: 3 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 3 (M) vai trabalhar por 10 segundos.
+Banheiro: se tornou feminino agora!
+fila: 1 é a vez da pessoa 10 (F)
+fila: 1 espera a pessoa 10 (F) entrar no banheiro!
+Pessoa: 10 (F) vai tentrar entrar no banheiro
+Pessoa: 10 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 10 (F) vai ficar no banheiro por 3 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 1 (M) entra na fila!
+Pessoa: 6 (F) entra na fila!
+Pessoa: 1 (M) pergunta: é minha vez?
+Pessoa: 6 (F) pergunta: é minha vez?
+Pessoa: 7 (F) entra na fila!
+Pessoa: 7 (F) pergunta: é minha vez?
+Pessoa: 9 (F) entra na fila!
+Pessoa: 9 (F) pergunta: é minha vez?
+Pessoa: 10 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 10 (F) vai trabalhar por 15 segundos.
+Banheiro: se tornou masculino agora!
+fila: 1 é a vez da pessoa 5 (M)
+fila: 1 espera a pessoa 5 (M) entrar no banheiro!
+Pessoa: 5 (M) vai tentrar entrar no banheiro
+Pessoa: 5 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+fila: 1 banheiro é masculino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
+Pessoa: 5 (M) vai ficar no banheiro por 3 segundos.
+fila: 1 é a vez da pessoa 1 (M)
+fila: 1 espera a pessoa 1 (M) entrar no banheiro!
+Pessoa: 1 (M) vai tentrar entrar no banheiro
+Pessoa: 1 (M) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 1 (M) vai ficar no banheiro por 5 segundos.
+fila: 1 banheiro é masculino!
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 5 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 5 (M) vai trabalhar por 19 segundos.
+Pessoa: 1 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Banheiro: se tornou feminino agora!
+Pessoa: 1 (M) vai trabalhar por 17 segundos.
+fila: 1 é a vez da pessoa 6 (F)
+fila: 1 espera a pessoa 6 (F) entrar no banheiro!
+Pessoa: 6 (F) vai tentrar entrar no banheiro
+Pessoa: 6 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 6 (F) vai ficar no banheiro por 5 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 2 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 3 (M) entra na fila!
+Pessoa: 3 (M) pergunta: é minha vez?
+Pessoa: 8 (F) entra na fila!
+Pessoa: 8 (F) pergunta: é minha vez?
+Pessoa: 2 (M) entra na fila!
+Pessoa: 2 (M) pergunta: é minha vez?
+Pessoa: 6 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 6 (F) vai trabalhar por 10 segundos.
+Banheiro: se tornou masculino agora!
+fila: 1 é a vez da pessoa 3 (M)
+Pessoa: 3 (M) vai tentrar entrar no banheiro
+fila: 1 espera a pessoa 3 (M) entrar no banheiro!
+Pessoa: 3 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 3 (M) vai ficar no banheiro por 1 segundos.
+fila: 1 banheiro é masculino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 2 (M)
+fila: 1 espera a pessoa 2 (M) entrar no banheiro!
+Pessoa: 2 (M) vai tentrar entrar no banheiro
+Pessoa: 2 (M) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+fila: 1 banheiro é masculino!
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 2 (M) vai ficar no banheiro por 5 segundos.
+Pessoa: 3 (M) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 3 (M) vai trabalhar por 12 segundos.
+Pessoa: 4 (M) entra na fila!
+Pessoa: 4 (M) pergunta: é minha vez?
+Pessoa: 10 (F) entra na fila!
+Pessoa: 10 (F) pergunta: é minha vez?
+Pessoa: 2 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 2 (M) vai trabalhar por 11 segundos.
+Banheiro: se tornou feminino agora!
+fila: 1 é a vez da pessoa 7 (F)
+fila: 1 espera a pessoa 7 (F) entrar no banheiro!
+Pessoa: 7 (F) vai tentrar entrar no banheiro
+Pessoa: 7 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 7 (F) vai ficar no banheiro por 2 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 9 (F)
+fila: 1 espera a pessoa 9 (F) entrar no banheiro!
+Pessoa: 9 (F) vai tentrar entrar no banheiro
+Pessoa: 9 (F) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 9 (F) vai ficar no banheiro por 2 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 2 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 8 (F)
+fila: 1 espera a pessoa 8 (F) entrar no banheiro!
+Pessoa: 8 (F) vai tentrar entrar no banheiro
+Pessoa: 8 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 8 (F) vai ficar no banheiro por 5 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 espera estar disponível para liberar a fila!
+Pessoa: 7 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+fila: 1 é a vez da pessoa 10 (F)
+Pessoa: 7 (F) vai trabalhar por 13 segundos.
+fila: 1 espera a pessoa 10 (F) entrar no banheiro!
+Pessoa: 10 (F) vai tentrar entrar no banheiro
+Pessoa: 10 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 10 (F) vai ficar no banheiro por 3 segundos.
+fila: 1 o banheiro é feminino!
+Pessoa: 9 (F) saiu do banheiro
+fila: 1 tem 1 homens na fila masculina!
+Banheiro: tem 2 pessoa(s) no banheiro
+fila: 1 tem 0 mulheres na fila feminina!
+Pessoa: 9 (F) vai trabalhar por 17 segundos.
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 6 (F) entra na fila!
+Pessoa: 6 (F) pergunta: é minha vez?
+Pessoa: 8 (F) saiu do banheiro
+Pessoa: 10 (F) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 8 (F) vai trabalhar por 15 segundos.
+Banheiro: se tornou masculino agora!
+Pessoa: 10 (F) vai trabalhar por 14 segundos.
+fila: 1 é a vez da pessoa 4 (M)
+Pessoa: 4 (M) vai tentrar entrar no banheiro
+fila: 1 espera a pessoa 4 (M) entrar no banheiro!
+Pessoa: 4 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 4 (M) vai ficar no banheiro por 5 segundos.
+fila: 1 banheiro é masculino!
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 5 (M) entra na fila!
+Pessoa: 5 (M) pergunta: é minha vez?
+Pessoa: 1 (M) entra na fila!
+Pessoa: 1 (M) pergunta: é minha vez?
+Pessoa: 3 (M) entra na fila!
+Pessoa: 3 (M) pergunta: é minha vez?
+Pessoa: 4 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 4 (M) vai trabalhar por 10 segundos.
+Banheiro: se tornou feminino agora!
+fila: 1 é a vez da pessoa 6 (F)
+fila: 1 espera a pessoa 6 (F) entrar no banheiro!
+Pessoa: 6 (F) vai tentrar entrar no banheiro
+Pessoa: 6 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+fila: 1 o banheiro é feminino!
+Pessoa: 6 (F) vai ficar no banheiro por 2 segundos.
+fila: 1 tem 3 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 2 (M) entra na fila!
+Pessoa: 2 (M) pergunta: é minha vez?
+Pessoa: 6 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Banheiro: se tornou masculino agora!
+Pessoa: 6 (F) vai trabalhar por 19 segundos.
+fila: 1 é a vez da pessoa 5 (M)
+fila: 1 espera a pessoa 5 (M) entrar no banheiro!
+Pessoa: 5 (M) vai tentrar entrar no banheiro
+Pessoa: 5 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 5 (M) vai ficar no banheiro por 1 segundos.
+fila: 1 banheiro é masculino!
+fila: 1 tem 3 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 5 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 5 (M) vai trabalhar por 16 segundos.
+Banheiro: se tornou feminino agora!
+Pessoa: 7 (F) entra na fila!
+fila: 1 é a vez da pessoa 7 (F)
+fila: 1 espera a pessoa 7 (F) entrar no banheiro!
+Pessoa: 7 (F) pergunta: é minha vez?
+Pessoa: 7 (F) vai tentrar entrar no banheiro
+Pessoa: 7 (F) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+fila: 1 o banheiro é feminino!
+Pessoa: 7 (F) vai ficar no banheiro por 1 segundos.
+fila: 1 tem 3 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 7 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 7 (F) vai trabalhar por 16 segundos.
+Banheiro: se tornou masculino agora!
+fila: 1 é a vez da pessoa 1 (M)
+fila: 1 espera a pessoa 1 (M) entrar no banheiro!
+Pessoa: 1 (M) vai tentrar entrar no banheiro
+Pessoa: 1 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 1 (M) vai ficar no banheiro por 4 segundos.
+fila: 1 banheiro é masculino!
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 9 (F) entra na fila!
+Pessoa: 9 (F) pergunta: é minha vez?
+Pessoa: 10 (F) entra na fila!
+Pessoa: 10 (F) pergunta: é minha vez?
+Pessoa: 8 (F) entra na fila!
+Pessoa: 8 (F) pergunta: é minha vez?
+Pessoa: 1 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 1 (M) vai trabalhar por 13 segundos.
+Banheiro: se tornou feminino agora!
+fila: 1 é a vez da pessoa 9 (F)
+fila: 1 espera a pessoa 9 (F) entrar no banheiro!
+Pessoa: 9 (F) vai tentrar entrar no banheiro
+Pessoa: 4 (M) entra na fila!
+Pessoa: 9 (F) entrou no banheiro!
+Pessoa: 4 (M) pergunta: é minha vez?
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 9 (F) vai ficar no banheiro por 4 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 3 homens na fila masculina!
+fila: 1 tem 2 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 10 (F)
+fila: 1 espera a pessoa 10 (F) entrar no banheiro!
+Pessoa: 10 (F) vai tentrar entrar no banheiro
+Pessoa: 10 (F) entrou no banheiro!
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 10 (F) vai ficar no banheiro por 4 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 3 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 8 (F)
+fila: 1 espera a pessoa 8 (F) entrar no banheiro!
+Pessoa: 8 (F) vai tentrar entrar no banheiro
+Pessoa: 8 (F) entrou no banheiro!
+Banheiro: tem 3 pessoa(s) no banheiro
+Pessoa: 8 (F) vai ficar no banheiro por 3 segundos.
+fila: 1 o banheiro é feminino!
+fila: 1 tem 3 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 8 (F) saiu do banheiro
+Banheiro: tem 2 pessoa(s) no banheiro
+Pessoa: 8 (F) vai trabalhar por 19 segundos.
+Pessoa: 9 (F) saiu do banheiro
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 9 (F) vai trabalhar por 19 segundos.
+Pessoa: 10 (F) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 10 (F) vai trabalhar por 19 segundos.
+Banheiro: se tornou masculino agora!
+fila: 1 é a vez da pessoa 3 (M)
+fila: 1 espera a pessoa 3 (M) entrar no banheiro!
+Pessoa: 3 (M) vai tentrar entrar no banheiro
+Pessoa: 3 (M) entrou no banheiro!
+Banheiro: tem 1 pessoa(s) no banheiro
+Pessoa: 3 (M) vai ficar no banheiro por 3 segundos.
+fila: 1 banheiro é masculino!
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+Banheiro: 1 vai trocar o gênero. Espera estar vazio!
+Pessoa: 3 (M) saiu do banheiro
+Banheiro: tem 0 pessoa(s) no banheiro
+Pessoa: 3 (M) vai trabalhar por 10 segundos.
+Banheiro: se tornou feminino agora!

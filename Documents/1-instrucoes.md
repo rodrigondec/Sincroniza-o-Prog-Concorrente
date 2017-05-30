@@ -11,12 +11,28 @@
 Para executar as abordagens do problema Uma Montanha-Russa, o usuário deverá executar o seguinte comando dentro da pasta root do projeto:
 
 ```
-python montanha-russa/<abordagem>/montanha.py <c> <n> <p>
+python montanha_russa/<abordagem>/montanha.py <c> <n> <p>
 
 <abordagem> = 'abordagem_1' ou 'abordagem_2'
 <c> = Número total de passageiros
 <n> = Capacidade do carro
 <p> = Número máximo de passeios
+```
+
+Após a execução dos programas, são salvos arquivos `<nome>.log` na pasta do programa contendo as informações fornecidas durante a execução.
+
+#### Uma Montanha-Russa Extra
+
+Para executar as abordagens do problema extra do Uma Montanha-Russa, o usuário deverá executar o seguinte comando dentro da pasta root do projeto:
+
+```
+python montanha_russa/extra/<abordagem>/montanha.py <c> <n> <p> <t>
+
+<abordagem> = 'abordagem_1' ou 'abordagem_2'
+<c> = Número total de passageiros
+<n> = Capacidade do carro
+<p> = Número máximo de passeios
+<t> = Número de carros
 ```
 
 Após a execução dos programas, são salvos arquivos `<nome>.log` na pasta do programa contendo as informações fornecidas durante a execução.

@@ -126,7 +126,7 @@ class Carro(object):
             self.passageiro_atual = self.fila.get()
             print_carro_log("Carro/fila: " + str(self) + " é a vez do passageiro "+str(self.passageiro_atual))
             self.passageiro_atual.vez.set()
-            print_carro_log("Carro/fila: " + str(self) + " espera o passageiro "+str(self.passageiro_atual)+" entrar no carro")
+            print_carro_log("Carro/fila: " + str(self) + " espera o passageiro "+str(self.passageiro_atual)+" entrar no carro!")
             if not self.passageiro_atual.boarded.is_set():
                 self.passageiro_atual.boarded.wait()
             self.passageiro_atual.vez.clear()
@@ -196,9 +196,8 @@ class Passageiro(object):
             print_passageiros_log("Passageiro: " + str(self) + " pergunta: é minha vez?")
             if not self.vez.is_set():
                 self.vez.wait()
-            print_passageiros_log("Passageiro: " + str(self) + " pergunta: poderei entrar no carro?")
+            print_passageiros_log("Passageiro: " + str(self) + " vai tentar entrar no carro!")
             with self.carro.assentos:
-                print_passageiros_log("Passageiro: " + str(self) + " irá poder entrar no carro!")
                 self.board()
                 self.unboard()
             self.passear()
@@ -209,9 +208,9 @@ class Passageiro(object):
         time.sleep(tempo)
 
     def board(self):
-        print_passageiros_log("Passageiro: " + str(self) + " pergunta: embarque do carro está liberado?")
-        if not self.carro.boardable.is_set():
-            self.carro.boardable.wait()
+        # print_passageiros_log("Passageiro: " + str(self) + " pergunta: embarque do carro está liberado?")
+        # if not self.carro.boardable.is_set():
+        #     self.carro.boardable.wait()
         print_passageiros_log("Passageiro: " + str(self) + " entrou no carro!")
         self.carro.board()
         self.boarded.set()
