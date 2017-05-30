@@ -65,13 +65,13 @@ class Carro(object):
         if passageiros is None:
             passageiros = []
         self.passageiros = passageiros
+        self.fila = []
 
         self.barr = Barrier(limite_pessoas + 1) #usado para esperar por saida (passageiros + carro)
         self.lk = Lock() #usado para garantir corretude (travar a lista de passageiros)
 
         #e para cvs (controlar board e unboard)
         self.boardable = False
-        self.cv_list = Condition(lock=self.lk) #usado para esperar carro ficar vazio
         self.cv_car = Condition(lock=self.lk) #usado para controle do algoritmo main do carro
 
         self.thread_main = Thread(target=self.main)
@@ -101,9 +101,13 @@ class Carro(object):
     def load(self):
         print_carro_log("Carro: " + str(self) + " embarque do carro está liberado!")
         self.lk.acquire() #usado para corretude
-        self.cv_list.notify_all() #wakes up all sleeping passengers threads
-        self.boardable = True #this will allow the passengers to board
-        self.cv_car.wait() #espera carro ficar cheio
+        while len(self.passageiros) < self.limite_pessoas: #espera carro ficar cheio
+            #notifica a primeira pessoa na fila, se houver
+            if len(self.fila) > 0:
+                print_carro_log("\tLqtd_passageiros: " + str(len(self.passageiros)))
+                self.fila[0].cv_fila.notify()
+            #volta à dormir. É acordado quando alguém entra no carro ou na fila
+            self.cv_car.wait() 
         #self.boardable = False #This is done at unboard to avoid adding more passengers than the max
         self.lk.release() #usado para corretude        
 
@@ -112,18 +116,17 @@ class Carro(object):
         #it is done before barr.wait so the car thread can sleep before any passenger leaves
         self.barr.wait() #releases passengers
         print_carro_log("Carro: " + str(self) + " desembarque do carro está liberado!")
-        self.cv_car.wait() #wait until it is empty
+        while len(self.passageiros) > 0: #wait until it is empty. Pode ser acordado quando alguém entrar na fila
+            print_carro_log("\tUqtd_passageiros: " + str(len(self.passageiros)))
+            self.cv_car.wait()
         self.lk.release() #(once it is notified, it will "reacquire" lock)
 
     def board(self, passageiro):
-        self.lk.acquire()
-        while not self.boardable:
-            self.cv_list.wait() #this releases lock
-            #lock is automatically reacquired
+        #should have acquired lock previously
+        self.fila.pop(0)
+        #só chegará nesse ponto quanto for o primeiro da fila e for notificado
         self.passageiros.append(passageiro)
-        if len(self.passageiros) == self.limite_pessoas:
-            self.cv_car.notify() #Car is full and will start running
-            self.boardable = False #Done here to ensure corretude.
+        self.cv_car.notify() #Car is full and will start running
         #mensagem impressa dentro de lock para facilitar compreensao. Idealmente estaria fora
         print_passageiros_log("Passageiro: " + str(passageiro.id_passageiro) + " entrou no carro!" + str(len(self.passageiros)))
         self.lk.release()
@@ -138,6 +141,15 @@ class Carro(object):
         print_passageiros_log("Passageiro: " + str(passageiro.id_passageiro) + " saiu do carro!")
         self.lk.release()
 
+    def entrar_fila(self, passageiro):
+        passageiro.cv_fila.acquire()
+        self.fila.append(passageiro)
+        print(" ".join(str(s) for s in self.fila))
+        self.cv_car.notify() #notifica que alguém entoru na fila. Carro pode adicioná-lo caso fila
+        #estivesse previamente vazia
+        passageiro.cv_fila.wait() #espera ser o primeiro da fila
+
+
 
 class Passageiro(object):
     """Passageiros de uma montanha russa"""
@@ -150,15 +162,21 @@ class Passageiro(object):
         Passageiro.id_passageiro += 1
 
         self.carro = carro
+        self.cv_fila = Condition(self.carro.lk)
 
         self.thread = Thread(target=self.run)
         self.thread.start()
 
     def run(self):
         while True:
+            self.entrar_fila()
             self.board()
             self.unboard()
             self.passear()
+
+    def entrar_fila(self):
+        print_passageiros_log("Passageiro: "+str(self)+" vai Entrar na fila.")
+        self.carro.entrar_fila(self)
 
     def passear(self):
         tempo = randrange(5)+1
