@@ -45,17 +45,24 @@ def print_passageiros_log(msg):
 
 
 """
-Essa abordagem irá fazer o uso de eventos e semáforos. Os eventos são utilizados para controlar as fases de
-embarque e desembarque do veículo e as situações cheio e vazio. O controle do acesso aos assentos do carro é 
-feito por um semáforo. 
+Essa abordagem utiliza eventos, semáforos e filas. 
+Mais especificamente utilizando Event, BoundedSemaphore e Queue objects das bibliotecas threading e queue do python3. 
+Os eventos são utilizados para controlar as fases de embarque e desembarque do veículo e as situações cheio e vazio. 
+O controle do acesso aos assentos do carro é feito por um semáforo e pela fila.   
 
-Considere o caso em que o caro possui 6 vagas mas há 12 pessoas no parque. 
-O carro espera o evento vazio para liberar o embarque. 
-O carro espera o evento cheio para terminar o embarque e iniciar o passeio. 
+Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque.
+
+O carro espera o evento vazio para liberar o embarque.
+O carro espera o evento cheio para terminar o embarque e iniciar o passeio.
 Depois do passeio, é iniciado o desembarque.
 
-Os passageiros tentam alocar um assento do semáforo, com isso fazendo o controle de limite de pessoas no carro. 
-Depois de alocar o assento, eles esperam o embarque ser liberado para entrar de fato no carro. 
+
+A fila do carro espera o embarque ser liberado para liberar o passagei o atual.
+A fila espera o passageiro atual embarcar no carro para chamar o próximo.
+
+Os passageiros entram na fila e esperam a sua vez.
+Na sua vez, tentam alocar um assento do semáforo. Com isso fazendo o controle de limite de pessoas no carro.
+Depois de alocar o assento eles entram de fato carro.
 Após embarcarem, eles esperam o desembarque do carro. Ao desembarcarem, liberam o assento adquirido e vão passear.
 """
 
