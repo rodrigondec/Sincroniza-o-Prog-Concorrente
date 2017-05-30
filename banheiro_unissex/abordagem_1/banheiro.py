@@ -78,8 +78,8 @@ class Banheiro(object):
         self.pessoa_atual = None
         self.fila = None
 
-        self.fila_masculino = Queue()
-        self.fila_feminino = Queue()
+        self.fila_masculina = Queue()
+        self.fila_feminina = Queue()
 
         # controle de gênero do banheiro
         self.masculino = Event()
@@ -107,13 +107,14 @@ class Banheiro(object):
                 print_fila_log("fila: " + str(self) + " banheiro é masculino!")
             elif self.feminino.is_set():
                 print_fila_log("fila: " + str(self) + " o banheiro é feminino!")
-            print_fila_log("fila: " + str(self) + " tem "+str(self.fila_masculino.qsize())+" homens na fila masculina!")
-            print_fila_log("fila: " + str(self) + " tem "+str(self.fila_feminino.qsize())+" mulheres na fila feminina!")
+            print_fila_log("fila: " + str(self) + " tem " + str(self.fila_masculina.qsize()) + " homens na fila masculina!")
+            print_fila_log("fila: " + str(self) + " tem " + str(self.fila_feminina.qsize()) + " mulheres na fila feminina!")
 
-            if (self.fila_masculino.qsize() > (self.fila_feminino.qsize()+(int(1.5*self.limite_pessoas))) or
-                    self.fila_feminino.qsize() > (self.fila_masculino.qsize()+(int(1.5*self.limite_pessoas))) or
-                    self.fila_feminino.empty() and not self.fila_masculino.empty() or
-                    self.fila_masculino.empty() and not self.fila_feminino.empty()):
+            # Condição de justiça
+            if (self.fila_masculina.qsize() > (self.fila_feminina.qsize()+(int(1.5*self.limite_pessoas))) or
+                    self.fila_feminina.qsize() > (self.fila_masculina.qsize()+(int(1.5*self.limite_pessoas))) or
+                    self.fila_feminina.empty() and not self.fila_masculina.empty() or
+                    self.fila_masculina.empty() and not self.fila_feminina.empty()):
                 self.trocar_genero()
 
             if not self.disponivel.is_set():
@@ -133,20 +134,20 @@ class Banheiro(object):
     def tornar_feminino(self):
         self.feminino.set()
         self.masculino.clear()
-        self.fila = self.fila_feminino
+        self.fila = self.fila_feminina
         print_banheiro_log("Banheiro: se tornou feminino agora!")
 
     def tornar_masculino(self):
         self.feminino.clear()
         self.masculino.set()
-        self.fila = self.fila_masculino
+        self.fila = self.fila_masculina
         print_banheiro_log("Banheiro: se tornou masculino agora!")
 
     def entrar_fila(self, pessoa):
         if pessoa.sexo == 'M':
-            self.fila_masculino.put(pessoa)
+            self.fila_masculina.put(pessoa)
         elif pessoa.sexo == 'F':
-            self.fila_feminino.put(pessoa)
+            self.fila_feminina.put(pessoa)
 
     def entrar(self):
         # if self.pessoas == 0:
