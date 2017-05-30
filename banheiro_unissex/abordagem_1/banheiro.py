@@ -110,8 +110,8 @@ class Banheiro(object):
             print_fila_log("fila: " + str(self) + " tem "+str(self.fila_masculino.qsize())+" homens na fila masculina!")
             print_fila_log("fila: " + str(self) + " tem "+str(self.fila_feminino.qsize())+" mulheres na fila feminina!")
 
-            if (self.fila_masculino.qsize() > (self.fila_feminino.qsize()+self.limite_pessoas-(int(self.limite_pessoas/2))) or
-                    self.fila_feminino.qsize() > (self.fila_masculino.qsize()+self.limite_pessoas-(int(self.limite_pessoas/2))) or
+            if (self.fila_masculino.qsize() > (self.fila_feminino.qsize()+(int(1.5*self.limite_pessoas))) or
+                    self.fila_feminino.qsize() > (self.fila_masculino.qsize()+(int(1.5*self.limite_pessoas))) or
                     self.fila_feminino.empty() and not self.fila_masculino.empty() or
                     self.fila_masculino.empty() and not self.fila_feminino.empty()):
                 self.trocar_genero()

@@ -1,43 +1,85 @@
 fila: 1 banheiro é masculino!
 fila: 1 tem 0 homens na fila masculina!
 fila: 1 tem 0 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 1 (M)
+fila: 1 espera a pessoa 1 (M) entrar no banheiro!
+fila: 1 banheiro é masculino!
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 2 (M)
 fila: 1 espera a pessoa 2 (M) entrar no banheiro!
 fila: 1 banheiro é masculino!
 fila: 1 tem 1 homens na fila masculina!
-fila: 1 tem 3 mulheres na fila feminina!
+fila: 1 tem 1 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 4 (M)
 fila: 1 espera a pessoa 4 (M) entrar no banheiro!
 fila: 1 banheiro é masculino!
 fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 6 (F)
+fila: 1 espera a pessoa 6 (F) entrar no banheiro!
+fila: 1 o banheiro é feminino!
+fila: 1 tem 2 homens na fila masculina!
 fila: 1 tem 3 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 8 (F)
 fila: 1 espera a pessoa 8 (F) entrar no banheiro!
 fila: 1 o banheiro é feminino!
-fila: 1 tem 1 homens na fila masculina!
-fila: 1 tem 4 mulheres na fila feminina!
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 2 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 7 (F)
+fila: 1 espera a pessoa 7 (F) entrar no banheiro!
+fila: 1 o banheiro é feminino!
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 espera estar disponível para liberar a fila!
+fila: 1 é a vez da pessoa 10 (F)
+fila: 1 espera a pessoa 10 (F) entrar no banheiro!
+fila: 1 o banheiro é feminino!
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 espera estar disponível para liberar a fila!
+fila: 1 é a vez da pessoa 9 (F)
+fila: 1 espera a pessoa 9 (F) entrar no banheiro!
+fila: 1 o banheiro é feminino!
+fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 3 (M)
 fila: 1 espera a pessoa 3 (M) entrar no banheiro!
 fila: 1 banheiro é masculino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 8 (F)
+fila: 1 espera a pessoa 8 (F) entrar no banheiro!
+fila: 1 o banheiro é feminino!
+fila: 1 tem 3 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 5 (M)
+fila: 1 espera a pessoa 5 (M) entrar no banheiro!
+fila: 1 banheiro é masculino!
 fila: 1 tem 2 homens na fila masculina!
-fila: 1 tem 4 mulheres na fila feminina!
+fila: 1 tem 1 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 1 (M)
 fila: 1 espera a pessoa 1 (M) entrar no banheiro!
 fila: 1 banheiro é masculino!
 fila: 1 tem 1 homens na fila masculina!
-fila: 1 tem 4 mulheres na fila feminina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 4 (M)
+fila: 1 espera a pessoa 4 (M) entrar no banheiro!
+fila: 1 banheiro é masculino!
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 6 (F)
+fila: 1 espera a pessoa 6 (F) entrar no banheiro!
+fila: 1 o banheiro é feminino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 9 (F)
 fila: 1 espera a pessoa 9 (F) entrar no banheiro!
 fila: 1 o banheiro é feminino!
 fila: 1 tem 1 homens na fila masculina!
-fila: 1 tem 3 mulheres na fila feminina!
+fila: 1 tem 2 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 10 (F)
 fila: 1 espera a pessoa 10 (F) entrar no banheiro!
-fila: 1 o banheiro é feminino!
-fila: 1 tem 1 homens na fila masculina!
-fila: 1 tem 2 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 6 (F)
-fila: 1 espera a pessoa 6 (F) entrar no banheiro!
 fila: 1 o banheiro é feminino!
 fila: 1 tem 1 homens na fila masculina!
 fila: 1 tem 1 mulheres na fila feminina!
@@ -45,151 +87,121 @@ fila: 1 espera estar disponível para liberar a fila!
 fila: 1 é a vez da pessoa 7 (F)
 fila: 1 espera a pessoa 7 (F) entrar no banheiro!
 fila: 1 o banheiro é feminino!
-fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 1 homens na fila masculina!
 fila: 1 tem 0 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 5 (M)
-fila: 1 espera a pessoa 5 (M) entrar no banheiro!
+fila: 1 é a vez da pessoa 2 (M)
+fila: 1 espera a pessoa 2 (M) entrar no banheiro!
 fila: 1 banheiro é masculino!
-fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 8 (F)
+fila: 1 espera a pessoa 8 (F) entrar no banheiro!
+fila: 1 o banheiro é feminino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 3 (M)
+fila: 1 espera a pessoa 3 (M) entrar no banheiro!
+fila: 1 banheiro é masculino!
+fila: 1 tem 1 homens na fila masculina!
 fila: 1 tem 1 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 4 (M)
 fila: 1 espera a pessoa 4 (M) entrar no banheiro!
 fila: 1 banheiro é masculino!
-fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 0 homens na fila masculina!
 fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 10 (F)
+fila: 1 espera a pessoa 10 (F) entrar no banheiro!
+fila: 1 o banheiro é feminino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 0 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 5 (M)
+fila: 1 espera a pessoa 5 (M) entrar no banheiro!
+fila: 1 banheiro é masculino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 1 (M)
+fila: 1 espera a pessoa 1 (M) entrar no banheiro!
+fila: 1 banheiro é masculino!
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 6 (F)
+fila: 1 espera a pessoa 6 (F) entrar no banheiro!
+fila: 1 o banheiro é feminino!
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 2 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 3 (M)
+fila: 1 espera a pessoa 3 (M) entrar no banheiro!
+fila: 1 banheiro é masculino!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 2 (M)
 fila: 1 espera a pessoa 2 (M) entrar no banheiro!
 fila: 1 banheiro é masculino!
 fila: 1 tem 0 homens na fila masculina!
-fila: 1 tem 1 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 8 (F)
-fila: 1 espera a pessoa 8 (F) entrar no banheiro!
-fila: 1 o banheiro é feminino!
-fila: 1 tem 0 homens na fila masculina!
-fila: 1 tem 0 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 6 (F)
-fila: 1 espera a pessoa 6 (F) entrar no banheiro!
-fila: 1 o banheiro é feminino!
-fila: 1 tem 1 homens na fila masculina!
-fila: 1 tem 0 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 1 (M)
-fila: 1 espera a pessoa 1 (M) entrar no banheiro!
-fila: 1 banheiro é masculino!
-fila: 1 tem 1 homens na fila masculina!
-fila: 1 tem 1 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 3 (M)
-fila: 1 espera a pessoa 3 (M) entrar no banheiro!
-fila: 1 banheiro é masculino!
-fila: 1 tem 0 homens na fila masculina!
-fila: 1 tem 1 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 9 (F)
-fila: 1 espera a pessoa 9 (F) entrar no banheiro!
-fila: 1 o banheiro é feminino!
-fila: 1 tem 0 homens na fila masculina!
-fila: 1 tem 1 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 5 (M)
-fila: 1 espera a pessoa 5 (M) entrar no banheiro!
-fila: 1 banheiro é masculino!
-fila: 1 tem 0 homens na fila masculina!
-fila: 1 tem 2 mulheres na fila feminina!
+fila: 1 tem 3 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 7 (F)
 fila: 1 espera a pessoa 7 (F) entrar no banheiro!
 fila: 1 o banheiro é feminino!
-fila: 1 tem 2 homens na fila masculina!
-fila: 1 tem 2 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 10 (F)
-fila: 1 espera a pessoa 10 (F) entrar no banheiro!
+fila: 1 tem 1 homens na fila masculina!
+fila: 1 tem 3 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 9 (F)
+fila: 1 espera a pessoa 9 (F) entrar no banheiro!
 fila: 1 o banheiro é feminino!
-fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 1 homens na fila masculina!
 fila: 1 tem 2 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 6 (F)
-fila: 1 espera a pessoa 6 (F) entrar no banheiro!
+fila: 1 é a vez da pessoa 8 (F)
+fila: 1 espera a pessoa 8 (F) entrar no banheiro!
 fila: 1 o banheiro é feminino!
-fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 1 homens na fila masculina!
 fila: 1 tem 1 mulheres na fila feminina!
 fila: 1 espera estar disponível para liberar a fila!
-fila: 1 é a vez da pessoa 8 (F)
-fila: 1 espera a pessoa 8 (F) entrar no banheiro!
+fila: 1 é a vez da pessoa 10 (F)
+fila: 1 espera a pessoa 10 (F) entrar no banheiro!
 fila: 1 o banheiro é feminino!
-fila: 1 tem 4 homens na fila masculina!
+fila: 1 tem 1 homens na fila masculina!
 fila: 1 tem 0 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 4 (M)
 fila: 1 espera a pessoa 4 (M) entrar no banheiro!
 fila: 1 banheiro é masculino!
-fila: 1 tem 3 homens na fila masculina!
-fila: 1 tem 0 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 9 (F)
-fila: 1 espera a pessoa 9 (F) entrar no banheiro!
+fila: 1 tem 0 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 6 (F)
+fila: 1 espera a pessoa 6 (F) entrar no banheiro!
 fila: 1 o banheiro é feminino!
 fila: 1 tem 3 homens na fila masculina!
 fila: 1 tem 0 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 2 (M)
-fila: 1 espera a pessoa 2 (M) entrar no banheiro!
+fila: 1 é a vez da pessoa 5 (M)
+fila: 1 espera a pessoa 5 (M) entrar no banheiro!
 fila: 1 banheiro é masculino!
-fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 3 homens na fila masculina!
 fila: 1 tem 0 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 10 (F)
-fila: 1 espera a pessoa 10 (F) entrar no banheiro!
+fila: 1 é a vez da pessoa 7 (F)
+fila: 1 espera a pessoa 7 (F) entrar no banheiro!
 fila: 1 o banheiro é feminino!
-fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 3 homens na fila masculina!
 fila: 1 tem 0 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 1 (M)
 fila: 1 espera a pessoa 1 (M) entrar no banheiro!
 fila: 1 banheiro é masculino!
 fila: 1 tem 2 homens na fila masculina!
 fila: 1 tem 0 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 9 (F)
+fila: 1 espera a pessoa 9 (F) entrar no banheiro!
+fila: 1 o banheiro é feminino!
+fila: 1 tem 3 homens na fila masculina!
+fila: 1 tem 2 mulheres na fila feminina!
+fila: 1 é a vez da pessoa 10 (F)
+fila: 1 espera a pessoa 10 (F) entrar no banheiro!
+fila: 1 o banheiro é feminino!
+fila: 1 tem 3 homens na fila masculina!
+fila: 1 tem 1 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 8 (F)
 fila: 1 espera a pessoa 8 (F) entrar no banheiro!
 fila: 1 o banheiro é feminino!
-fila: 1 tem 2 homens na fila masculina!
-fila: 1 tem 1 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 6 (F)
-fila: 1 espera a pessoa 6 (F) entrar no banheiro!
-fila: 1 o banheiro é feminino!
-fila: 1 tem 2 homens na fila masculina!
+fila: 1 tem 3 homens na fila masculina!
 fila: 1 tem 0 mulheres na fila feminina!
 fila: 1 é a vez da pessoa 3 (M)
 fila: 1 espera a pessoa 3 (M) entrar no banheiro!
 fila: 1 banheiro é masculino!
 fila: 1 tem 2 homens na fila masculina!
-fila: 1 tem 1 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 5 (M)
-fila: 1 espera a pessoa 5 (M) entrar no banheiro!
-fila: 1 banheiro é masculino!
-fila: 1 tem 1 homens na fila masculina!
-fila: 1 tem 1 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 4 (M)
-fila: 1 espera a pessoa 4 (M) entrar no banheiro!
-fila: 1 banheiro é masculino!
-fila: 1 tem 0 homens na fila masculina!
-fila: 1 tem 1 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 7 (F)
-fila: 1 espera a pessoa 7 (F) entrar no banheiro!
-fila: 1 o banheiro é feminino!
-fila: 1 tem 2 homens na fila masculina!
-fila: 1 tem 1 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 9 (F)
-fila: 1 espera a pessoa 9 (F) entrar no banheiro!
-fila: 1 o banheiro é feminino!
-fila: 1 tem 2 homens na fila masculina!
-fila: 1 tem 0 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 2 (M)
-fila: 1 espera a pessoa 2 (M) entrar no banheiro!
-fila: 1 banheiro é masculino!
-fila: 1 tem 1 homens na fila masculina!
-fila: 1 tem 1 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 1 (M)
-fila: 1 espera a pessoa 1 (M) entrar no banheiro!
-fila: 1 banheiro é masculino!
-fila: 1 tem 0 homens na fila masculina!
-fila: 1 tem 1 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 10 (F)
-fila: 1 espera a pessoa 10 (F) entrar no banheiro!
-fila: 1 o banheiro é feminino!
-fila: 1 tem 0 homens na fila masculina!
-fila: 1 tem 0 mulheres na fila feminina!
-fila: 1 é a vez da pessoa 6 (F)
-fila: 1 espera a pessoa 6 (F) entrar no banheiro!
-fila: 1 o banheiro é feminino!
-fila: 1 tem 0 homens na fila masculina!
 fila: 1 tem 0 mulheres na fila feminina!
