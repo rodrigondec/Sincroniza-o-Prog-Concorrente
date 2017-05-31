@@ -44,7 +44,8 @@ def print_passageiros_log(msg):
 
 # global variables
 curr_car = None
-
+fila_cv = None
+fila = []
 
 """
 Essa abordagem irá fazer o uso de barreiras. É impossível o uso de barreiras para controlar a entrada e saída.
@@ -70,15 +71,12 @@ class Carro(object):
 
         self.limite_pessoas = limite_pessoas
         self.num_passeios = num_passeios
-        self.passageiros = []
+        self.passageiros = [] #passageiros dentro do carro
 
         self.barr = Barrier(limite_pessoas + 1)  # usado para esperar por saida (passageiros + carro)
         self.lk = Lock()  # usado para garantir corretude (travar a lista de passageiros)
         self.sem = Semaphore()  # semaphore is going to be used for controlling unboarding
 
-        # e para cvs (controlar board e unboard)
-        self.boardable = False
-        self.cv_list = Condition(lock=self.lk)  # usado para esperar carro ficar vazio
         self.cv_car = Condition(lock=self.lk)  # usado para controle do algoritmo main do carro
 
         self.prv_car = None  # usado para acordar carro anterior, permitindo que novos passageros embarquem nele
@@ -121,20 +119,36 @@ class Carro(object):
 
     def load(self):
         print_carro_log("Carro: " + str(self) + " embarque do carro está liberado!")
-        self.lk.acquire()  # usado para corretude
-        self.cv_list.notify_all()  # wakes up all sleeping passengers threads that tried to enter this car before
-        # it has become available to boarding
-        self.boardable = True  # this will allow the passengers to board
-        self.cv_car.wait()  # espera carro ficar cheio
+        
+        for i in range(self.limite_pessoas):
+            global fila
+            global fila_cv
+            fila_cv.acquire()
+            #acorda a quantidade de pessoas necessárias para fazer o carro andar
+            if len(fila) == 0: #fila vazia. Esperar alguém entrar
+                fila_cv.wait()
+            #remove um cara da fila e o notifica para entrar no carro
+            print("FILA ANTES: " + " ".join(str(x) for x in fila))
+            passageiro = fila.pop(0)
+            print("FILA DEPOIS: " + " ".join(str(x) for x in fila))
+            fila_cv.release()
+            passageiro.cv.acquire()
+            passageiro.cv.notify()
+            passageiro.cv.release()
+        
+
+        #esperar pessoas acordadas embarcarem / carro ficar cheio
+        self.lk.acquire()
+        #if necessário pois é possível que todos os passageiros entrem no carro antes de wait() ser chamado. Causando
+        #livelock. Carro e passageiros irão dormir eternamente
+        if len(self.passageiros) < self.limite_pessoas:
+            self.cv_car.wait()
+
         global curr_car
-        curr_car = self.prv_car  # this is done to avoid passengers trying to enter curr_car (self) twice
-        self.cv_list.notify_all()  # wakes up all sleeping passengers threads (passengers that tried to enter
-        # after car getting full. This is necessary so they can attempt to enter the next car)
+        curr_car = self.prv_car  # this is done so passengers try to enter the new car
         self.prv_car.sem.release()  # wakes up previous car
-        self.lk.release()  # usado para corretude
 
     def unload(self, last_trip):
-        self.lk.acquire()  # lock needs to be acquired before cv_wait to assure corretude. Used for passengers
         self.sem.acquire()  # use for cars' arrival order
         print_carro_log("Carro: " + str(self) + " passeio terminado!")
         # it is done before barr.wait so the car thread can sleep before any passenger leaves
@@ -142,10 +156,10 @@ class Carro(object):
         print_carro_log("Carro: " + str(self) + " desembarque do carro está liberado!")
         self.cv_car.wait()  # wait until it is empty
         print_carro_log("Carro: " + str(self) + " desembarque do carro está vazio!")
+        self.lk.release()
 
         self.prv_car.sem.release()  # permite o carro anterior liberar passageiros
 
-        self.lk.release()  # (once it is notified, it will "reacquire" lock)
         if not last_trip:
             self.sem.acquire()  # waits next car to get full
 
@@ -162,6 +176,7 @@ class Passageiro(object):
         """Constructor for Passageiro"""
         self.id_passageiro = Passageiro.id_passageiro
         self.carro_atual = None  # carro no qual o passageiro entrou ou vai tentar entrar
+        self.cv = Condition()
         Passageiro.id_passageiro += 1
 
         self.thread = Thread(target=self.run)
@@ -169,9 +184,22 @@ class Passageiro(object):
 
     def run(self):
         while True:
+            self.entrar_fila()
             self.board()
             self.unboard()
             self.passear()
+
+    def entrar_fila(self):
+        global fila
+        global fila_cv
+        fila_cv.acquire()
+        fila.append(self) #se adiciona na fila. Valor de curr_car não importa
+        print_passageiros_log("Passageiro: " + str(self) + " entrou na fila " + " ".join(str(x) for x in fila))
+        fila_cv.notify() #acorda carro para indicar que entrou uma pessoa na fila
+        self.cv.acquire()
+        fila_cv.release()
+        self.cv.wait() #espera ser o primeiro da fila para entrar
+        self.cv.release()
 
     def passear(self):
         tempo = randrange(5) + 1
@@ -180,28 +208,21 @@ class Passageiro(object):
         time.sleep(tempo)
 
     def board(self):
+        #se chega nesse ponto, foi acordado. (primeiro da fila)
         global curr_car
-        while (True):
-            self.carro_atual = curr_car  # curr_car is a global variable
-            print_passageiros_log("Passageiro: " + str(self) + " vai tentar entrar no carro " + str(self.carro_atual))
-            self.carro_atual.lk.acquire()
-            if not self.carro_atual.boardable:
-                self.carro_atual.cv_list.wait()
-                self.carro_atual.lk.release()
-                continue
+        self.carro_atual = curr_car  # curr_car is a global variable
+        print_passageiros_log("Passageiro: " + str(self) + " vai tentar entrar no carro " + str(self.carro_atual))
+        self.carro_atual.lk.acquire()
+        self.carro_atual.passageiros.append(self)
+        # mensagem impressa dentro de lock para facilitar compreensao. Idealmente estaria fora
+        print_passageiros_log(
+            "Passageiro: " + str(self.id_passageiro) + " entrou no carro " + str(self.carro_atual) + "! " +
+            str(len(self.carro_atual.passageiros)))
+        if len(self.carro_atual.passageiros) == self.carro_atual.limite_pessoas:
+            self.carro_atual.cv_car.notify()  # Car is full and will start running
 
-            self.carro_atual.passageiros.append(self)
-            # mensagem impressa dentro de lock para facilitar compreensao. Idealmente estaria fora
-            print_passageiros_log(
-                "Passageiro: " + str(self.id_passageiro) + " entrou no carro " + str(self.carro_atual) + "! " +
-                str(len(self.carro_atual.passageiros)))
-            if len(self.carro_atual.passageiros) == self.carro_atual.limite_pessoas:
-                self.carro_atual.cv_car.notify()  # Car is full and will start running
-                self.carro_atual.boardable = False  # Done here to ensure corretude.
-            barr = self.carro_atual.barr  # salvo em variavel local para garantir coretude (caso fosse salvo depois do lock ser solto, valor de)
-            self.carro_atual.lk.release()
-            barr.wait()
-            break
+        self.carro_atual.lk.release()
+        self.carro_atual.barr.wait()
 
     def unboard(self):
         print_passageiros_log("Passageiro: " + str(self) + " vai tentar sair do carro " + str(self.carro_atual))
@@ -244,8 +265,10 @@ if (num_pessoas < limite_pessoas_por_carro):
     print("Erro! Número total de pessoas/passageiros é menor que a capacidade do carro")
     os._exit(1)
 
-# inicializa carros
 carros = []
+fila_cv = Condition()
+
+# inicializa carros
 carros.append(Carro(limite_pessoas_por_carro, passeios_por_carro))  # sets first car
 carros[0].set_thread_main_args(False)
 for i in range(qtd_carros - 1):
@@ -263,9 +286,9 @@ curr_car = carros[0]  # global
 for i in range(qtd_carros):
     carros[i].thread_main.start()
 
-passageiros = []
 for x in range(num_pessoas):
-    passageiros.append(Passageiro())
+    p = Passageiro()
+    #passageiros.append(p)
 
 carros[qtd_carros - 1].thread_main.join()
 os._exit(1)
