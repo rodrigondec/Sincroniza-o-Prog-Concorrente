@@ -7,35 +7,35 @@ Fila carros: é a vez do carro 1
 Carro: 2 entra na fila da plataforma!
 Fila passageiros: espera o embarque do carro 1 para liberar passageiros!
 Carro: 2 espera sua vez!
-Fila carros: espera o carro 1 iniciar seu passeio para liberar o proximo carro!
 Carro: 1 adquire acesso da plataforma!
+Fila carros: espera o carro 1 iniciar seu passeio para liberar o proximo carro!
 Passageiro: 1 entra na fila!
 Passageiro: 2 entra na fila!
 Passageiro: 3 entra na fila!
-Passageiro: 4 entra na fila!
 Carro: 1 desembarque do carro está liberado!
+Passageiro: 4 entra na fila!
 Passageiro: 5 entra na fila!
 Passageiro: 1 espera sua vez!
 Passageiro: 6 entra na fila!
 Passageiro: 2 espera sua vez!
-Passageiro: 7 entra na fila!
 Carro: 1 embarque do carro está liberado!
+Passageiro: 7 entra na fila!
 Passageiro: 3 espera sua vez!
 Passageiro: 8 entra na fila!
-Passageiro: 4 espera sua vez!
 Passageiro: 9 entra na fila!
-Passageiro: 10 entra na fila!
-Passageiro: 5 espera sua vez!
+Passageiro: 4 espera sua vez!
 Carro: 1 espera estar cheio para iniciar passeio!
+Passageiro: 10 entra na fila!
 Fila passageiros: é a vez do passageiro 1!
+Passageiro: 5 espera sua vez!
 Passageiro: 11 entra na fila!
 Passageiro: 12 entra na fila!
 Passageiro: 6 espera sua vez!
 Passageiro: 7 espera sua vez!
 Passageiro: 8 espera sua vez!
-Passageiro: 10 espera sua vez!
 Passageiro: 9 espera sua vez!
 Fila passageiros: espera passageiro 1 entrar no carro!
+Passageiro: 10 espera sua vez!
 Passageiro: 1 vai tentar entrar no carro 1!
 Passageiro: 11 espera sua vez!
 Passageiro: 12 espera sua vez!
@@ -52,8 +52,373 @@ Passageiro: 3 vai tentar entrar no carro 1!
 Passageiro: 3 entrou no carro 1!
 Passageiro: 3 pergunta: desembarque do carro 1 está liberado?
 Fila passageiros: é a vez do passageiro 4!
+Passageiro: 4 vai tentar entrar no carro 1!
+Passageiro: 4 entrou no carro 1!
+Fila passageiros: espera passageiro 4 entrar no carro!
+Passageiro: 4 pergunta: desembarque do carro 1 está liberado?
+Fila passageiros: é a vez do passageiro 5!
+Passageiro: 5 vai tentar entrar no carro 1!
+Fila passageiros: espera passageiro 5 entrar no carro!
+Passageiro: 5 entrou no carro 1!
+Passageiro: 5 pergunta: desembarque do carro 1 está liberado?
+Fila passageiros: é a vez do passageiro 6!
+Fila passageiros: espera passageiro 6 entrar no carro!
+Passageiro: 6 vai tentar entrar no carro 1!
+Passageiro: 6 entrou no carro 1!
+Carro: 1 passeio iniciado!
+Carro: 1 vai andar por 5 segundos.
+Passageiro: 6 pergunta: desembarque do carro 1 está liberado?
+Fila carros: é a vez do carro 2
+Fila passageiros: espera o embarque do carro 2 para liberar passageiros!
+Carro: 2 adquire acesso da plataforma!
+Fila carros: espera o carro 2 iniciar seu passeio para liberar o proximo carro!
+Carro: 2 desembarque do carro está liberado!
+Carro: 2 embarque do carro está liberado!
+Fila passageiros: é a vez do passageiro 7!
+Fila passageiros: espera passageiro 7 entrar no carro!
+Passageiro: 7 vai tentar entrar no carro 2!
+Passageiro: 7 entrou no carro 2!
+Carro: 2 espera estar cheio para iniciar passeio!
+Fila passageiros: é a vez do passageiro 8!
+Fila passageiros: espera passageiro 8 entrar no carro!
+Passageiro: 7 pergunta: desembarque do carro 2 está liberado?
+Passageiro: 8 vai tentar entrar no carro 2!
+Passageiro: 8 entrou no carro 2!
+Passageiro: 8 pergunta: desembarque do carro 2 está liberado?
+Fila passageiros: é a vez do passageiro 9!
+Passageiro: 9 vai tentar entrar no carro 2!
+Fila passageiros: espera passageiro 9 entrar no carro!
+Passageiro: 9 entrou no carro 2!
+Passageiro: 9 pergunta: desembarque do carro 2 está liberado?
+Fila passageiros: é a vez do passageiro 10!
+Fila passageiros: espera passageiro 10 entrar no carro!
+Passageiro: 10 vai tentar entrar no carro 2!
+Passageiro: 10 entrou no carro 2!
+Fila passageiros: é a vez do passageiro 11!
+Fila passageiros: espera passageiro 11 entrar no carro!
+Passageiro: 10 pergunta: desembarque do carro 2 está liberado?
+Passageiro: 11 vai tentar entrar no carro 2!
+Passageiro: 11 entrou no carro 2!
+Fila passageiros: é a vez do passageiro 12!
+Passageiro: 11 pergunta: desembarque do carro 2 está liberado?
+Fila passageiros: espera passageiro 12 entrar no carro!
+Passageiro: 12 vai tentar entrar no carro 2!
+Passageiro: 12 entrou no carro 2!
+Carro: 2 passeio iniciado!
+Passageiro: 12 pergunta: desembarque do carro 2 está liberado?
+Carro: 2 vai andar por 5 segundos.
+Fila carros: espera o carro 1 terminar o passeio!
+Carro: 1 passeio terminado!
+Fila carros: é a vez do carro 1
+Fila carros: espera o carro 1 iniciar seu passeio para liberar o proximo carro!
+Carro: 1 passeio nº 2
+Carro: 1 adquire acesso da plataforma!
+Carro: 1 desembarque do carro está liberado!
+Carro: 1 espera estar vazio para liberar o embarque!
+Passageiro: 3 saiu do carro 1!
+Passageiro: 3 vai passear no parque por 2 segundos!
+Passageiro: 1 saiu do carro 1!
+Passageiro: 1 vai passear no parque por 4 segundos!
+Passageiro: 5 saiu do carro 1!
+Passageiro: 5 vai passear no parque por 3 segundos!
+Passageiro: 6 saiu do carro 1!
+Fila passageiros: espera o embarque do carro 1 para liberar passageiros!
+Passageiro: 2 saiu do carro 1!
+Passageiro: 6 vai passear no parque por 3 segundos!
+Passageiro: 4 saiu do carro 1!
+Passageiro: 2 vai passear no parque por 4 segundos!
+Passageiro: 4 vai passear no parque por 5 segundos!
+Carro: 1 embarque do carro está liberado!
+Carro: 1 espera estar cheio para iniciar passeio!
+Carro: 2 passeio terminado!
+Carro: 2 passeio nº 2
+Carro: 2 espera sua vez!
+Passageiro: 3 entra na fila!
+Passageiro: 3 espera sua vez!
+Fila passageiros: é a vez do passageiro 3!
+Fila passageiros: espera passageiro 3 entrar no carro!
+Passageiro: 3 vai tentar entrar no carro 1!
+Passageiro: 3 entrou no carro 1!
+Passageiro: 3 pergunta: desembarque do carro 1 está liberado?
+Passageiro: 5 entra na fila!
+Passageiro: 5 espera sua vez!
+Fila passageiros: é a vez do passageiro 5!
+Passageiro: 5 vai tentar entrar no carro 1!
+Fila passageiros: espera passageiro 5 entrar no carro!
+Passageiro: 5 entrou no carro 1!
+Passageiro: 6 entra na fila!
+Passageiro: 5 pergunta: desembarque do carro 1 está liberado?
+Passageiro: 6 espera sua vez!
+Fila passageiros: é a vez do passageiro 6!
+Fila passageiros: espera passageiro 6 entrar no carro!
+Passageiro: 6 vai tentar entrar no carro 1!
+Passageiro: 6 entrou no carro 1!
+Passageiro: 6 pergunta: desembarque do carro 1 está liberado?
+Passageiro: 1 entra na fila!
+Passageiro: 1 espera sua vez!
+Fila passageiros: é a vez do passageiro 1!
+Passageiro: 1 vai tentar entrar no carro 1!
+Fila passageiros: espera passageiro 1 entrar no carro!
+Passageiro: 1 entrou no carro 1!
+Passageiro: 1 pergunta: desembarque do carro 1 está liberado?
+Passageiro: 2 entra na fila!
+Passageiro: 2 espera sua vez!
+Fila passageiros: é a vez do passageiro 2!
+Passageiro: 2 vai tentar entrar no carro 1!
+Fila passageiros: espera passageiro 2 entrar no carro!
+Passageiro: 2 entrou no carro 1!
+Passageiro: 2 pergunta: desembarque do carro 1 está liberado?
+Passageiro: 4 entra na fila!
+Passageiro: 4 espera sua vez!
+Fila passageiros: é a vez do passageiro 4!
+Passageiro: 4 vai tentar entrar no carro 1!
+Fila passageiros: espera passageiro 4 entrar no carro!
+Passageiro: 4 entrou no carro 1!
+Passageiro: 4 pergunta: desembarque do carro 1 está liberado?
+Fila carros: é a vez do carro 2
+Carro: 2 adquire acesso da plataforma!
+Carro: 2 desembarque do carro está liberado!
+Carro: 2 espera estar vazio para liberar o embarque!
+Passageiro: 9 saiu do carro 2!
+Passageiro: 9 vai passear no parque por 1 segundos!
+Passageiro: 7 saiu do carro 2!
+Fila passageiros: espera o embarque do carro 2 para liberar passageiros!
+Fila carros: espera o carro 2 iniciar seu passeio para liberar o proximo carro!
+Passageiro: 7 vai passear no parque por 1 segundos!
+Carro: 1 passeio iniciado!
+Passageiro: 8 saiu do carro 2!
+Passageiro: 10 saiu do carro 2!
+Carro: 1 vai andar por 5 segundos.
+Passageiro: 11 saiu do carro 2!
+Passageiro: 12 saiu do carro 2!
+Passageiro: 8 vai passear no parque por 2 segundos!
+Passageiro: 10 vai passear no parque por 3 segundos!
+Passageiro: 11 vai passear no parque por 1 segundos!
+Passageiro: 12 vai passear no parque por 2 segundos!
+Carro: 2 embarque do carro está liberado!
+Carro: 2 espera estar cheio para iniciar passeio!
+Passageiro: 9 entra na fila!
+Passageiro: 9 espera sua vez!
+Fila passageiros: é a vez do passageiro 9!
+Fila passageiros: espera passageiro 9 entrar no carro!
+Passageiro: 9 vai tentar entrar no carro 2!
+Passageiro: 9 entrou no carro 2!
+Passageiro: 9 pergunta: desembarque do carro 2 está liberado?
+Passageiro: 7 entra na fila!
+Passageiro: 7 espera sua vez!
+Fila passageiros: é a vez do passageiro 7!
+Passageiro: 7 vai tentar entrar no carro 2!
+Passageiro: 7 entrou no carro 2!
+Fila passageiros: espera passageiro 7 entrar no carro!
+Passageiro: 7 pergunta: desembarque do carro 2 está liberado?
+Passageiro: 11 entra na fila!
+Passageiro: 11 espera sua vez!
+Fila passageiros: é a vez do passageiro 11!
+Fila passageiros: espera passageiro 11 entrar no carro!
+Passageiro: 11 vai tentar entrar no carro 2!
+Passageiro: 11 entrou no carro 2!
+Passageiro: 11 pergunta: desembarque do carro 2 está liberado?
+Passageiro: 8 entra na fila!
+Fila passageiros: é a vez do passageiro 8!
+Fila passageiros: espera passageiro 8 entrar no carro!
+Passageiro: 12 entra na fila!
+Passageiro: 8 espera sua vez!
+Passageiro: 12 espera sua vez!
+Passageiro: 8 vai tentar entrar no carro 2!
+Passageiro: 8 entrou no carro 2!
+Fila passageiros: é a vez do passageiro 12!
+Passageiro: 12 vai tentar entrar no carro 2!
+Passageiro: 12 entrou no carro 2!
+Passageiro: 12 pergunta: desembarque do carro 2 está liberado?
+Passageiro: 8 pergunta: desembarque do carro 2 está liberado?
+Fila passageiros: espera passageiro 12 entrar no carro!
+Passageiro: 10 entra na fila!
+Passageiro: 10 espera sua vez!
+Fila passageiros: é a vez do passageiro 10!
+Fila passageiros: espera passageiro 10 entrar no carro!
+Passageiro: 10 vai tentar entrar no carro 2!
+Passageiro: 10 entrou no carro 2!
+Passageiro: 10 pergunta: desembarque do carro 2 está liberado?
+Fila carros: espera o carro 1 terminar o passeio!
+Carro: 2 passeio iniciado!
+Carro: 2 vai andar por 5 segundos.
+Carro: 1 passeio terminado!
+Fila carros: é a vez do carro 1
+Fila carros: espera o carro 1 iniciar seu passeio para liberar o proximo carro!
+Carro: 1 passeio nº 3
+Carro: 1 adquire acesso da plataforma!
+Carro: 1 desembarque do carro está liberado!
+Carro: 1 espera estar vazio para liberar o embarque!
+Passageiro: 1 saiu do carro 1!
+Passageiro: 1 vai passear no parque por 1 segundos!
+Passageiro: 5 saiu do carro 1!
+Passageiro: 5 vai passear no parque por 3 segundos!
+Passageiro: 4 saiu do carro 1!
+Passageiro: 4 vai passear no parque por 2 segundos!
+Passageiro: 3 saiu do carro 1!
+Passageiro: 2 saiu do carro 1!
+Passageiro: 6 saiu do carro 1!
+Fila passageiros: espera o embarque do carro 1 para liberar passageiros!
+Carro: 1 embarque do carro está liberado!
+Carro: 1 espera estar cheio para iniciar passeio!
+Passageiro: 3 vai passear no parque por 2 segundos!
+Passageiro: 2 vai passear no parque por 5 segundos!
+Passageiro: 6 vai passear no parque por 2 segundos!
+Passageiro: 1 entra na fila!
+Passageiro: 1 espera sua vez!
+Fila passageiros: é a vez do passageiro 1!
+Fila passageiros: espera passageiro 1 entrar no carro!
+Passageiro: 1 vai tentar entrar no carro 1!
+Passageiro: 1 entrou no carro 1!
+Passageiro: 1 pergunta: desembarque do carro 1 está liberado?
+Passageiro: 4 entra na fila!
+Passageiro: 4 espera sua vez!
+Fila passageiros: é a vez do passageiro 4!
 Fila passageiros: espera passageiro 4 entrar no carro!
 Passageiro: 4 vai tentar entrar no carro 1!
+Passageiro: 4 entrou no carro 1!
+Passageiro: 4 pergunta: desembarque do carro 1 está liberado?
+Passageiro: 3 entra na fila!
+Passageiro: 6 entra na fila!
+Fila passageiros: é a vez do passageiro 3!
+Passageiro: 3 espera sua vez!
+Passageiro: 6 espera sua vez!
+Fila passageiros: espera passageiro 3 entrar no carro!
+Passageiro: 3 vai tentar entrar no carro 1!
+Passageiro: 3 entrou no carro 1!
+Passageiro: 3 pergunta: desembarque do carro 1 está liberado?
+Fila passageiros: é a vez do passageiro 6!
+Fila passageiros: espera passageiro 6 entrar no carro!
+Passageiro: 6 vai tentar entrar no carro 1!
+Passageiro: 6 entrou no carro 1!
+Passageiro: 6 pergunta: desembarque do carro 1 está liberado?
+Carro: 2 passeio terminado!
+Carro: 2 passeio nº 3
+Carro: 2 espera sua vez!
+Passageiro: 5 entra na fila!
+Passageiro: 5 espera sua vez!
+Fila passageiros: é a vez do passageiro 5!
+Fila passageiros: espera passageiro 5 entrar no carro!
+Passageiro: 5 vai tentar entrar no carro 1!
+Passageiro: 5 entrou no carro 1!
+Passageiro: 5 pergunta: desembarque do carro 1 está liberado?
+Passageiro: 2 entra na fila!
+Passageiro: 2 espera sua vez!
+Fila passageiros: é a vez do passageiro 2!
+Passageiro: 2 vai tentar entrar no carro 1!
+Passageiro: 2 entrou no carro 1!
+Passageiro: 2 pergunta: desembarque do carro 1 está liberado?
+Carro: 1 passeio iniciado!
+Fila passageiros: espera passageiro 2 entrar no carro!
+Carro: 1 vai andar por 5 segundos.
+Fila carros: é a vez do carro 2
+Carro: 2 adquire acesso da plataforma!
+Carro: 2 desembarque do carro está liberado!
+Carro: 2 espera estar vazio para liberar o embarque!
+Passageiro: 11 saiu do carro 2!
+Passageiro: 11 vai passear no parque por 1 segundos!
+Fila carros: espera o carro 2 iniciar seu passeio para liberar o proximo carro!
+Passageiro: 12 saiu do carro 2!
+Fila passageiros: espera o embarque do carro 2 para liberar passageiros!
+Passageiro: 12 vai passear no parque por 4 segundos!
+Passageiro: 8 saiu do carro 2!
+Passageiro: 10 saiu do carro 2!
+Passageiro: 9 saiu do carro 2!
+Passageiro: 7 saiu do carro 2!
+Passageiro: 8 vai passear no parque por 5 segundos!
+Carro: 2 embarque do carro está liberado!
+Passageiro: 10 vai passear no parque por 4 segundos!
+Passageiro: 9 vai passear no parque por 3 segundos!
+Carro: 2 espera estar cheio para iniciar passeio!
+Passageiro: 7 vai passear no parque por 5 segundos!
+Passageiro: 11 entra na fila!
+Passageiro: 11 espera sua vez!
+Fila passageiros: é a vez do passageiro 11!
+Passageiro: 11 vai tentar entrar no carro 2!
+Passageiro: 11 entrou no carro 2!
+Passageiro: 11 pergunta: desembarque do carro 2 está liberado?
+Fila passageiros: espera passageiro 11 entrar no carro!
+Passageiro: 9 entra na fila!
+Passageiro: 9 espera sua vez!
+Fila passageiros: é a vez do passageiro 9!
+Passageiro: 9 vai tentar entrar no carro 2!
+Fila passageiros: espera passageiro 9 entrar no carro!
+Passageiro: 9 entrou no carro 2!
+Passageiro: 9 pergunta: desembarque do carro 2 está liberado?
+Passageiro: 12 entra na fila!
+Fila passageiros: é a vez do passageiro 12!
+Fila passageiros: espera passageiro 12 entrar no carro!
+Passageiro: 12 espera sua vez!
+Passageiro: 12 vai tentar entrar no carro 2!
+Passageiro: 10 entra na fila!
+Passageiro: 12 entrou no carro 2!
+Passageiro: 10 espera sua vez!
+Fila passageiros: é a vez do passageiro 10!
+Passageiro: 12 pergunta: desembarque do carro 2 está liberado?
+Fila passageiros: espera passageiro 10 entrar no carro!
+Passageiro: 10 vai tentar entrar no carro 2!
+Passageiro: 10 entrou no carro 2!
+Passageiro: 10 pergunta: desembarque do carro 2 está liberado?
+Carro: 1 passeio terminado!
+Carro: 1 passeio nº 4
+Carro: 1 espera sua vez!
+Passageiro: 8 entra na fila!
+Passageiro: 8 espera sua vez!
+Fila passageiros: é a vez do passageiro 8!
+Fila passageiros: espera passageiro 8 entrar no carro!
+Passageiro: 8 vai tentar entrar no carro 2!
+Passageiro: 7 entra na fila!
+Passageiro: 8 entrou no carro 2!
+Passageiro: 7 espera sua vez!
+Passageiro: 8 pergunta: desembarque do carro 2 está liberado?
+Fila passageiros: é a vez do passageiro 7!
+Fila passageiros: espera passageiro 7 entrar no carro!
+Passageiro: 7 vai tentar entrar no carro 2!
+Passageiro: 7 entrou no carro 2!
+Passageiro: 7 pergunta: desembarque do carro 2 está liberado?
+Carro: 2 passeio iniciado!
+Fila carros: é a vez do carro 1
+Carro: 2 vai andar por 5 segundos.
+Fila carros: espera o carro 1 iniciar seu passeio para liberar o proximo carro!
+Carro: 1 adquire acesso da plataforma!
+Carro: 1 desembarque do carro está liberado!
+Passageiro: 6 saiu do carro 1!
+Carro: 1 espera estar vazio para liberar o embarque!
+Fila passageiros: espera o embarque do carro 1 para liberar passageiros!
+Passageiro: 4 saiu do carro 1!
+Passageiro: 1 saiu do carro 1!
+Passageiro: 5 saiu do carro 1!
+Passageiro: 2 saiu do carro 1!
+Passageiro: 3 saiu do carro 1!
+Passageiro: 6 vai passear no parque por 1 segundos!
+Passageiro: 4 vai passear no parque por 2 segundos!
+Passageiro: 1 vai passear no parque por 3 segundos!
+Passageiro: 5 vai passear no parque por 2 segundos!
+Passageiro: 2 vai passear no parque por 5 segundos!
+Carro: 1 embarque do carro está liberado!
+Passageiro: 3 vai passear no parque por 1 segundos!
+Carro: 1 espera estar cheio para iniciar passeio!
+Passageiro: 6 entra na fila!
+Passageiro: 6 espera sua vez!
+Fila passageiros: é a vez do passageiro 6!
+Passageiro: 3 entra na fila!
+Passageiro: 6 vai tentar entrar no carro 1!
+Fila passageiros: espera passageiro 6 entrar no carro!
+Passageiro: 3 espera sua vez!
+Passageiro: 6 entrou no carro 1!
+Passageiro: 6 pergunta: desembarque do carro 1 está liberado?
+Fila passageiros: é a vez do passageiro 3!
+Fila passageiros: espera passageiro 3 entrar no carro!
+Passageiro: 3 vai tentar entrar no carro 1!
+Passageiro: 3 entrou no carro 1!
+Passageiro: 3 pergunta: desembarque do carro 1 está liberado?
+Passageiro: 4 entra na fila!
+Passageiro: 4 espera sua vez!
+Passageiro: 5 entra na fila!
+Passageiro: 5 espera sua vez!
+Fila passageiros: é a vez do passageiro 4!
+Passageiro: 4 vai tentar entrar no carro 1!
+Fila passageiros: espera passageiro 4 entrar no carro!
 Passageiro: 4 entrou no carro 1!
 Passageiro: 4 pergunta: desembarque do carro 1 está liberado?
 Fila passageiros: é a vez do passageiro 5!
@@ -61,98 +426,78 @@ Fila passageiros: espera passageiro 5 entrar no carro!
 Passageiro: 5 vai tentar entrar no carro 1!
 Passageiro: 5 entrou no carro 1!
 Passageiro: 5 pergunta: desembarque do carro 1 está liberado?
-Fila passageiros: é a vez do passageiro 6!
-Fila passageiros: espera passageiro 6 entrar no carro!
-Passageiro: 6 vai tentar entrar no carro 1!
-Passageiro: 6 entrou no carro 1!
-Passageiro: 6 pergunta: desembarque do carro 1 está liberado?
+Passageiro: 1 entra na fila!
+Passageiro: 1 espera sua vez!
+Fila passageiros: é a vez do passageiro 1!
+Passageiro: 1 vai tentar entrar no carro 1!
+Fila passageiros: espera passageiro 1 entrar no carro!
+Passageiro: 1 entrou no carro 1!
+Passageiro: 1 pergunta: desembarque do carro 1 está liberado?
+Carro: 2 passeio terminado!
+Carro: 2 passeio nº 4
+Carro: 2 espera sua vez!
+Passageiro: 2 entra na fila!
+Passageiro: 2 espera sua vez!
+Fila passageiros: é a vez do passageiro 2!
+Passageiro: 2 vai tentar entrar no carro 1!
+Fila passageiros: espera passageiro 2 entrar no carro!
+Passageiro: 2 entrou no carro 1!
+Passageiro: 2 pergunta: desembarque do carro 1 está liberado?
 Carro: 1 passeio iniciado!
-Fila carros: é a vez do carro 2
-Fila passageiros: espera o embarque do carro 2 para liberar passageiros!
 Carro: 1 vai andar por 5 segundos.
-Fila carros: espera o carro 2 iniciar seu passeio para liberar o proximo carro!
+Fila carros: é a vez do carro 2
 Carro: 2 adquire acesso da plataforma!
 Carro: 2 desembarque do carro está liberado!
+Fila carros: espera o carro 2 iniciar seu passeio para liberar o proximo carro!
+Carro: 2 espera estar vazio para liberar o embarque!
+Passageiro: 9 saiu do carro 2!
+Passageiro: 10 saiu do carro 2!
+Passageiro: 12 saiu do carro 2!
+Passageiro: 11 saiu do carro 2!
+Fila passageiros: espera o embarque do carro 2 para liberar passageiros!
+Passageiro: 8 saiu do carro 2!
+Passageiro: 7 saiu do carro 2!
+Passageiro: 9 vai passear no parque por 5 segundos!
+Passageiro: 10 vai passear no parque por 2 segundos!
+Passageiro: 12 vai passear no parque por 3 segundos!
+Passageiro: 11 vai passear no parque por 3 segundos!
+Passageiro: 8 vai passear no parque por 4 segundos!
 Carro: 2 embarque do carro está liberado!
+Passageiro: 7 vai passear no parque por 1 segundos!
 Carro: 2 espera estar cheio para iniciar passeio!
+Passageiro: 7 entra na fila!
+Passageiro: 7 espera sua vez!
 Fila passageiros: é a vez do passageiro 7!
 Fila passageiros: espera passageiro 7 entrar no carro!
 Passageiro: 7 vai tentar entrar no carro 2!
 Passageiro: 7 entrou no carro 2!
 Passageiro: 7 pergunta: desembarque do carro 2 está liberado?
-Fila passageiros: é a vez do passageiro 8!
-Fila passageiros: espera passageiro 8 entrar no carro!
-Passageiro: 8 vai tentar entrar no carro 2!
-Passageiro: 8 entrou no carro 2!
-Passageiro: 8 pergunta: desembarque do carro 2 está liberado?
-Fila passageiros: é a vez do passageiro 9!
-Fila passageiros: espera passageiro 9 entrar no carro!
-Passageiro: 9 vai tentar entrar no carro 2!
-Passageiro: 9 entrou no carro 2!
-Passageiro: 9 pergunta: desembarque do carro 2 está liberado?
+Passageiro: 10 entra na fila!
 Fila passageiros: é a vez do passageiro 10!
 Fila passageiros: espera passageiro 10 entrar no carro!
+Passageiro: 10 espera sua vez!
 Passageiro: 10 vai tentar entrar no carro 2!
 Passageiro: 10 entrou no carro 2!
 Passageiro: 10 pergunta: desembarque do carro 2 está liberado?
+Passageiro: 11 entra na fila!
+Passageiro: 12 entra na fila!
 Fila passageiros: é a vez do passageiro 11!
+Passageiro: 11 espera sua vez!
+Passageiro: 12 espera sua vez!
 Fila passageiros: espera passageiro 11 entrar no carro!
 Passageiro: 11 vai tentar entrar no carro 2!
 Passageiro: 11 entrou no carro 2!
-Passageiro: 11 pergunta: desembarque do carro 2 está liberado?
 Fila passageiros: é a vez do passageiro 12!
+Passageiro: 11 pergunta: desembarque do carro 2 está liberado?
 Fila passageiros: espera passageiro 12 entrar no carro!
 Passageiro: 12 vai tentar entrar no carro 2!
 Passageiro: 12 entrou no carro 2!
 Passageiro: 12 pergunta: desembarque do carro 2 está liberado?
-Carro: 2 passeio iniciado!
-Fila carros: é a vez do carro 1
-Carro: 2 vai andar por 5 segundos.
-Fila carros: espera o carro 1 iniciar seu passeio para liberar o proximo carro!
+Passageiro: 8 entra na fila!
+Fila passageiros: é a vez do passageiro 8!
+Fila passageiros: espera passageiro 8 entrar no carro!
+Passageiro: 8 espera sua vez!
+Passageiro: 8 vai tentar entrar no carro 2!
+Passageiro: 8 entrou no carro 2!
+Passageiro: 8 pergunta: desembarque do carro 2 está liberado?
 Carro: 1 passeio terminado!
-Carro: 1 passeio nº 2
-Carro: 1 adquire acesso da plataforma!
-Carro: 2 passeio terminado!
-Carro: 1 desembarque do carro está liberado!
-Carro: 2 passeio nº 2
-Passageiro: 4 saiu do carro 1!
-Carro: 1 espera estar vazio para liberar o embarque!
-Passageiro: 5 saiu do carro 1!
-Carro: 2 espera sua vez!
-Fila passageiros: espera o embarque do carro 1 para liberar passageiros!
-Passageiro: 1 saiu do carro 1!
-Passageiro: 2 saiu do carro 1!
-Passageiro: 6 saiu do carro 1!
-Passageiro: 3 saiu do carro 1!
-Passageiro: 4 vai passear no parque por 3 segundos!
-Passageiro: 5 vai passear no parque por 3 segundos!
-Passageiro: 1 vai passear no parque por 1 segundos!
-Carro: 1 embarque do carro está liberado!
-Passageiro: 2 vai passear no parque por 1 segundos!
-Passageiro: 6 vai passear no parque por 4 segundos!
-Passageiro: 3 vai passear no parque por 1 segundos!
-Carro: 1 espera estar cheio para iniciar passeio!
-Passageiro: 1 entra na fila!
-Fila passageiros: é a vez do passageiro 1!
-Passageiro: 1 espera sua vez!
-Passageiro: 3 entra na fila!
-Passageiro: 2 entra na fila!
-Fila passageiros: é a vez do passageiro 3!
-Passageiro: 3 espera sua vez!
-Passageiro: 2 espera sua vez!
-Fila passageiros: é a vez do passageiro 2!
-Passageiro: 2 vai tentar entrar no carro 1!
-Passageiro: 2 entrou no carro 1!
-Passageiro: 2 pergunta: desembarque do carro 1 está liberado?
-Passageiro: 4 entra na fila!
-Passageiro: 4 espera sua vez!
-Fila passageiros: é a vez do passageiro 4!
-Passageiro: 4 vai tentar entrar no carro 1!
-Passageiro: 4 entrou no carro 1!
-Passageiro: 4 pergunta: desembarque do carro 1 está liberado?
-Passageiro: 5 entra na fila!
-Fila passageiros: é a vez do passageiro 5!
-Passageiro: 5 espera sua vez!
-Passageiro: 6 entra na fila!
-Fila passageiros: é a vez do passageiro 6!
-Passageiro: 6 espera sua vez!
