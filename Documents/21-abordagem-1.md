@@ -8,8 +8,6 @@ Os eventos são utilizados para controlar as fases de embarque e desembarque do 
 
 ### Condições e fluxo
 
-Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
-
 #### Carro
 
 1. O carro libera o desembarque
@@ -21,7 +19,7 @@ Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
 ##### Fila de passageiros
 
 1. A fila do carro espera o embarque ser liberado
-2. A fila libera o próximo passageiro
+2. A fila libera a vez do passageiro atual
 3. A fila espera o passageiro atual embarcar no carro
 
 #### Passageiro
