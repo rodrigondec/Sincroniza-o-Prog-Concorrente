@@ -40,13 +40,16 @@ Considere o caso em que uma plataforma possui 2 carros, cada um possuindo 6 vaga
 1. A fila do carro espera o embarque ser liberado para liberar o passagei o atual
 2. A fila espera o passageiro atual embarcar no carro para chamar o próximo
 
-#### Passageiros
+#### Passageiro
 
-1. Os passageiros entram na fila e esperam a sua vez
-2. Na sua vez, tentam  alocar um assento do semáforo. Com isso fazendo o controle de limite de pessoas no carro
-3. Depois de alocar o assento eles entram de fato carro
-4. Após embarcarem, eles esperam o desembarque do carro.
-5. Ao desembarcarem, liberam o assento adquirido e vão passear
+1. O passageiro entra na fila
+2. O passageiro espera sua vez
+3. O passageiro adquire o recurso assento
+4. O passageiro entra no carro
+5. O passageiro espera o desembarque do carro ser liberado
+6. O passageiro sai do carro
+7. O passageiro libera o recurso assento
+8. O passageiro vai passear no parque
 
 ## Classes
 

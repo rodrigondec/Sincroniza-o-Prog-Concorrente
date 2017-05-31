@@ -31,8 +31,8 @@ Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
 3. O passageiro adquire o recurso assento
 4. O passageiro entra no carro
 5. O passageiro espera o desembarque do carro ser liberado
-6. O passageiro libera o recurso assento
-7. O passageiro sai do carro
+6. O passageiro sai do carro
+7. O passageiro libera o resurso assento
 8. O passageiro vai passear no parque
 
 ## Classes
