@@ -59,8 +59,6 @@ Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utiliza
 
 * A fila atual do banheiro é de acordo com o gênero atual do banheiro. Com isso fazendo o controle de acesso de gênero
 
-
-
 1. A fila atual do banheiro espera ele estar disponível
 2. A fila atual do banheiro libera a vez da pessoa atual
 3. A fila atual do banheiro espera a pessoa atual entrar no banheiro
@@ -96,9 +94,9 @@ Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utiliza
 1. A pessoa entra na fila
 2. A pessoa espera sua vez
 3. A pessoa adquire o recurso vaga do banheiro
-4. Na sua vez, tentam  alocar uma vaga do semáforo. Com isso fazendo o controle de limite de pessoas no banheiro
-5. Depois de alocar a vaga eles entram de fato no banheiro
-6. Ao saírem  do banheiro, liberam a vaga e vão trabalhar
+4. A pessoa entra no banheiro
+5. A pessoa dai do banheiro
+6. A pessoa libera o recurso vaga do banheiro
 
 
 
