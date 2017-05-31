@@ -4,15 +4,11 @@
 
 Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utilizando [Event](https://docs.python.org/3/library/threading.html#event-objects), [BoundedSemaphore](https://docs.python.org/3/library/threading.html#semaphore-objects) e [Queue](https://docs.python.org/3/library/queue.html#queue-objects) objects das bibliotecas [threading](https://docs.python.org/3/library/threading.html) e  [queue](https://docs.python.org/3/library/queue.html) do python3.
 
-Quanto à estrutura de dados, duas filas foram utilizadas para armazenar as pessoas esperando para entrar no banheiro.
+Quanto à estrutura de dados:
 
-Os events são usados para esperar condições serem satisfeitas e os semáforos para obedecer a quantidade limite dos recursos \(no caso, vagas do banheiro\).
-
-Resumindo a lógica: 
-
-* Há duas filas, na qual cada uma controla um dos gêneros
-* O gênero atual do banheiro determina qual das filas será liberada
-* O gênero atual do banheiro é alterado de acordo com um método de justiça
+* Duas filas foram utilizadas para armazenar as pessoas esperando para entrar no banheiro
+* Os events são usados para esperar condições serem satisfeitas
+* Os semáforos foram utilizadospara garantir a corretude com relação a quantidade limite dos recursos \(no caso, vagas do banheiro\)
 
 ## Classes
 
