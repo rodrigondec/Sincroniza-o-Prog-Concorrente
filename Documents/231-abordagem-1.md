@@ -18,8 +18,6 @@ Considere o caso em que uma plataforma possui 2 carros, cada um possuindo 6 vaga
 2. A fila de carros libera a vez do carro atual
 3. A fila de carros espera o passeio do carro atual iniciar antes de colocá-lo novamente na fila e liberar o próximo
 
-
-
 ##### Fila de passageiros
 
 1. A fila de passageiros espera ter um carro  na plataforma para prosseguir
@@ -27,13 +25,15 @@ Considere o caso em que uma plataforma possui 2 carros, cada um possuindo 6 vaga
 3. A fila de passageiros libera a vez do passageiro atual
 4. A fila de passageiros espera que o passageiro atual embarque no carro para poder liberar o próximo
 
-
-
 #### Carro
 
-1. O carro espera o evento vazio para liberar o embarque
-2. O carro espera o evento cheio para terminar o embarque e iniciar o passeio
-3. Depois do passeio, é iniciado o desembarque
+1. O carro espera sua vez para prosseguir
+2. O carro adquire o recurso plataforma
+3. O carro libera o desembarque
+4. O carro espera estar vazio para liberar o embarque
+5. O carro libera o embarque
+6. O carro espera estar cheio para iniciar passeio
+7. O carro libera o recurso plataforma e inicia o passeio
 
 #### Fila do carro
 
