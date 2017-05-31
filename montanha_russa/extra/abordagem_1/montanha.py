@@ -73,35 +73,95 @@ class Plataforma(object):
     def __init__(self):
         """Constructor for Plataforma"""
 
-        self.fila = Queue()
+        self.fila_carros = Queue()
+        # self.carro_anterior
         self.carro_atual = None
+
+        self.fila_passageiros = Queue()
+        self.passageiro_atual = None
+
         self.tem_carro = Event()
         self.acesso = BoundedSemaphore()
 
         self.tem_carro.clear()
 
-        self.thread_main = Thread(target=self.main)
-        self.thread_main.start()
+        self.thread_fila_carros = Thread(target=self.controlador_fila_carros)
+        self.thread_fila_carros.start()
+        self.thread_fila_passageiros = Thread(target=self.controlador_fila_passageiros)
+        self.thread_fila_passageiros.start()
 
-    def main(self):
+    def controlador_fila_passageiros(self):
+        while True:
+            if not self.tem_carro.is_set():
+                print_plataforma_log("Fila passageiros: espera ter carro na plataforma!")
+                self.tem_carro.wait()
+
+            # if self.carro_atual.cheio.is_set():
+            #     print_plataforma_log("Fila passageiros: carro na plataforma cheio!")
+            #     if self.carro_atual.passeio.is_set():
+            #         print_plataforma_log("Fila passageiros: carro com passeio em andamento. Esperar passeio terminar!")
+            #         self.carro_atual.passeio_terminado.wait()
+            #     elif not self.carro_atual.passeio.is_set():
+            #         print_plataforma_log("Fila passageiros: carro não está em passeio. Esperar passeio iniciar!")
+            #         self.carro_atual.passeio_iniciado.wait()
+            #
+            #         time.sleep(0.1)
+            #
+            #
+            #         if not self.tem_carro.is_set():
+            #             print_plataforma_log("Fila passageiros: espera ter carro na plataforma!")
+            #             self.tem_carro.wait()
+
+
+            if not self.carro_atual.boardable.is_set():
+                print_plataforma_log("Fila passageiros: espera o embarque do carro "+str(self.carro_atual)+" para liberar passageiros!")
+                self.carro_atual.boardable.wait()
+
+            self.passageiro_atual = self.fila_passageiros.get()
+
+            print_plataforma_log("Fila passageiros: é a vez do passageiro " + str(self.passageiro_atual) + "!")
+            self.passageiro_atual.vez.set()
+
+            if not self.passageiro_atual.boarded.is_set():
+                print_plataforma_log("Fila passageiros: espera passageiro "+str(self.passageiro_atual)+" entrar no carro!")
+                self.passageiro_atual.boarded.wait()
+            self.passageiro_atual.vez.clear()
+
+    def controlador_fila_carros(self):
         try:
             while True:
                 self.tem_carro.clear()
-                self.carro_atual = self.fila.get(timeout=5)
+                self.carro_atual = self.fila_carros.get(timeout=5)
                 self.tem_carro.set()
 
-                print_plataforma_log("Plataforma: liberado acesso à plataforma do carro "+str(self.carro_atual))
+                if not self.carro_atual.passeio_terminado:
+                    print_plataforma_log("Fila carros: espera carro "+str(self.carro_atual)+" terminar o passeio!")
+                    self.carro_atual.passeio_terminado.wait()
+
+                print_plataforma_log("Fila carros: é a vez do carro "+str(self.carro_atual))
                 self.carro_atual.vez.set()
 
-                print_plataforma_log("Plataforma: espera o carro " + str(self.carro_atual)+" iniciar seu passeio para liberar o prox")
-                if not self.carro_atual.passeio_iniciado.is_set():
-                    self.carro_atual.passeio_iniciado.wait()
-                self.carro_atual.vez.clear()
-        except Empty:
-            print_plataforma_log("Plataforma: terminou todos os passeios!")
+                # print_plataforma_log("Fila carros: espera o carro "+str(self.carro_atual)+" estar cheio para remover sua veziniciar seu passeio para liberar o proximo carro!")
+                # if not self.carro_atual.cheio.is_set():
+                #     self.carro_atual.cheio.wait()
 
-    def entrar(self, carro):
-        self.fila.put(carro)
+                if not self.carro_atual.passeio_iniciado.is_set():
+                    print_plataforma_log("Fila carros: espera o carro "+str(self.carro_atual)+" iniciar seu passeio para liberar o proximo carro!")
+                    self.carro_atual.passeio_iniciado.wait()
+                    self.carro_atual.passeio_iniciado.clear()
+                self.tem_carro.clear()
+                self.carro_atual.vez.clear()
+
+                self.entrar_fila_carros(self.carro_atual)
+        except Empty:
+            print_plataforma_log("Plataforma/fila_carros: terminou todos os passeios!")
+            os._exit(1)
+
+    def entrar_fila_passageiros(self, passageiro):
+        self.fila_passageiros.put(passageiro)
+
+    def entrar_fila_carros(self, carro):
+        self.fila_carros.put(carro)
 
 class Carro(object):
     """Carro de uma montanha russa"""
@@ -126,6 +186,8 @@ class Carro(object):
         self.cheio = Event()
         self.vazio = Event()
         self.passeio_iniciado = Event()
+        self.passeio = Event()
+        self.passeio_terminado = Event()
         self.vez = Event()
         # carro começa com embarque e desembarque bloqueados
         self.boardable.clear()
@@ -135,6 +197,8 @@ class Carro(object):
         self.vazio.set()
         # carro
         self.passeio_iniciado.clear()
+        self.passeio.clear()
+        self.passeio_terminado.clear()
         self.vez.clear()
 
 
@@ -142,50 +206,51 @@ class Carro(object):
         self.thread_main = Thread(target=self.main)
         self.thread_main.start()
 
+        self.thread_run = Thread(target=self.run)
+
+
+        print_carro_log("Carro: " + str(self) + " entra na fila da plataforma!")
+        self.plataforma.entrar_fila_carros(self)
+
     def main(self):
         for x in range(self.num_passeios):
             print_carro_log("Carro: " + str(self) + " passeio nº " + str(x + 1))
 
-            print_carro_log("Carro: " + str(self) + " entra na fila da plataforma!")
-            self.plataforma.entrar(self)
-
-            print_carro_log("Carro: " + str(self) + " pergunta é minha vez?")
             if not self.vez.is_set():
+                print_carro_log("Carro: " + str(self) + " espera sua vez!")
                 self.vez.wait()
 
             print_carro_log("Carro: " + str(self) + " adquire acesso da plataforma!")
             with self.plataforma.acesso:
 
-                print_carro_log("Carro: " + str(self) + " espera estar vazio para liberar o embarque!")
+                self.unload()
                 if not self.vazio.is_set():
+                    print_carro_log("Carro: " + str(self) + " espera estar vazio para liberar o embarque!")
                     self.vazio.wait()
 
                 self.load()
-                print_carro_log("Carro: " + str(self) + " espera estar cheio para iniciar passeio!")
                 if not self.cheio.is_set():
+                    print_carro_log("Carro: " + str(self) + " espera estar cheio para iniciar passeio!")
                     self.cheio.wait()
 
-            print_carro_log("Carro: " + str(self) + " espera terminar o passaio para liberar desembarque!")
-            self.run()
-
-            print_carro_log("Carro: " + str(self) + " pergunta é minha vez?")
-            if not self.vez.is_set():
-                self.vez.wait()
-
-            print_carro_log("Carro: " + str(self) + " adquire acesso da plataforma!")
-            with self.plataforma.acesso:
-                self.unload()
+            self.thread_run = Thread(target=self.run)# print_carro_log("Carro: " + str(self) + " espera terminar o passeio para liberar desembarque!")
+            self.thread_run.start()
+            self.thread_run.join()
 
         os._exit(1)
 
     def run(self):
+        self.passeio.set()
+        self.boardable.clear()
+        self.unboardable.clear()
+        self.passeio_terminado.clear()
         self.passeio_iniciado.set()
         print_carro_log("Carro: " + str(self) + " passeio iniciado!")
         tempo = randrange(5) + 1
         print_carro_log("Carro: " + str(self) + " vai andar por " + str(tempo) + " segundos.")
         time.sleep(tempo)
         print_carro_log("Carro: " + str(self) + " passeio terminado!")
-        self.passeio_iniciado.clear()
+        self.passeio_terminado.set()
 
     def load(self):
         print_carro_log("Carro: " + str(self) + " embarque do carro está liberado!")
@@ -225,20 +290,29 @@ class Passageiro(object):
         Passageiro.id_passageiro += 1
 
         self.plataforma = plataforma
+        self.carro_atual = None
+
+        self.vez = Event()
+        self.boarded = Event()
+        self.vez.clear()
+        self.boarded.clear()
 
         self.thread = Thread(target=self.run)
         self.thread.start()
 
     def run(self):
         while True:
-            print_passageiros_log("Passageiro: " + str(self) + " pergunta: tem carro na plataforma?")
-            if not self.plataforma.tem_carro.is_set():
-                self.plataforma.tem_carro.wait()
+            print_passageiros_log("Passageiro: " + str(self) + " entra na fila!")
+            self.plataforma.entrar_fila_passageiros(self)
 
-            print_passageiros_log("Passageiro: " + str(self) + " pergunta: é minha vez para o carro "+str(self.plataforma.carro_atual)+"?")
-            assert isinstance(self.plataforma.carro_atual, Carro)
-            with self.plataforma.carro_atual.assentos:
-                print_passageiros_log("Passageiro: " + str(self) + " irá poder entrar no carro "+str(self.plataforma.carro_atual)+"!")
+            if not self.vez.is_set():
+                print_passageiros_log("Passageiro: " + str(self) + " espera sua vez!")
+                self.vez.wait()
+
+            self.carro_atual = self.plataforma.carro_atual
+
+            print_passageiros_log("Passageiro: " + str(self) + " vai tentar entrar no carro " + str(self.carro_atual) + "!")
+            with self.carro_atual.assentos:
                 self.board()
                 self.unboard()
             self.passear()
@@ -249,20 +323,17 @@ class Passageiro(object):
         time.sleep(tempo)
 
     def board(self):
-        print_passageiros_log("Passageiro: " + str(self) + " pergunta: embarque do carro "+str(self.plataforma.carro_atual)+" está liberado?")
-        assert isinstance(self.plataforma.carro_atual, Carro)
-        if not self.plataforma.carro_atual.boardable.is_set():
-            self.plataforma.carro_atual.boardable.wait()
-        print_passageiros_log("Passageiro: " + str(self) + " entrou no carro "+str(self.plataforma.carro_atual)+"!")
-        self.plataforma.carro_atual.board()
+        print_passageiros_log("Passageiro: " + str(self) + " entrou no carro " + str(self.carro_atual) + "!")
+        self.carro_atual.board()
+        self.boarded.set()
 
     def unboard(self):
-        print_passageiros_log("Passageiro: " + str(self) + " pergunta: desembarque do carro "+str(self.plataforma.carro_atual)+" está liberado?")
+        print_passageiros_log("Passageiro: " + str(self) + " pergunta: desembarque do carro "+str(self.carro_atual)+" está liberado?")
         # assert isinstance(self.plataforma.carro_atual, Carro)
-        if not self.plataforma.carro_atual.unboardable.is_set():
-            self.plataforma.carro_atual.unboardable.wait()
-        print_passageiros_log("Passageiro: "+str(self)+" saiu do carro "+str(self.plataforma.carro_atual)+"!")
-        self.plataforma.carro_atual.unboard()
+        if not self.carro_atual.unboardable.is_set():
+            self.carro_atual.unboardable.wait()
+        print_passageiros_log("Passageiro: "+str(self)+" saiu do carro "+str(self.carro_atual)+"!")
+        self.carro_atual.unboard()
 
     def __str__(self):
         return str(self.id_passageiro)
