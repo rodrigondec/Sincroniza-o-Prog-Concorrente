@@ -6,9 +6,13 @@ Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utiliza
 
 Quanto à estrutura de dados, duas filas foram utilizadas para armazenar as pessoas esperando para entrar no banheiro.
 
-Os events são usados para esperar condições serem satisfeitas e os semáforos para obedecer a quantidade limite dos recursos \(no caso, vagas do banheiro\). 
+Os events são usados para esperar condições serem satisfeitas e os semáforos para obedecer a quantidade limite dos recursos \(no caso, vagas do banheiro\).
 
-Resumindo a lógica: há uma fila única na qual entram homens e mulheres. O banheiro ou está vazio ou comportando pessoas de um dos gêneros. Quando a primeira pessoa na fila é de um gênero diferente, espera-se o banheiro esvaziar para que entre.
+Resumindo a lógica: 
+
+* Há duas filas, na qual cada uma controla um dos gêneros
+* O gênero atual do banheiro determina qual das filas será liberada
+* O gênero atual do banheiro é alterado de acordo com um método de justiça
 
 ## Classes
 
