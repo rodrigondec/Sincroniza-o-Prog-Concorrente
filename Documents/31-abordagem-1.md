@@ -50,17 +50,20 @@ Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utiliza
 
 ##### Banheiro
 
-1. O banheiro começa com o gênero masculino
-2. O banheiro tem duas filas, a _**fila masculina**_ e a _**fila feminina**_
-3. É chamado o método de justiça de gênero nas seguintes condições:
-   1. Quando uma fila está maior _**1.5\*limite\_pessoas**_ do que a outra
-   2. uma das filas está vazia enquanto a outra não
+* O banheiro começa com o gênero masculino
+* É chamado o método de justiça de gênero nas seguintes condições:
+  * Quando uma fila está maior 1.5\*limite\_pessoas do que a outra
+  * Uma das filas está vazia enquanto a outra não
 
 ##### Fila do banheiro
 
-1. A _**fila atual**_ do banheiro é de acordo com o gênero atual do banheiro. Com isso fazendo o controle de acesso de gênero
-2. A _**fila atual**_ do banheiro espera ele estar disponível para liberar a _**pessoa atual**_
-3. A _**fila atual**_ do banheiro espera a **pessoa**_** **_**atual** entrar no banheiro para liberar o próximo
+* A fila atual do banheiro é de acordo com o gênero atual do banheiro. Com isso fazendo o controle de acesso de gênero
+
+
+
+1. A fila atual do banheiro espera ele estar disponível
+2. A fila atual do banheiro libera a vez da pessoa atual
+3. A fila atual do banheiro espera a pessoa atual entrar no banheiro
 
 ### Pessoa
 
@@ -90,10 +93,12 @@ Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utiliza
 
 #### Condições e fluxo
 
-1. As pessoas entram na fila e esperam a sua vez
-2. Na sua vez, tentam  alocar uma vaga do semáforo. Com isso fazendo o controle de limite de pessoas no banheiro
-3. Depois de alocar a vaga eles entram de fato no banheiro
-4. Ao saírem  do banheiro, liberam a vaga e vão trabalhar
+1. A pessoa entra na fila
+2. A pessoa espera sua vez
+3. A pessoa adquire o recurso vaga do banheiro
+4. Na sua vez, tentam  alocar uma vaga do semáforo. Com isso fazendo o controle de limite de pessoas no banheiro
+5. Depois de alocar a vaga eles entram de fato no banheiro
+6. Ao saírem  do banheiro, liberam a vaga e vão trabalhar
 
 
 

@@ -92,11 +92,11 @@ Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utiliza
 
 1. O passageiro entra na fila
 2. O passageiro espera sua vez
-3. O passageiro adquire o recurso assento
+3. O passageiro adquire o recurso assento do carro
 4. O passageiro entra no carro
 5. O passageiro espera o desembarque do carro ser liberado
 6. O passageiro sai do carro
-7. O passageiro libera o resurso assento
+7. O passageiro libera o resurso assento do carro
 8. O passageiro vai passear no parque
 
 

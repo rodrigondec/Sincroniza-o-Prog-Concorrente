@@ -93,12 +93,12 @@ Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utiliza
 #### Condições e fluxo
 
 1. O carro espera sua vez para prosseguir
-2. O carro adquire o recurso plataforma
+2. O carro adquire o recurso acesso da plataforma
 3. O carro libera o desembarque
 4. O carro espera estar vazio para liberar o embarque
 5. O carro libera o embarque
 6. O carro espera estar cheio para iniciar passeio
-7. O carro libera o recurso plataforma e inicia o passeio
+7. O carro libera o recurso acesso da plataforma e inicia o passeio
 
 ### Passageiro
 
@@ -129,11 +129,11 @@ Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utiliza
 
 1. O passageiro entra na fila de passageiros
 2. O passageiro espera sua vez
-3. O passageiro adquire o recurso assento
+3. O passageiro adquire o recurso assento do carro
 4. O passageiro entra no carro
 5. O passageiro espera o desembarque do carro ser liberado
 6. O passageiro sai do carro
-7. O passageiro libera o recurso assento
+7. O passageiro libera o recurso assento do carro
 8. O passageiro vai passear no parque
 
 
