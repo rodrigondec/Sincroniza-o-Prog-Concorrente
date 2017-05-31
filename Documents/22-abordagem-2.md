@@ -29,7 +29,7 @@ Deadlocks e livelocks foram evitados, basicamente, adquirindo-se locks em ordem 
 | Nome do atributo condicional | Descrição | Tipo |
 | :--- | :--- | :--- |
 | barr | Utilizado para impedir que passageiros "pulem" da montanha-russa. É utilizado para liberar os passageiros para desembarque | [Barrier](https://docs.python.org/3/library/threading.html#barrier-objects) |
-| lk | Utilizado para garantia exclusão mútua e garantir consistência ao realizar operações de adição e remoção em passageiros e/ou fila | \[Lock\]\(\([https://docs.python.org/3/library/threading.html\#lock-objects](https://docs.python.org/3/library/threading.html#lock-objects)\)\) |
+| lk | Utilizado para garantia exclusão mútua e garantir consistência ao realizar operações de adição e remoção em passageiros e/ou fila | \[Lock\]\([https://docs.python.org/3/library/threading.html\#lock-objects](https://docs.python.org/3/library/threading.html#lock-objects)\) |
 | cv\_car | Utilizado para fazer a thread do carro dormir e esperar que uma condição aconteça para que volte a agir \(carro ficar cheio ou vazio\). Evita processamento desnecessário. | [Condition](https://docs.python.org/3/library/threading.html#condition-objects) |
 
 #### Métodos
