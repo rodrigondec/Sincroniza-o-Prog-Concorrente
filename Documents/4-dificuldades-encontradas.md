@@ -12,14 +12,10 @@ Uma dificuldade foi usar barreiras para controlar a entrada de passageiros. No v
 
 ### Extra 1
 
-##### Abordagem 1
-
 Uma dificuldade durante a implementação da abordagem 1 do extra foi a questão de gerenciar a fila dos carros e fazer com que as pessoas entrem corretamente no carro atual da plataforma.
 
 A questão de gerenciar a fila dos carros foi resolvido com a implementação de uma fila sequencial, onde a fila só prossegue quando o carro atual inicie seu passeio.  
 Enquanto a questão das pessoas entragem corretamente no carro atual foi resolvido com a ajuda da fila sequencial dos carros e ter um carro atual da plataforma que muda, fazendo com que os passageiros só tentem alocar o assento do carro correto.
-
-##### Abordagem 2
 
 ### Extra 2
 
