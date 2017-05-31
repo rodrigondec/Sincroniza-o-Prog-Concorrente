@@ -13,5 +13,14 @@ Desenvolva uma segunda versão do programa para fazer com que a montanha-russa c
 * os passageiros de um carro só podem desembarcar dele quando todos os passageiros do carro que  
    está a sua frente já tenham saído.
 
+## Análise do problema
 
+O problema consiste em algumas pontos a serem satisfeitos, tais como:
+
+1. Os vários carros respeitarem uma ordem de fila
+2. Apenas um carro estar em processo de embarque/desembarque
+3. Os passageiros entrarem/saírem apenas no/do carro que está em processo de embarque/desembarque
+4. Todos os pontos originais do problema [Uma Montanha-Russa](/Documents/2-uma-montanha-russa.md)
+
+As sincronizações necessárias entre as partes do programa, são entre as etapas de embarque, passeio, desembarque, limite de vagas do carro, ordem dos carros e fila de passageiros. Tendo em mente isso implementaremos soluções utilizando metodologias/tecnologias com o intuito de garantir a corretude entre esses quesitos.
 
