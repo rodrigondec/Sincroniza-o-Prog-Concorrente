@@ -8,9 +8,9 @@ Uma dificuldade encontrada foi dividir e separar os diferentes estados e condiç
 
 ### Abordagem 2
 
-bla
+Uma dificuldade foi usar barreiras para controlar a entrada de passageiros. No versão final, as barreiras foram utilizadas apenas para controlar a saída dos passageiros do carro mesmo.
 
-### Extra
+### Extra 1
 
 ##### Abordagem 1
 
@@ -19,6 +19,10 @@ Uma dificuldade durante a implementação da abordagem 1 do extra foi a questão
 A questão de gerenciar a fila dos carros foi resolvido com a implementação de
 
 ##### Abordagem 2
+
+### Extra 2
+
+Uma dificuldade encontrada foi usar locks e variáveis condicionais para controlar a chegada em ordem dos carros. Na versão final utilizou-se semáforos nessa parte. Para usar locks, uma possível abordagem seria a utilização de uma fila para controlar a chegada dos carros na "plataforma de desembarque".
 
 ## Banheiro Unissex
 
@@ -35,5 +39,5 @@ Com isso garantindo a execução sem starvation.
 
 ### Abordagem 2
 
-bla
+A dificuldade maior foi controlar a troca de sexo do banheiro evitando livelocks e que alguém do outro gênero entrasse. Erros muito provavelmente ocasionados por motivos de exaustão
 
