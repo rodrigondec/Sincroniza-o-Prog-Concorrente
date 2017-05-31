@@ -128,9 +128,7 @@ class Carro(object):
             if len(fila) == 0: #fila vazia. Esperar alguém entrar
                 fila_cv.wait()
             #remove um cara da fila e o notifica para entrar no carro
-            print("FILA ANTES: " + " ".join(str(x) for x in fila))
             passageiro = fila.pop(0)
-            print("FILA DEPOIS: " + " ".join(str(x) for x in fila))
             fila_cv.release()
             passageiro.cv.acquire()
             passageiro.cv.notify()
