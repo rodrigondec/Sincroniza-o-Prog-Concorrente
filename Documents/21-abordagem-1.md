@@ -16,7 +16,7 @@ Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
 2. O carro espera o evento cheio para terminar o embarque e iniciar o passeio
 3. Depois do passeio, é iniciado o desembarque
 
-#### Fila do carro
+##### Fila de passageiros
 
 1. A fila do carro espera o embarque ser liberado para liberar o passagei o atual
 2. A fila espera o passageiro atual embarcar no carro para chamar o próximo

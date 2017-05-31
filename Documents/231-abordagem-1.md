@@ -8,7 +8,26 @@ Os eventos são utilizados para controlar as fases de embarque e desembarque do 
 
 ### Condições e fluxo
 
-Considere o caso em que o carro possui 6 vagas mas há 12 pessoas no parque:
+Considere o caso em que uma plataforma possui 2 carros, cada um possuindo 6 vagas mas há 12 pessoas no parque:
+
+#### Plataforma
+
+##### Fila de carros
+
+1. A fila de carros espera que o passeio do carro atual termine para prosseguir
+2. A fila de carros libera a vez do carro atual
+3. A fila de carros espera o passeio do carro atual iniciar antes de colocá-lo novamente na fila e liberar o próximo
+
+
+
+##### Fila de passageiros
+
+1. A fila de passageiros espera ter um carro  na plataforma para prosseguir
+2. A fila de passageiros espera que o carro atual da plataforma tenha o embarque liberado para prosseguir
+3. A fila de passageiros libera a vez do passageiro atual
+4. A fila de passageiros espera que o passageiro atual embarque no carro para poder liberar o próximo
+
+
 
 #### Carro
 
