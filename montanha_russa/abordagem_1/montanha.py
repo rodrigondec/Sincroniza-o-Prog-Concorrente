@@ -86,12 +86,12 @@ class Carro(object):
         for x in range(self.num_passeios):
             print_carro_log("Carro: " + str(self) + " passeio nº " + str(x + 1))
 
+            self.unload()
             print_carro_log("Carro: " + str(self) + " espera estar vazio para liberar o embarque!")
             if not self.vazio.is_set():
                 self.vazio.wait()
 
             self.load()
-
             print_carro_log("Carro: " + str(self) + " espera estar cheio para iniciar passeio!")
             if not self.cheio.is_set():
                 self.cheio.wait()
@@ -99,7 +99,6 @@ class Carro(object):
             print_carro_log("Carro: " + str(self) + " espera terminar o passaio para liberar desembarque!")
             self.run()
 
-            self.unload()
         os._exit(1)
 
     def controlar_fila(self):
@@ -116,6 +115,8 @@ class Carro(object):
             self.passageiro_atual.vez.clear()
 
     def run(self):
+        self.boardable.clear()
+        self.unboardable.clear()
         print_carro_log("Carro: " + str(self) + " passeio iniciado!")
         tempo = randrange(5) + 1
         print_carro_log("Carro: " + str(self) + " vai andar por " + str(tempo) + " segundos.")
