@@ -4,6 +4,12 @@
 
 Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utilizando [Event](https://docs.python.org/3/library/threading.html#event-objects), [BoundedSemaphore](https://docs.python.org/3/library/threading.html#semaphore-objects) e [Queue](https://docs.python.org/3/library/queue.html#queue-objects) objects das bibliotecas [threading](https://docs.python.org/3/library/threading.html) e  [queue](https://docs.python.org/3/library/queue.html) do python3.
 
+Quanto à estrutura de dados, duas filas foram utilizadas para armazenar as pessoas esperando para entrar no banheiro.
+
+Os events são usados para esperar condições serem satisfeitas e os semáforos para obedecer a quantidade limite dos recursos \(no caso, vagas do banheiro\). 
+
+Resumindo a lógica: há uma fila única na qual entram homens e mulheres. O banheiro ou está vazio ou comportando pessoas de um dos gêneros. Quando a primeira pessoa na fila é de um gênero diferente, espera-se o banheiro esvaziar para que entre.
+
 ## Classes
 
 * [Banheiro](#banheiro)
@@ -57,11 +63,10 @@ Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utiliza
 
 ##### Fila do banheiro
 
-* A fila atual do banheiro é de acordo com o gênero atual do banheiro. Com isso fazendo o controle de acesso de gênero
-
-1. A fila atual do banheiro espera ele estar disponível
-2. A fila atual do banheiro libera a vez da pessoa atual
-3. A fila atual do banheiro espera a pessoa atual entrar no banheiro
+1. A fila atual do banheiro é de acordo com o gênero atual do banheiro. Com isso fazendo o controle de acesso de gênero
+2. A fila atual do banheiro espera ele estar disponível
+3. A fila atual do banheiro libera a vez da pessoa atual
+4. A fila atual do banheiro espera a pessoa atual entrar no banheiro
 
 ### Pessoa
 
@@ -94,8 +99,8 @@ Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utiliza
 1. A pessoa entra na fila
 2. A pessoa espera sua vez
 3. A pessoa adquire o recurso vaga do banheiro
-4. A pessoa entra no banheiro
-5. A pessoa dai do banheiro
+4. A pessoa entra no banheiro e dorme por um tempo randômico
+5. A pessoa sai do banheiro
 6. A pessoa libera o recurso vaga do banheiro
 
 

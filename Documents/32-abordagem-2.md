@@ -10,31 +10,6 @@ Os locks são usados para garantir exclusão mútua e as variáveis condicionais
 
 Resumindo a lógica: há uma fila única na qual entram homens e mulheres. O banheiro ou está vazio ou comportando pessoas de um dos gêneros. Quando a primeira pessoa na fila é de um gênero diferente, espera-se o banheiro esvaziar para que entre.
 
-### Condições e fluxo
-
-Considere o caso em que o banheiro possui 3 vagas mas há 10 pessoas \(5 homens e 5 mulheres\) no escritório:
-
-#### Banheiro
-
-1. O banheiro começa sem gênero
-2. O banheiro só tem uma fila, não qual entrarão pessoas dos dois gêneros
-3. Quando o banheiro está vazio (sem gênero)
-    1. Se a fila estiver vazia, espera alguém chegar
-    2. Se tiver alguém na fila, atribua seu gênero ao banheiro
-4. Quando o banheiro está cheio espere alguém sair
-5. Quando tem gente na fila
-    1. Se a primeira pessoa é do mesmo gênero do banheiro, incremente o contador e acorde-a
-    2. Senão se o contador **não** atingiu o valor máximo, acorde a próxima pessoa do gênero do banheiro
-    3. Senão espera o banheiro esvaziar (gênero será trocado)
-
-#### Pessoas
-
-1. Cada pessoa trabalha por um tempo aleatório antes de usar o banheiro
-2. Pessoa entra na fila, notifica banheiro (pode estar dormindo caso a fila esteja vazia) e espera ser acordada para entrar no banheiro
-3. Pessoa entra no banheiro
-4. Pessoa usa o banheiro (thread dorme por tempo aleatório)
-5. Pessoa sai do banheiro e notifica o banheiro (que pode estar dormindo caso estiver cheio)
-
 ## Classes
 
 * [Banheiro](#banheiro)
@@ -77,6 +52,19 @@ Considere o caso em que o banheiro possui 3 vagas mas há 10 pessoas \(5 homens 
 | entrar | adiciona uma pessoa no banheiro |
 | sair | remove uma pessoa do banheiro |
 
+#### Condições e fluxo
+
+1. O banheiro começa sem gênero
+2. O banheiro só tem uma fila, não qual entrarão pessoas dos dois gêneros
+3. Quando o banheiro está vazio \(sem gênero\)
+   1. Se a fila estiver vazia, espera alguém chegar
+   2. Se tiver alguém na fila, atribua seu gênero ao banheiro
+4. Quando o banheiro está cheio espere alguém sair
+5. Quando tem gente na fila
+   1. Se a primeira pessoa é do mesmo gênero do banheiro, incremente o contador e acorde-a
+   2. Senão se o contador **não** atingiu o valor máximo, acorde a próxima pessoa do gênero do banheiro
+   3. Senão espera o banheiro esvaziar \(gênero será trocado\)
+
 ### Pessoa
 
 #### Atributos
@@ -102,6 +90,14 @@ Considere o caso em que o banheiro possui 3 vagas mas há 10 pessoas \(5 homens 
 | trabalhar | pessoa trabalha por um tempo |
 | entrar | pessoa entra no banheiro |
 | sair | pessoa sai do banheiro |
+
+#### Condições e fluxo
+
+1. Cada pessoa trabalha por um tempo aleatório antes de usar o banheiro
+2. Pessoa entra na fila, notifica banheiro \(pode estar dormindo caso a fila esteja vazia\) e espera ser acordada para entrar no banheiro
+3. Pessoa entra no banheiro
+4. Pessoa usa o banheiro \(thread dorme por tempo aleatório\)
+5. Pessoa sai do banheiro e notifica o banheiro \(que pode estar dormindo caso estiver cheio\)
 
 
 
