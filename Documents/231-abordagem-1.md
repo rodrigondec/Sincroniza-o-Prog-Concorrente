@@ -4,11 +4,42 @@
 
 Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utilizando [Event](https://docs.python.org/3/library/threading.html#event-objects), [BoundedSemaphore](https://docs.python.org/3/library/threading.html#semaphore-objects) e [Queue](https://docs.python.org/3/library/queue.html#queue-objects) objects das bibliotecas [threading](https://docs.python.org/3/library/threading.html) e  [queue](https://docs.python.org/3/library/queue.html) do python3.
 
-Os eventos são utilizados para controlar as fases de embarque e desembarque do veículo e as situações cheio e vazio. O controle do acesso aos assentos do carro é feito por um semáforo e pela fila.
+## Classes
 
-### Condições e fluxo
+* [Plataforma](#plataforma)
+* [Carro](#carro)
+* [Passageiro](#passageiro)
 
-#### Plataforma
+### Plataforma
+
+#### Atributos
+
+| Nome do atributo | Descrição | Tipo |
+| :--- | :--- | :--- |
+| fila\_carros | fila de carros da plataforma | Queue |
+| fila\_passageiros | fila de passageiros da plataforma | Queue |
+| carro\_atual | carro atual da plataforma | Carro |
+| passageiro\_atual | passageiros atual da plataforma | Passageiro |
+| thread\_fila\_carros | representa o controlador da fila de carros | Thread |
+| thread\_fila\_passageiros | representa o controlador da fila de passageiros | Thread |
+
+#### Atributos sincronização
+
+| Nome do atributo condicional | Descrição | Tipo |
+| :--- | :--- | :--- |
+| acesso | representa o acesso à plataforma de embarque/desembarque | BoundedSemaphore |
+| tem\_carro | representa se tem um carro na plataforma de embarque/desembarque | Event |
+
+#### Métodos
+
+| Nome do método | Descrição |
+| :--- | :--- |
+| controlador\_fila\_passageiros | controlador da fila de passageiros |
+| controlador\_fila\_carros | controlador da fila de carros |
+| entrar\_fila\_passageiros | adiciona um passageiro na fila |
+| entrar\_fila\_carros | adiciona um carro na fila |
+
+#### Condições e fluxo
 
 ##### Fila de carros
 
@@ -23,59 +54,6 @@ Os eventos são utilizados para controlar as fases de embarque e desembarque do 
 3. A fila de passageiros libera a vez do passageiro atual
 4. A fila de passageiros espera que o passageiro atual embarque no carro
 
-#### Carro
-
-1. O carro espera sua vez para prosseguir
-2. O carro adquire o recurso plataforma
-3. O carro libera o desembarque
-4. O carro espera estar vazio para liberar o embarque
-5. O carro libera o embarque
-6. O carro espera estar cheio para iniciar passeio
-7. O carro libera o recurso plataforma e inicia o passeio
-
-#### Passageiro
-
-1. O passageiro entra na fila de passageiros
-2. O passageiro espera sua vez
-3. O passageiro adquire o recurso assento
-4. O passageiro entra no carro
-5. O passageiro espera o desembarque do carro ser liberado
-6. O passageiro sai do carro
-7. O passageiro libera o recurso assento
-8. O passageiro vai passear no parque
-
-## Classes
-
-* [Plataforma](#plataforma)
-* [Carro](#carro)
-* [Passageiro](#passageiro)
-
-### Plataforma
-
-#### Atributos
-
-| Nome do atributo | Descrição | Tipo |
-| :--- | :--- | :--- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-#### Atributos sincronização
-
-| Nome do atributo condicional | Descrição | Tipo |
-| :--- | :--- | :--- |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-
-#### Métodos
-
-| Nome do método | Descrição |
-| :--- | :--- |
-|  |  |
-|  |  |
-|  |  |
-
 ### Carro
 
 #### Atributos
@@ -86,10 +64,7 @@ Os eventos são utilizados para controlar as fases de embarque e desembarque do 
 | num\_passeios | número de vezes que o carro irá rodar | inteiro |
 | limite\_passageiros | quantidade de pessoas que cabem no carro | inteiro |
 | passageiros | quantidade atual de pessoas no ca | inteiro |
-| passageiro\_atual | passageiro atual da fila | Passageiro |
-| fila | fila de passageiros do carro | Queue |
 | thread\_main | representa o controlador do carro | Thread |
-| thread\_fila | representa o controlador da fila do carro | Thread |
 
 #### Atributos sincronização
 
@@ -100,19 +75,30 @@ Os eventos são utilizados para controlar as fases de embarque e desembarque do 
 | assentos | representa os assentos disponíveis no carro | BoundedSemaphore |
 | cheio | representa se o carro está cheio | Event |
 | vazio | representa se o carro está vazio | Event |
+| vez | representa se é a vez do carro | Event |
+| passeio\_iniciado | representa se o passeio foi iniciado | Event |
+| passeio\_terminado | representa se o passeio terminou | Event |
 
 #### Métodos
 
 | Nome do método | Descrição |
 | :--- | :--- |
 | main | controlador do carro |
-| controlar\_fila | controlador da fila do carro |
-| entrar\_fila | adiciona passageiro na fila do carro |
 | run | carro passeia no trilho por um tempo |
 | load | libera o embarque no carro |
 | unload | libera o desembarque no carro |
 | board | adiciona um passageiro no carro |
 | unboard | remove um passageiro do carro |
+
+#### Condições e fluxo
+
+1. O carro espera sua vez para prosseguir
+2. O carro adquire o recurso plataforma
+3. O carro libera o desembarque
+4. O carro espera estar vazio para liberar o embarque
+5. O carro libera o embarque
+6. O carro espera estar cheio para iniciar passeio
+7. O carro libera o recurso plataforma e inicia o passeio
 
 ### Passageiro
 
@@ -138,6 +124,17 @@ Os eventos são utilizados para controlar as fases de embarque e desembarque do 
 | passear | passageiro passeia pelo parque de diversões por um tempo |
 | board | passageiro entra no carro da montanha-russa |
 | unboard | passageiro sai do carro da montanha-russa |
+
+#### Condições e fluxo
+
+1. O passageiro entra na fila de passageiros
+2. O passageiro espera sua vez
+3. O passageiro adquire o recurso assento
+4. O passageiro entra no carro
+5. O passageiro espera o desembarque do carro ser liberado
+6. O passageiro sai do carro
+7. O passageiro libera o recurso assento
+8. O passageiro vai passear no parque
 
 
 
