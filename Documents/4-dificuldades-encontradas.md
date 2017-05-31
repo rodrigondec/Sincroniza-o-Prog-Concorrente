@@ -6,6 +6,8 @@
 
 Uma dificuldade encontrada durante a abordagem 1 foi dividir e separar os diferentes estados e condições das threads/objetos/rotinas/programa para fazer de fato a sincronização entre as threads. Como por exemplo, os estados de cheio, vazio, em embarque e em desembarque. E fazer com que os passageiros esperem os estados embarque e desembarque para poderem fazer as ações de entrar e sair do carro, respctivamente.
 
+Uma outra questão foi que os passageiros podiam entrar em starvation caso tivesse muitos outros tentando entrar no carro. Para resolver tal situação foi implementado uma fila sequencial de acesso ao carro, onde cada passageiro esperava sua vez.
+
 ### Abordagem 2
 
 Uma dificuldade foi usar barreiras para controlar a entrada de passageiros. Na versão final, as barreiras foram utilizadas apenas para controlar a saída dos passageiros do carro mesmo.
