@@ -10,6 +10,11 @@ Quanto à estrutura de dados:
 * Os events são usados para esperar condições serem satisfeitas
 * Os semáforos foram utilizadospara garantir a corretude com relação a quantidade limite dos recursos \(no caso, vagas do banheiro\)
 
+Resumindo a lógica:
+
+* O banheiro controla duas filas de pessoas e suas condições
+* A pessoa apenas entra na fila e tenta entrar no banheiro
+
 ## Classes
 
 * [Banheiro](#banheiro)

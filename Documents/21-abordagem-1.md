@@ -10,6 +10,11 @@ Quanto à estrutura de dados:
 * Os events são usados para esperar condições serem satisfeitas
 * Os semáforos foram utilizados para garantir a corretude com relação a quantidade limite dos recursos \(no caso, vagas do carro\)
 
+Resumindo a lógica:
+
+* O carro controla uma fila de passageiros, suas condições e seu passeio
+* O passageiro apenas entra na fila e tenta embarcar
+
 ## Classes
 
 * [Carro](#carro)

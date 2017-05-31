@@ -4,11 +4,17 @@
 
 Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utilizando [Event](https://docs.python.org/3/library/threading.html#event-objects), [BoundedSemaphore](https://docs.python.org/3/library/threading.html#semaphore-objects) e [Queue](https://docs.python.org/3/library/queue.html#queue-objects) objects das bibliotecas [threading](https://docs.python.org/3/library/threading.html) e  [queue](https://docs.python.org/3/library/queue.html) do python3.
 
-Quanto à estrutura de dados, apenas uma lista foi utilizada para armazenar as pessoas esperando na fila para entrar no banheiro.
+Quanto à estrutura de dados:
 
-Os locks são usados para garantir exclusão mútua e as variáveis condicionais para evitar processamente inútil, fazendo com que uma thread durma.
+* Foi utilizado uma fila para os carros e uma fila para os passageiros que querem ir na montanha-russa
+* Os events são usados para esperar condições serem satisfeitas
+* Os semáforos foram utilizados para garantir a corretude com relação a quantidade limite dos recursos \(no caso, vagas do carro e acesso da plataforma\)
 
-Resumindo a lógica: há uma fila única na qual entram homens e mulheres. O banheiro ou está vazio ou comportando pessoas de um dos gêneros. Quando a primeira pessoa na fila é de um gênero diferente, espera-se o banheiro esvaziar para que entre.
+Resumindo a lógica:
+
+* A plataforma controla duas filas, a de passageiros e a de carros
+* O carro controla suas condições e seu passeio
+* O passageiro apenas entra na fila e tenta embarcar
 
 ## Classes
 
