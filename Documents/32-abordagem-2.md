@@ -2,9 +2,13 @@
 
 ## Descrição
 
-Essa abordagem utiliza eventos, semáforos e filas. Mais especificamente utilizando [Event](https://docs.python.org/3/library/threading.html#event-objects), [BoundedSemaphore](https://docs.python.org/3/library/threading.html#semaphore-objects) e [Queue](https://docs.python.org/3/library/queue.html#queue-objects) objects das bibliotecas [threading](https://docs.python.org/3/library/threading.html) e  [queue](https://docs.python.org/3/library/queue.html) do python3.
+Essa abordagem utiliza apenas os [Locks](https://docs.python.org/3/library/threading.html#lock-objects) e [Variáveis Condicionais](https://docs.python.org/3/library/threading.html#condition-objects) ofertados pela biblioteca threading de python3.
 
-Os eventos são utilizados para controlar o gênero e as situações disponível e vazio do banheiro. O controle de acesso das vagas do banheiro é feito por um semáforo e pela fila.
+Quanto à estrutura de dados, apenas uma lista foi utilizada para armazenar as pessoas esperando na fila para entrar no banheiro.
+
+Os locks são usados para garantir exclusão mútua e as variáveis condicionais para evitar processamente inútil, fazendo com que uma thread durma.
+
+Resumindo a lógica: há uma fila única na qual entram homens e mulheres. O banheiro ou está vazio ou comportando pessoas de um dos gêneros. Quando a primeira pessoa na fila é de um gênero diferente, espera-se o banheiro esvaziar para que entre.
 
 ### Condições e fluxo
 
@@ -12,24 +16,24 @@ Considere o caso em que o banheiro possui 3 vagas mas há 10 pessoas \(5 homens 
 
 #### Banheiro
 
-1. O banheiro começa com o gênero masculino
-2. O banheiro tem duas filas, a _**fila masculina**_ e a _**fila feminina**_
-3. É chamado o método de justiça de gênero nas seguintes condições:
-   1. Quando uma fila está maior _**1.5\*limite\_pessoas**_ do que a outra
-   2. Uma das filas está vazia enquanto a outra não
-
-#### Fila do banheiro
-
-1. A _**fila atual**_ do banheiro é de acordo com o gênero atual do banheiro. Com isso fazendo o controle de acesso de gênero
-2. A _**fila atual**_ do banheiro espera ele estar disponível para liberar a _**pessoa atual**_
-3. A _**fila atual**_ do banheiro espera a **pessoa**_** **_**atual** entrar no banheiro para liberar o próximo
+1. O banheiro começa sem gênero
+2. O banheiro só tem uma fila, não qual entrarão pessoas dos dois gêneros
+3. Quando o banheiro está vazio (sem gênero)
+    1. Se a fila estiver vazia, espera alguém chegar
+    2. Se tiver alguém na fila, atribua seu gênero ao banheiro
+4. Quando o banheiro está cheio espere alguém sair
+5. Quando tem gente na fila
+    1. Se a primeira pessoa é do mesmo gênero do banheiro, incremente o contador e acorde-a
+    2. Senão se o contador **não** atingiu o valor máximo, acorde a próxima pessoa do gênero do banheiro
+    3. Senão espera o banheiro esvaziar (gênero será trocado)
 
 #### Pessoas
 
-1. As pessoas entram na fila e esperam a sua vez
-2. Na sua vez, tentam  alocar uma vaga do semáforo. Com isso fazendo o controle de limite de pessoas no banheiro
-3. Depois de alocar a vaga eles entram de fato no banheiro
-4. Ao saírem  do banheiro, liberam a vaga e vão trabalhar
+1. Cada pessoa trabalha por um tempo aleatório antes de usar o banheiro
+2. Pessoa entra na fila, notifica banheiro (pode estar dormindo caso a fila esteja vazia) e espera ser acordada para entrar no banheiro
+3. Pessoa entra no banheiro
+4. Pessoa usa o banheiro (thread dorme por tempo aleatório)
+5. Pessoa sai do banheiro e notifica o banheiro (que pode estar dormindo caso estiver cheio)
 
 ## Classes
 
