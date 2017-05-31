@@ -130,7 +130,7 @@ class Plataforma(object):
                 self.carro_atual.vez.set()
 
                 if not self.carro_atual.passeio_iniciado.is_set():
-                    print_plataforma_log("Fila carros: espera o carro "+str(self.carro_atual)+" iniciar seu passeio para liberar o proximo carro!")
+                    print_plataforma_log("Fila carros: espera o carro "+str(self.carro_atual)+" iniciar seu passeio!")
                     self.carro_atual.passeio_iniciado.wait()
                     self.carro_atual.passeio_iniciado.clear()
 
