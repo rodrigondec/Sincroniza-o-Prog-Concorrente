@@ -111,7 +111,8 @@ class Plataforma(object):
             #         if not self.tem_carro.is_set():
             #             print_plataforma_log("Fila passageiros: espera ter carro na plataforma!")
             #             self.tem_carro.wait()
-
+            while self.carro_atual.cheio.is_set():
+                pass
 
             if not self.carro_atual.boardable.is_set():
                 print_plataforma_log("Fila passageiros: espera o embarque do carro "+str(self.carro_atual)+" para liberar passageiros!")
@@ -246,7 +247,7 @@ class Carro(object):
         self.passeio_terminado.clear()
         self.passeio_iniciado.set()
         print_carro_log("Carro: " + str(self) + " passeio iniciado!")
-        tempo = randrange(5) + 1
+        tempo = 5
         print_carro_log("Carro: " + str(self) + " vai andar por " + str(tempo) + " segundos.")
         time.sleep(tempo)
         print_carro_log("Carro: " + str(self) + " passeio terminado!")
