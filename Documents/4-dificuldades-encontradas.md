@@ -12,7 +12,13 @@ bla
 
 ### Extra
 
-bla
+##### Abordagem 1
+
+Uma dificuldade durante a implementação da abordagem 1 do extra foi a questão de gerenciar a fila dos carros e fazer com que as pessoas entrem corretamente no 'carro atual' da plataforma. 
+
+A questão de gerenciar a fila dos carros foi resolvido com a implementação de
+
+##### Abordagem 2
 
 ## Banheiro Unissex
 
@@ -20,7 +26,12 @@ bla
 
 Uma dificuldade durante a implementação da abordagem 1, foi que as pessoas de um sexo 'X' entravam em starvation caso o tempo de "trabalho" e a quantidade de trabalhadores fossem muito superior à quantidade de vagas do banheiro. E não era garantido que uma pessoa da fila realmente entrasse no banheiro em algum momento, pois todas as pessoas do mesmo sexo eram liberadas ao mesmo tempo para adquirir a vaga, ficando assim em starvation.
 
-Precisando por causa disso, implementar um algoritmo que garantisse a justiça entre a divisão do banheiro entre os dois possíveis gêneros. As solu
+As soluções para esses dois tipos de starvation foram, respectivamente:
+
+1. Implementação de um método de justiça para o gênero do banheiro
+2. Implementação de uma fila sequencial para as pessoas respeitarem uma ordem
+
+Com isso garantindo a execução sem starvation.
 
 ### Abordagem 2
 
