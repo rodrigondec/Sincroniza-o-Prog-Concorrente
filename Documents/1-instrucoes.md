@@ -42,9 +42,12 @@ Após a execução dos programas, são salvos arquivos `<nome>.log` na pasta do 
 Para executar as abordagens do problema Banheiro Unissex, o usuário deverá executar o seguinte comando dentro da pasta root do projeto:
 
 ```
-python banheiro_unissex/<abordagem>/banheiro.py
+python banheiro_unissex/<abordagem>/banheiro.py <qt_homens> <qt_mulheres> <qt_vagas>
 
 <abordagem> = 'abordagem_1' ou 'abordagem_2'
+<qt_homens> = Número total de homens
+<qt_mulheres> = Número total de mulheres
+<qt_vagas> = Número de vagas no banheiro
 ```
 
 dentro da pasta root do projeto.
