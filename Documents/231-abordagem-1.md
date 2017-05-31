@@ -30,8 +30,8 @@ Resumindo a lógica:
 | :--- | :--- | :--- |
 | fila\_carros | fila de carros da plataforma | Queue |
 | fila\_passageiros | fila de passageiros da plataforma | Queue |
-| carro\_atual | carro atual da plataforma | Carro |
-| passageiro\_atual | passageiros atual da plataforma | Passageiro |
+| carro\_atual | carro atual da plataforma | [Carro](#carro) |
+| passageiro\_atual | passageiros atual da plataforma | [Passageiro](#passageiro) |
 | thread\_fila\_carros | representa o controlador da fila de carros | Thread |
 | thread\_fila\_passageiros | representa o controlador da fila de passageiros | Thread |
 

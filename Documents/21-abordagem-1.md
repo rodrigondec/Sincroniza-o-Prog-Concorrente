@@ -10,7 +10,7 @@ Quanto à estrutura de dados:
 * Os events são usados para esperar condições serem satisfeitas
 * Os semáforos foram utilizados para garantir a corretude com relação a quantidade limite dos recursos \(no caso, vagas do carro\)
 
-Resumindo a lógica:
+Resumindo a lógica:
 
 * O carro controla uma fila de passageiros, suas condições e seu passeio
 * O passageiro apenas entra na fila e tenta embarcar
@@ -30,7 +30,7 @@ Resumindo a lógica:
 | num\_passeios | número de vezes que o carro irá rodar | inteiro |
 | limite\_passageiros | quantidade de pessoas que cabem no carro | inteiro |
 | passageiros | quantidade atual de pessoas no ca | inteiro |
-| passageiro\_atual | passageiro atual da fila | Passageiro |
+| passageiro\_atual | passageiro atual da fila | [Passageiro](#passageiro) |
 | fila | fila de passageiros do carro | Queue |
 | thread\_main | representa o controlador do carro | Thread |
 | thread\_fila | representa o controlador da fila do carro | Thread |
