@@ -1,6 +1,6 @@
 # Projeto 2ª unidade de Programação Concorrente
 
-Nesse projeto são implementadas soluções para dois problemas de concorrência, testesendo esses:
+Nesse projeto são implementadas soluções para dois problemas de concorrência, sendo esses:
 
 * Uma Montanha-Russa
 * O Banheiro Unissex
