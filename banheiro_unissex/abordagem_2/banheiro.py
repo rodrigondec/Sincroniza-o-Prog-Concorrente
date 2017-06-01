@@ -3,10 +3,41 @@ import os
 import sys
 from random import randrange
 from threading import Thread, Lock, Condition
+from logging import getLogger, Formatter, FileHandler, StreamHandler, INFO
 
-# VARIÁVEIS DE CONFIGURAÇÃO
-limite_pessoas = 7
+def setup_logger(logger_name, log_file, level=INFO):
+    l = getLogger(logger_name)
+    formatter = Formatter('%(message)s')
+    fileHandler = FileHandler(log_file, mode='w')
+    fileHandler.setFormatter(formatter)
+    streamHandler = StreamHandler()
+    streamHandler.setFormatter(formatter)
 
+    l.setLevel(level)
+    l.addHandler(fileHandler)
+
+setup_logger("info_log", "info.log")
+info_log = getLogger("info_log")
+
+setup_logger("banheiro_log", "banheiro.log")
+banheiro_log = getLogger("banheiro_log")
+
+setup_logger("pessoas_log", "pessoas.log")
+pessoas_log = getLogger("pessoas_log")
+
+
+def print_info_log(msg):
+    info_log.info(msg)
+
+
+def print_banheiro_log(msg):
+    banheiro_log.info(msg)
+    print_info_log(msg)
+
+def print_pessoas_log(msg):
+    print(msg)
+    pessoas_log.info(msg)
+    print_info_log(msg)
 
 class Banheiro(object):
     """Implementação de um banheiro"""
@@ -136,7 +167,7 @@ class Pessoa(object):
 
     def trabalhar(self):
         tempo = randrange(60)  # cada segundo simula 1 minuto de uma hora
-        print("TRABALHA POR " + str(tempo) + " SEGUNDOS: " + str(self))
+        print_pessoas_log(str(self) + " TRABALHA POR " + str(tempo) + " SEGUNDOS")
         time.sleep(tempo)
 
     def entrar_fila(self):
@@ -144,7 +175,7 @@ class Pessoa(object):
         # print("ENTRA FILA " + str(self))
         # se adiciona na fila
         self.banheiro.fila.append(self)
-        print("ENTRA FILA: " + " ".join(str(s) for s in self.banheiro.fila))
+        print_pessoas_log(str(self) + " ENTRA NA FILA: " + " ".join(str(s) for s in self.banheiro.fila))
         # notifica à fila que uma nova pessoa entrou nela
         self.banheiro.fila_cv.notify()
         self.banheiro.banheiro_lk.acquire()  # evita idle management quando,
@@ -161,13 +192,14 @@ class Pessoa(object):
         self.banheiro.pessoas_usando.append(self)
         # print("ENTRA BANHEIRO " + str(self) + "\tqtd_pessoas_no_banheiro: " +
         #    str(len(self.banheiro.pessoas_usando)))
-        print("ENTRA BANHEIRO: " + " ".join(str(x) for x in self.banheiro.pessoas_usando))
+        print_pessoas_log(str(self) + " ENTRA NO BANHEIRO: " + " ".join(str(x) for x in self.banheiro.pessoas_usando))
+        print_banheiro_log(str(self) + " ENTRA NO BANHEIRO: " + " ".join(str(x) for x in self.banheiro.pessoas_usando))
         self.banheiro.banheiro_cv.notify()  # acorda banheiro
         self.banheiro.banheiro_lk.release()
 
     def usar_banheiro(self):
         tempo = randrange(4) + 1  # cada segundo simula 1 minuto de uma hora
-        # print("USA BANHEIRO POR " + str(tempo) + " SEGUNDOS " + str(self))
+        print_pessoas_log(str(self) + " USA BANHEIRO POR " + str(tempo) + " SEGUNDOS")
         time.sleep(tempo)
 
     def sair(self):
@@ -175,7 +207,8 @@ class Pessoa(object):
         self.banheiro.pessoas_usando.remove(self)
         # print("SAIR " + str(self) + "\t\tqtd_pessoas_no_banheiro: " +
         #    str(len(self.banheiro.pessoas_usando)))
-        print("SAIR BANHEIRO: " + " ".join(str(x) for x in self.banheiro.pessoas_usando))
+        print_pessoas_log(str(self) + " SAI BANHEIRO: " + " ".join(str(x) for x in self.banheiro.pessoas_usando))
+        print_banheiro_log(str(self) + " SAI BANHEIRO: " + " ".join(str(x) for x in self.banheiro.pessoas_usando))
         self.banheiro.trocar_genero()  # troca de genero quando necessario
         self.banheiro.banheiro_cv.notify()  # acorda banheiro para que ele possa colocar
         # mais gente pra dentro
