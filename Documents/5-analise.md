@@ -17,5 +17,5 @@ O Lock é a solução ideal quando apenas um processo pode fazer uma operação\
 
 ## Condition
 
-
+A Condition é idealmente usado para evitar processamento desnecessário. É sempre utilizado em conjunto com Lock. Processamento desnecessário é evitado ao se chamar o método wait\(\), que fará com que a thread atual durma por tempo indeterminado. A thread só será acordada quando uma outra thread chamar o método notify\(\) ou notify\_all\(\). O uso adequado de Conditions deve melhorar o desempenho do programa concorrente.
 
