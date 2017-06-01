@@ -38,6 +38,7 @@ python montanha_russa/extra/<abordagem>/montanha.py <qt_passag> <qt_ass> <qt_pas
 Após a execução dos programas, são salvos arquivos `<nome>.log` na pasta do programa contendo as informações fornecidas durante a execução.
 
 ### Banheiro Unissex
+
 ##### ABORDAGEM 1
 
 Para executar a primeira abordagem do problema Banheiro Unissex, o usuário deverá executar o seguinte comando dentro da pasta root do projeto:
@@ -60,7 +61,7 @@ Após a execução dos programas, são salvos arquivos `<nome>.log` na pasta do 
 Para executar a segunda abordagem do problema Banheiro Unissex, o usuário deverá executar o seguinte comando dentro da pasta root do projeto:
 
 ```
-python banheiro_unissex/<abordagem>/banheiro.py <qt_homens> <qt_mulheres> <qt_vagas>
+python banheiro_unissex/<abordagem>/banheiro.py <qt_homens> <qt_mulheres> <qt_vagas> <lim_pessoas>
 
 <abordagem> = 'abordagem_1' ou 'abordagem_2'
 <qt_homens> = Número total de homens
