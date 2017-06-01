@@ -1,4 +1,6 @@
 import time
+import os
+import sys
 from random import randrange
 from threading import Thread, Lock, Condition
 
@@ -183,28 +185,35 @@ class Pessoa(object):
         return str(self.id_pessoa) + "-" + self.sexo
 
 # VARIÁVEIS DE CONFIGURAÇÃO
-if len(sys.argv) != 4:
+if len(sys.argv) != 5:
     print("Número inválido de argumentos. Exatamente 4 argumentos requeridos, na seguinte ordem:" +
-          "\n1 - Número total de homens\n2 - Número total de mulheres\n3 - Número de vagas no banheiro")
+          "\n1 - Número total de homens\n2 - Número total de mulheres\n3 - Número de vagas no banheiro" +
+          "\n4 - Limite de pessoas antes de trocar de gênero")
     os._exit(1)
 
 qt_homens = None
 qt_mulheres = None
 qt_vagas_banheiro = None
+limite_pessoas_por_genero = None
 
 try:
     qt_homens = int(sys.argv[1])
     qt_mulheres = int(sys.argv[2])
     qt_vagas_banheiro = int(sys.argv[3])
+    limite_pessoas_por_genero = int(sys.argv[4])
 except ValueError:
-    print("Argumento(s) inválido(s)! Os 3 argumentos enviados necessitam ser do tipo inteiro")
+    print("Argumento(s) inválido(s)! Os 4 argumentos enviados necessitam ser do tipo inteiro")
     os._exit(1)
 
 if qt_homens < qt_vagas_banheiro or qt_mulheres < qt_vagas_banheiro:
     print("Erro! Número total de homens ou mulheres é menor que a capacidade do banheiro")
     os._exit(1)
 
-banheiro = Banheiro(qt_vagas_banheiro, 15)
+if limite_pessoas_por_genero < qt_vagas_banheiro:
+    #espera o banheiro encher pelo menos 1 vez antes de esvaziar
+    limite_pessoas_por_genero = qt_vagas_banheiro
+
+banheiro = Banheiro(qt_vagas_banheiro, limite_pessoas_por_genero)
 
 pessoas = []
 for x in range(qt_homens):
