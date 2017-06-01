@@ -1,6 +1,6 @@
 # Instruções
 
-## Requerimentos para rodar
+## Requerimentos
 
 * [Python 3.6.1](https://www.python.org/ftp/python/3.6.1/python-3.6.1.exe)
 
